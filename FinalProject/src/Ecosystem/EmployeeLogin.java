@@ -5,9 +5,6 @@
 package Ecosystem;
 import CounsellingEnterprise.*;
 import CoachingEnterprise.*;
-import VisaEnterprise.*;
-//import LoanEnterprise.*;
-
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import java.sql.Connection;
