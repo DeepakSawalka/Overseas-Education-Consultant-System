@@ -32,6 +32,7 @@ public class CoachingAdmin extends javax.swing.JFrame {
         jSplitPane1 = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
         managebtn = new javax.swing.JButton();
+        credentialsbtn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -43,19 +44,30 @@ public class CoachingAdmin extends javax.swing.JFrame {
             }
         });
 
+        credentialsbtn.setText("Manage Credentials");
+        credentialsbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                credentialsbtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(managebtn)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(managebtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(credentialsbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(245, 245, 245)
+                .addGap(172, 172, 172)
+                .addComponent(credentialsbtn)
+                .addGap(50, 50, 50)
                 .addComponent(managebtn)
                 .addContainerGap(391, Short.MAX_VALUE))
         );
@@ -97,12 +109,19 @@ public class CoachingAdmin extends javax.swing.JFrame {
         jSplitPane1.setBottomComponent(ms);
     }//GEN-LAST:event_managebtnActionPerformed
 
+    private void credentialsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_credentialsbtnActionPerformed
+        // TODO add your handling code here:
+        EmployeeCoCredentials ecc=new EmployeeCoCredentials();
+        jSplitPane1.setBottomComponent(ecc);
+    }//GEN-LAST:event_credentialsbtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton credentialsbtn;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
