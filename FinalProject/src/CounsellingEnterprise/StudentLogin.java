@@ -4,7 +4,7 @@
  */
 package CounsellingEnterprise;
 
-import com.mysql.cj.jdbc.Blob;
+
 import java.awt.Image;
 import java.io.File;
 import java.io.FileOutputStream;
