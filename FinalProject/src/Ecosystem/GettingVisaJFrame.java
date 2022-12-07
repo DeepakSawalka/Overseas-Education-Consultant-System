@@ -4,6 +4,10 @@
  */
 package Ecosystem;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 /**
  *
  * @author Deepak
@@ -13,6 +17,16 @@ public class GettingVisaJFrame extends javax.swing.JFrame {
     /**
      * Creates new form GettingVisaJFrame
      */
+     private static final String username="root"; 
+    private static final String password="Rajkumar123#";
+    private static final String dataconn="jdbc:mysql://localhost:3306/finalproject";
+    
+    Connection sqlConn=null;
+    PreparedStatement pst=null;
+    ResultSet rs=null;
+    int i,q;
+    String enterprise,n;
+            int deleteItem;
     public GettingVisaJFrame() {
         initComponents();
     }
