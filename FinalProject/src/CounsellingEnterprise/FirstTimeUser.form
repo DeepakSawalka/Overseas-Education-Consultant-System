@@ -93,25 +93,23 @@
                                   </Group>
                                   <EmptySpace pref="454" max="32767" attributes="0"/>
                               </Group>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="timeslotlbl" min="-2" pref="59" max="-2" attributes="0"/>
-                                      <Component id="aptdatelbl" alignment="0" min="-2" pref="133" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="aptdate" alignment="0" max="32767" attributes="0"/>
                                       <Component id="timeslotcbox" alignment="0" max="32767" attributes="0"/>
                                       <Component id="enterprisecbox" alignment="0" pref="174" max="32767" attributes="0"/>
                                       <Component id="branchcbox" alignment="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="251" max="32767" attributes="0"/>
+                                  <EmptySpace pref="303" max="32767" attributes="0"/>
                                   <Component id="registerbtn" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jDateChooser1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="aptdate" min="-2" max="-2" attributes="0"/>
+                                      <Component id="timeslotlbl" min="-2" pref="59" max="-2" attributes="0"/>
+                                      <Component id="aptdatelbl" alignment="0" min="-2" pref="133" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -138,7 +136,6 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="branchcbox" min="-2" max="-2" attributes="0"/>
                               <Component id="registerbtn" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jDateChooser1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="enterpriselbl" min="-2" max="-2" attributes="0"/>
@@ -146,9 +143,9 @@
                           <Component id="enterprisecbox" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                           <Component id="aptdatelbl" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                           <Component id="aptdate" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="timeslotlbl" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="timeslotcbox" min="-2" max="-2" attributes="0"/>
@@ -303,8 +300,6 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="registerbtnActionPerformed"/>
                   </Events>
-                </Component>
-                <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
                 </Component>
                 <Component class="com.toedter.calendar.JDateChooser" name="aptdate">
                 </Component>
