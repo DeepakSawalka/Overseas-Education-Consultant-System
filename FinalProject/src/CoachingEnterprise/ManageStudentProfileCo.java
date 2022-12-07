@@ -30,7 +30,7 @@ private static final String username="root";
      String enterprise;
      String name,pass;
      byte[] image;
-     DefaultTableModel recordTable;
+     
     /**
      * Creates new form MSP
      */
@@ -169,6 +169,21 @@ public void upDateDb()
 
     private void managetblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managetblMouseClicked
         // TODO add your handling code here:
+         DefaultTableModel recordTable=(DefaultTableModel)managetbl.getModel();
+         int SelectedRows= managetbl.getSelectedRow();
+         
+         StudentClassDetailsJFrame sc=new StudentClassDetailsJFrame();
+         sc.setVisible(true);
+         sc.namelbl.setText(recordTable.getValueAt(SelectedRows, 1).toString());
+sc.agelbl.setText(recordTable.getValueAt(SelectedRows, 2).toString());
+sc.genderlbl.setText(recordTable.getValueAt(SelectedRows, 3).toString());
+sc.emaillbl.setText(recordTable.getValueAt(SelectedRows, 4).toString());
+sc.mobilelbl.setText(recordTable.getValueAt(SelectedRows, 5).toString());
+sc.branchlbl.setText(recordTable.getValueAt(SelectedRows, 6).toString());
+sc.enterpriselbl.setText(recordTable.getValueAt(SelectedRows, 7).toString());
+sc.degreelbl.setText(recordTable.getValueAt(SelectedRows, 8).toString());
+sc.countrieslbl.setText(recordTable.getValueAt(SelectedRows, 9).toString());
+
 
     }//GEN-LAST:event_managetblMouseClicked
 
