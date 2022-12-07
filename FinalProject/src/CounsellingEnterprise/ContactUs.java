@@ -130,7 +130,6 @@ private void init(){
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         mapcbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Open Street", "Virtual Earth", "Hybrid", "Satellite" }));
         mapcbox.addActionListener(new java.awt.event.ActionListener() {
@@ -156,22 +155,17 @@ private void init(){
                 .addContainerGap(420, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jXMapViewer, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 118, -1, -1));
-
         emaillbl.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         emaillbl.setText("Email");
-        jPanel1.add(emaillbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 200, 84, -1));
 
         mobiletxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mobiletxtActionPerformed(evt);
             }
         });
-        jPanel1.add(mobiletxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 300, 235, -1));
 
         namelbl.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         namelbl.setText("Name");
-        jPanel1.add(namelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 130, 84, -1));
 
         nametxt.setToolTipText("");
         nametxt.addActionListener(new java.awt.event.ActionListener() {
@@ -179,47 +173,38 @@ private void init(){
                 nametxtActionPerformed(evt);
             }
         });
-        jPanel1.add(nametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 160, 235, -1));
 
         mobilelbl.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         mobilelbl.setText("Mobile No.");
-        jPanel1.add(mobilelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 270, 84, -1));
 
         enterpriselbl.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         enterpriselbl.setText("Enterprise");
-        jPanel1.add(enterpriselbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 410, 84, -1));
 
         branchlbl.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         branchlbl.setText("Branch");
-        jPanel1.add(branchlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 480, 84, -1));
 
         emailtxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailtxtActionPerformed(evt);
             }
         });
-        jPanel1.add(emailtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 230, 235, -1));
 
         subjecttxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 subjecttxtActionPerformed(evt);
             }
         });
-        jPanel1.add(subjecttxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 370, 236, -1));
 
         branchcbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select--", "Mumbai", "Bangalore" }));
-        jPanel1.add(branchcbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 510, 236, -1));
 
         messagelbl.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         messagelbl.setText("Message");
-        jPanel1.add(messagelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 560, 84, -1));
 
         messagetxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 messagetxtActionPerformed(evt);
             }
         });
-        jPanel1.add(messagetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 590, 236, 112));
 
         submitbtn.setBackground(new java.awt.Color(255, 51, 51));
         submitbtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -229,20 +214,16 @@ private void init(){
                 submitbtnActionPerformed(evt);
             }
         });
-        jPanel1.add(submitbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 750, 85, -1));
 
         subjectlbl.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         subjectlbl.setText("Subject");
-        jPanel1.add(subjectlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 340, 84, -1));
 
         enterprisecbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select--", "Career Counselling", "Test Preparation", "Getting Visa ", "Related to Loans", " " }));
-        jPanel1.add(enterprisecbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 440, 230, -1));
 
         jLabel1.setBackground(new java.awt.Color(255, 153, 102));
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel1.setText("DROP US A LINE");
         jLabel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 50, 211, 40));
 
         jButton2.setText("<<");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -250,7 +231,84 @@ private void init(){
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jButton2))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(730, 730, 730)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(jXMapViewer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(123, 123, 123)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(namelbl, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nametxt, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(emaillbl, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(emailtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mobilelbl, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mobiletxt, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(subjectlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(subjecttxt, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(enterpriselbl, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(enterprisecbox, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(branchlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(branchcbox, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(messagelbl, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(720, 720, 720)
+                .addComponent(messagetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(800, 800, 800)
+                .addComponent(submitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jButton2)
+                .addGap(7, 7, 7)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jXMapViewer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(namelbl)
+                        .addGap(14, 14, 14)
+                        .addComponent(nametxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(emaillbl)
+                        .addGap(14, 14, 14)
+                        .addComponent(emailtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(mobilelbl)
+                        .addGap(14, 14, 14)
+                        .addComponent(mobiletxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(subjectlbl)
+                        .addGap(14, 14, 14)
+                        .addComponent(subjecttxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(enterpriselbl)
+                        .addGap(14, 14, 14)
+                        .addComponent(enterprisecbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(branchlbl)
+                        .addGap(14, 14, 14)
+                        .addComponent(branchcbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(messagelbl)))
+                .addGap(14, 14, 14)
+                .addComponent(messagetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addComponent(submitbtn))
+        );
 
         jScrollPane1.setViewportView(jPanel1);
 
