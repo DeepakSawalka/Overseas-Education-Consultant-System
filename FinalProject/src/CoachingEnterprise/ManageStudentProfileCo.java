@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Deepak
  */
-public class ManageStudentProfileCoAdmin extends javax.swing.JPanel {
+public class ManageStudentProfileCo extends javax.swing.JPanel {
 private static final String username="root"; 
     private static final String password="Rajkumar123#";
     private static final String dataconn="jdbc:mysql://localhost:3306/finalproject";
@@ -34,7 +34,7 @@ private static final String username="root";
     /**
      * Creates new form MSP
      */
-    public ManageStudentProfileCoAdmin() {
+    public ManageStudentProfileCo() {
         initComponents();
     }
 public void upDateDb()
@@ -94,6 +94,9 @@ public void upDateDb()
         managetbl = new javax.swing.JTable();
         viewbtn = new javax.swing.JButton();
 
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+
+        managetbl.setBackground(new java.awt.Color(204, 204, 204));
         managetbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null},
@@ -171,6 +174,7 @@ public void upDateDb()
 
     private void viewbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewbtnActionPerformed
         // TODO add your handling code here:
+       
        try{
             Class.forName("com.mysql.cj.jdbc.Driver");
          sqlConn=DriverManager.getConnection(dataconn,username,password);

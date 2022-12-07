@@ -4,7 +4,7 @@
  */
 package VisaEnterprise;
 
-import CoachingEnterprise.ManageStudentProfileCoAdmin;
+import CoachingEnterprise.ManageStudentProfileCo;
 
 /**
  *
@@ -93,7 +93,7 @@ public class VisaAdmin extends javax.swing.JFrame {
 
     private void credentialsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_credentialsbtnActionPerformed
         // TODO add your handling code here:
-        ManageStudentProfileCoAdmin ms=new  ManageStudentProfileCoAdmin();
+        ManageStudentProfileCo ms=new  ManageStudentProfileCo();
         jSplitPane1.setBottomComponent(ms);
     }//GEN-LAST:event_credentialsbtnActionPerformed
 

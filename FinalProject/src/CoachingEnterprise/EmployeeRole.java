@@ -51,6 +51,7 @@ private static final String username="root";
         jSplitPane2 = new javax.swing.JSplitPane();
         jPanel3 = new javax.swing.JPanel();
         managebtn = new javax.swing.JButton();
+        classbtn = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -62,13 +63,22 @@ private static final String username="root";
             }
         });
 
+        classbtn.setText(" Student Class Details");
+        classbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                classbtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(managebtn)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(managebtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(classbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -76,7 +86,9 @@ private static final String username="root";
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(154, 154, 154)
                 .addComponent(managebtn)
-                .addContainerGap(400, Short.MAX_VALUE))
+                .addGap(53, 53, 53)
+                .addComponent(classbtn)
+                .addContainerGap(324, Short.MAX_VALUE))
         );
 
         jSplitPane2.setLeftComponent(jPanel3);
@@ -112,9 +124,15 @@ private static final String username="root";
 
     private void managebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managebtnActionPerformed
         // TODO add your handling code here:
-         ManageStudentProfileCoAdmin ms=new  ManageStudentProfileCoAdmin();
-        jSplitPane2.setBottomComponent(ms);
+         ManageStudentProfileCo ms=new  ManageStudentProfileCo();
+        jSplitPane2.setRightComponent(ms);
     }//GEN-LAST:event_managebtnActionPerformed
+
+    private void classbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_classbtnActionPerformed
+        // TODO add your handling code here:
+        StudentClassDetailsJPanel scd=new StudentClassDetailsJPanel();
+        jSplitPane2.setRightComponent(scd);
+    }//GEN-LAST:event_classbtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -122,6 +140,7 @@ private static final String username="root";
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton classbtn;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
