@@ -22,10 +22,8 @@ import javax.swing.JOptionPane;
  */
 public class StudentLogin extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Studentlogin
-     */
-  
+    
+  private ImageIcon format=null;
     public StudentLogin() {
         initComponents();
         scaleImage();
@@ -183,15 +181,11 @@ ImageIcon icon=new ImageIcon("C:\\Users\\Deepak Sawalka\\Documents\\NetBeansProj
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(piclbl, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(adminlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(adminlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(piclbl, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -209,8 +203,9 @@ ImageIcon icon=new ImageIcon("C:\\Users\\Deepak Sawalka\\Documents\\NetBeansProj
                         .addGap(10, 10, 10))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(adminlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(piclbl, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(36, 36, 36)
+                        .addComponent(piclbl, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(52, 52, 52))
         );
 
@@ -239,14 +234,15 @@ ImageIcon icon=new ImageIcon("C:\\Users\\Deepak Sawalka\\Documents\\NetBeansProj
         // TODO add your handling code here:
         String user=usernametxt.getText();
         String password=passwordtxt.getText();
-        InputStream in;
-        FileOutputStream o=null;
+        
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/finalproject","root","Rajkumar123#");
             String s= "select * from createstudentprofile where Username='"+user+"' and Password='"+password+"'";
-            PreparedStatement ps=conn.prepareStatement(s);
             
+            PreparedStatement ps=conn.prepareStatement(s);
+             
+              
             ResultSet rs=ps.executeQuery();
             if(rs.next()==true)
             {
@@ -254,17 +250,18 @@ ImageIcon icon=new ImageIcon("C:\\Users\\Deepak Sawalka\\Documents\\NetBeansProj
                
                 StudentAcc sa=new StudentAcc();
                 String name=String.valueOf(rs.getString("Name"));
-                 String pname=String.valueOf(rs.getString("Name"));
-                 /*byte[] p_image=rs.getBytes("Image");
-                 //Blob p_image=(Blob) rs.getBlob("Image");
-                 ImageIcon imageicon=new ImageIcon(p_image);
-                 Image im =imageicon.getImage();
-                 Image myImg=im.getScaledInstance(sa.imglbl.getWidth(), sa.imglbl.getHeight(), Image.SCALE_SMOOTH);
-        ImageIcon newImage=new ImageIcon(myImg);
-                 sa.imglbl.setIcon(newImage);*/
+                
+                  byte[] imagedata=rs.getBytes("Image");
+               format=new ImageIcon(imagedata);
+               Image mm=format.getImage();
+
+Image img =mm.getScaledInstance(sa.imglbl.getWidth(), sa.imglbl.getHeight(), Image.SCALE_SMOOTH);
+ ImageIcon imgae=new ImageIcon(img);
                  
-       sa.profilelbl.setText(name);
+                 
+      
        sa.namelbl.setText(name);
+        sa.imglbl.setIcon(imgae);
         dispose();
             sa.setVisible(true);
             

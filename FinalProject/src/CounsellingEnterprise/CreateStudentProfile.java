@@ -36,9 +36,16 @@ private static final String username="root";
     int i,q;
     String employeetype,n;
     String filename=null;
-    private byte[] person_image;
+    
     String gender,enterprise,branch,degree,countries;
             String name,userpassword;
+            byte[] person_image=null;
+     
+     DefaultTableModel recordTable;
+     File f=null;
+     String path=null;
+     private ImageIcon format=null;
+     int s=0;
             
             
     /**
@@ -377,10 +384,10 @@ public void upDateDb()
 
     private void savebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savebtnActionPerformed
         // TODO add your handling code here:
-        
+         File f=new File(path);
           try
     {
-      
+        FileInputStream is =new FileInputStream(f);
         Class.forName("com.mysql.cj.jdbc.Driver");
          sqlConn=DriverManager.getConnection(dataconn,username,password);
          pst=sqlConn.prepareStatement("INSERT INTO createstudentprofile(Name,Age,Gender,Email,Mobile,Branch,Enterprise,Degree,Countries,Image,Username,Password)values(?,?,?,?,?,?,?,?,?,?,?,?)");
@@ -462,7 +469,7 @@ public void upDateDb()
             countries=((usa.getText())+","+(canada.getText())+","+(uk.getText())+","+(germany.getText())) ;
          }
      pst.setString(9,countries);
-   pst.setBytes(10, person_image);
+   pst.setBlob(10, is);
     name="Pending";
        pst.setString(11,name);
        userpassword="Pending";
@@ -487,7 +494,7 @@ catch(Exception e){
     private void uploadbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadbtnActionPerformed
         // TODO add your handling code here:
         
-        JFileChooser chooser=new JFileChooser();
+        /*JFileChooser chooser=new JFileChooser();
         chooser.showOpenDialog(null);
         File f =chooser.getSelectedFile();
         filename=f.getAbsolutePath();
@@ -507,23 +514,22 @@ catch(Exception e){
         catch(Exception e)
         {
             JOptionPane.showMessageDialog(null, e);
-        }
-      
-        /*JFileChooser chooser=new JFileChooser();
-        FileNameExtensionFilter fnwf=new  FileNameExtensionFilter("PNG JPG AND JPEG","png","jpeg","jpg");
-        chooser.addChoosableFileFilter(fnwf);
-        int load=chooser.showOpenDialog(null);
-        if(load==chooser.APPROVE_OPTION){
-            f=chooser.getSelectedFile();
-            path=f.getAbsolutePath();
-              ImageIcon imageicon=new ImageIcon(path);
-              Image img=imageicon.getImage().getScaledInstance(imglbl.getWidth(), imglbl.getHeight(), Image.SCALE_SMOOTH);
-        imglbl.setIcon(new ImageIcon(img));
-        
         }*/
-      
-    }//GEN-LAST:event_uploadbtnActionPerformed
+        JFileChooser fileChooser = new JFileChooser ();
+FileNameExtensionFilter fnwf = new FileNameExtensionFilter ("PNG JPG AND JPEG", "png", "jpeg", "ipg");
+fileChooser.addChoosableFileFilter(fnwf);
+int load = fileChooser. showOpenDialog (null);
+if (load ==fileChooser.APPROVE_OPTION) {
+f = fileChooser.getSelectedFile();
+path = f.getAbsolutePath();
 
+ImageIcon ii=new ImageIcon (path) ;
+Image img =ii.getImage().getScaledInstance(imglbl.getWidth(), imglbl.getHeight(), Image.SCALE_SMOOTH);
+ imglbl.setIcon(new ImageIcon(img));
+      
+        
+    }//GEN-LAST:event_uploadbtnActionPerformed
+    }
     /**
      * @param args the command line arguments
      */
