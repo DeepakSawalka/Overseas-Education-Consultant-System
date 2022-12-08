@@ -99,13 +99,13 @@ public void upDateDb()
         managetbl.setBackground(new java.awt.Color(204, 204, 204));
         managetbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Name", "Age", "Gender", "Email", "Mobile", "Branch", "Enterprise", "Degree", "Countries", "Image", "Username", "Password"
+                "ID", "Name", "Age", "Gender", "Email", "Mobile", "Branch", "Enterprise", "Degree", "Countries"
             }
         ));
         managetbl.addMouseListener(new java.awt.event.MouseAdapter() {
