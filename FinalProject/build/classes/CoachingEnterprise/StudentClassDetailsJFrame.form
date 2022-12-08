@@ -56,41 +56,41 @@
                       <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel10" alignment="0" min="-2" pref="84" max="-2" attributes="0"/>
-                          <Component id="jCheckBox2" min="-2" pref="85" max="-2" attributes="0"/>
-                          <Component id="jCheckBox3" min="-2" pref="85" max="-2" attributes="0"/>
+                          <Component id="gmat" min="-2" pref="85" max="-2" attributes="0"/>
+                          <Component id="sat" min="-2" pref="85" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jCheckBox1" alignment="0" min="-2" pref="85" max="-2" attributes="0"/>
+                                  <Component id="gre" alignment="0" min="-2" pref="85" max="-2" attributes="0"/>
                                   <Component id="jLabel11" alignment="0" min="-2" pref="72" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="batchcbox" min="-2" pref="146" max="-2" attributes="0"/>
-                                  <Component id="prepmodescbox1" min="-2" pref="146" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="prepmodescbox" max="32767" attributes="0"/>
+                                  <Component id="batchcbox" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <EmptySpace pref="141" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jCheckBox5" min="-2" pref="85" max="-2" attributes="0"/>
+                              <Component id="toefl" min="-2" pref="85" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jCheckBox6" min="-2" pref="85" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel14" min="-2" pref="72" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="prepmodestcbox" min="-2" pref="140" max="-2" attributes="0"/>
+                              <Component id="ielts" min="-2" pref="85" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                              <Component id="batchtcbox" min="-2" pref="141" max="-2" attributes="0"/>
+                              <Component id="batchtcbox" max="32767" attributes="0"/>
                           </Group>
                           <Component id="jLabel13" alignment="0" min="-2" pref="207" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel14" min="-2" pref="72" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="prepmodestcbox" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="229" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="199" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="65" max="32767" attributes="0"/>
@@ -119,16 +119,16 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jCheckBox1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="gre" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="toefl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ielts" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jCheckBox2" min="-2" max="-2" attributes="0"/>
+                      <Component id="gmat" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jCheckBox3" min="-2" max="-2" attributes="0"/>
+                              <Component id="sat" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
@@ -141,7 +141,7 @@
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="prepmodescbox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="prepmodescbox" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="batchtcbox" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -427,12 +427,7 @@
             <Component class="javax.swing.JComboBox" name="batchcbox">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
-                  </StringArray>
+                  <StringArray count="0"/>
                 </Property>
               </Properties>
               <AuxValues>
@@ -443,6 +438,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Save"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="savebtnActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel13">
               <Properties>
@@ -452,7 +450,7 @@
                 <Property name="text" type="java.lang.String" value="English Proficiency Test"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+            <Component class="javax.swing.JCheckBox" name="gre">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="testprep"/>
@@ -460,7 +458,7 @@
                 <Property name="text" type="java.lang.String" value="GRE"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox2">
+            <Component class="javax.swing.JCheckBox" name="gmat">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="testprep"/>
@@ -468,7 +466,7 @@
                 <Property name="text" type="java.lang.String" value="GMAT"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox3">
+            <Component class="javax.swing.JCheckBox" name="sat">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="testprep"/>
@@ -476,7 +474,7 @@
                 <Property name="text" type="java.lang.String" value="SAT"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox5">
+            <Component class="javax.swing.JCheckBox" name="toefl">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="proftest"/>
@@ -484,7 +482,7 @@
                 <Property name="text" type="java.lang.String" value="TOEFL"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox6">
+            <Component class="javax.swing.JCheckBox" name="ielts">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="proftest"/>
@@ -497,7 +495,7 @@
                 <Property name="text" type="java.lang.String" value="Prep Modes"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="prepmodescbox1">
+            <Component class="javax.swing.JComboBox" name="prepmodescbox">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="7">
@@ -505,14 +503,14 @@
                     <StringItem index="1" value="GRE Classroom Training"/>
                     <StringItem index="2" value="GRE Online Training "/>
                     <StringItem index="3" value="GMAT Classroom Training"/>
-                    <StringItem index="4" value="GMATOnline Training "/>
+                    <StringItem index="4" value="GMAT Online Training "/>
                     <StringItem index="5" value="SAT Classroom Training"/>
                     <StringItem index="6" value="SAT Online Training "/>
                   </StringArray>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="prepmodescbox1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="prepmodescboxActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -529,12 +527,15 @@
                   <StringArray count="5">
                     <StringItem index="0" value="--Select--"/>
                     <StringItem index="1" value="TOEFL Classroom Training"/>
-                    <StringItem index="2" value="TOEFL OnlineTraining"/>
+                    <StringItem index="2" value="TOEFL Online Training"/>
                     <StringItem index="3" value="IELTS Classroom Training"/>
                     <StringItem index="4" value="IELTS Online Training"/>
                   </StringArray>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="prepmodestcboxActionPerformed"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
@@ -542,11 +543,8 @@
             <Component class="javax.swing.JComboBox" name="batchtcbox">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value=" "/>
                   </StringArray>
                 </Property>
               </Properties>
