@@ -575,6 +575,8 @@ public void upDateDb()
          JOptionPane.showMessageDialog(this,"Student Profile Created Successfully");
         upDateDb();
         
+        
+        
     }                                         
 catch(Exception e){
         JOptionPane.showMessageDialog(null,e);

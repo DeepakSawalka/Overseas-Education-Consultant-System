@@ -31,8 +31,9 @@ private static final String username="root";
      int q,i;
      String branch;
      String enterprise;
-     String name,pass;
+     String name,pass,test;
      byte[] image;
+     String englishtest;
     /**
      * Creates new form CLassDetailsAdmin
      */
@@ -96,15 +97,20 @@ public void upDateDb()
 
         detailstbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Name", "Email", "Test Prep", "Prep Modes", "Batch", "EngTestPrep", "EngPrepModes", "EngBatch", "Status", "Test", "EnglishTest"
+                "ID", "Name", "Email", "Test Prep", "Prep Modes", "Batch", "EngTestPrep", "EngPrepModes", "EngBatch", "Status", "Test", "EnglishTest"
             }
         ));
+        detailstbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                detailstblMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(detailstbl);
 
         viewbtn.setText("View");
@@ -124,16 +130,16 @@ public void upDateDb()
                         .addGap(418, 418, 418)
                         .addComponent(viewbtn))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 959, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(40, Short.MAX_VALUE))
+                        .addGap(16, 16, 16)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 981, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(123, 123, 123)
+                .addGap(126, 126, 126)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(67, 67, 67)
+                .addGap(64, 64, 64)
                 .addComponent(viewbtn)
                 .addContainerGap(213, Short.MAX_VALUE))
         );
@@ -153,7 +159,7 @@ public void upDateDb()
             {
                 
                 
-                
+                String id=String.valueOf(rs.getString("ID"));
                 String name=String.valueOf(rs.getString("Name"));
                 String email=String.valueOf(rs.getString("Email"));
                 String testprep=String.valueOf(rs.getString("TestPrep"));
@@ -164,10 +170,10 @@ public void upDateDb()
                 String engbatch=String.valueOf(rs.getString("EngBatch"));
                
                 String status =String.valueOf(rs.getString("Status"));
-                String test=String.valueOf(rs.getString("Test"));
-                String englishtest=String.valueOf(rs.getString("EnglishTest"));
+                 test=String.valueOf(rs.getString("Test"));
+                englishtest=String.valueOf(rs.getString("EnglishTest"));
                 
-                String tbdata[]={name,email,testprep,prepmodes,batch,engtestprep,engprepmodes,engbatch,status,test,englishtest};
+                String tbdata[]={id,name,email,testprep,prepmodes,batch,engtestprep,engprepmodes,engbatch,status,test,englishtest};
                 
                 model.addRow(tbdata);
             }
@@ -178,6 +184,45 @@ public void upDateDb()
             JOptionPane.showMessageDialog(null,e);
         }
     }//GEN-LAST:event_viewbtnActionPerformed
+
+    private void detailstblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_detailstblMouseClicked
+        // TODO add your handling code here:
+          DefaultTableModel model=(DefaultTableModel)detailstbl.getModel();
+         int SelectedRows= detailstbl.getSelectedRow();
+         String nstatus="Class Completed";
+   model.setValueAt(nstatus, SelectedRows, 9);
+         String ntestscore=JOptionPane.showInputDialog(null, "Test Score",test);
+         model.setValueAt(ntestscore, SelectedRows, 10);
+          String nengtestscore=JOptionPane.showInputDialog(null, "English Proficiency Score", englishtest);
+         model.setValueAt(nengtestscore, SelectedRows, 11);
+               try
+    {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+         sqlConn=DriverManager.getConnection(dataconn,username,password);
+         pst=sqlConn.prepareStatement("update studentclassdetailscoaching set ID=?,Name=?,Email=?,TestPrep=?,PrepModes=?, Batch=?,EngTestPrep=?,EngPrepModes=?,EngBatch=?,Status=?,Test=?,EnglishTest=? where ID=?");
+         
+       pst.setString(1,model.getValueAt(SelectedRows, 0).toString());
+        pst.setString(2,model.getValueAt(SelectedRows, 1).toString());
+        pst.setString(3,model.getValueAt(SelectedRows, 2).toString());
+        pst.setString(4,model.getValueAt(SelectedRows, 3).toString());
+        pst.setString(5,model.getValueAt(SelectedRows, 4).toString());
+        pst.setString(6,model.getValueAt(SelectedRows, 5).toString());
+        pst.setString(7,model.getValueAt(SelectedRows, 6).toString());
+        pst.setString(8,model.getValueAt(SelectedRows, 7).toString());
+        pst.setString(9,model.getValueAt(SelectedRows, 8).toString());
+        pst.setString(10,model.getValueAt(SelectedRows, 9).toString());
+        pst.setString(11,model.getValueAt(SelectedRows, 10).toString());
+        pst.setString(12,model.getValueAt(SelectedRows, 11).toString());
+        pst.setString(13,model.getValueAt(SelectedRows, 0).toString());
+         pst.executeUpdate();
+         JOptionPane.showMessageDialog(this,"Scores Updated Successfully");
+         upDateDb();}                    
+catch(Exception e){
+        JOptionPane.showMessageDialog(null,e);
+         
+    }
+     
+    }//GEN-LAST:event_detailstblMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
