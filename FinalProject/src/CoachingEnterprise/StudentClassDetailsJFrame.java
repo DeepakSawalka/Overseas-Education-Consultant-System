@@ -31,13 +31,55 @@ private static final String username="root";
      String name,pass;
      byte[] image;
      DefaultTableModel recordTable;
+     String testp,prepmodes,batch,testpt,prepmodest,batcht,status,test,englishtest;
     /**
      * Creates new form StudentClassDetailsJFrame
      */
     public StudentClassDetailsJFrame() {
         initComponents();
     }
-
+public void upDateDb()
+    {
+    try
+    {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+         sqlConn=DriverManager.getConnection(dataconn,username,password);
+         pst=sqlConn.prepareStatement("select * from studentclassdetailscoaching");
+         
+         rs=pst.executeQuery();
+         ResultSetMetaData stData= rs.getMetaData();
+         q=stData.getColumnCount();
+         
+   
+         while (rs.next())
+         {
+            Vector columnData = new Vector();
+            
+            
+                for(i=1;i<q;i++){
+                  
+                  columnData.add(rs.getString("ID"));
+                  columnData.add(rs.getString("Name"));
+                  columnData.add(rs.getString("Email"));
+                  columnData.add(rs.getString("TestPrep"));
+                  columnData.add(rs.getString("PrepModes"));
+                  columnData.add(rs.getString("Batch"));
+                  columnData.add(rs.getString("EngTestPrep"));
+                  columnData.add(rs.getString("EngPrepModes"));
+                  columnData.add(rs.getBlob("EngBatch"));
+                  columnData.add(rs.getString("Status"));
+                  columnData.add(rs.getString("Test"));
+                  columnData.add(rs.getString("EnglishTest"));
+                }         
+            
+             
+         }
+         
+} 
+    catch(Exception e){
+        JOptionPane.showMessageDialog(null,e);
+    
+    }}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -76,13 +118,13 @@ private static final String username="root";
         batchcbox = new javax.swing.JComboBox<>();
         savebtn = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
+        gre = new javax.swing.JCheckBox();
+        gmat = new javax.swing.JCheckBox();
+        sat = new javax.swing.JCheckBox();
+        toefl = new javax.swing.JCheckBox();
+        ielts = new javax.swing.JCheckBox();
         jLabel14 = new javax.swing.JLabel();
-        prepmodescbox1 = new javax.swing.JComboBox<>();
+        prepmodescbox = new javax.swing.JComboBox<>();
         jLabel15 = new javax.swing.JLabel();
         prepmodestcbox = new javax.swing.JComboBox<>();
         batchtcbox = new javax.swing.JComboBox<>();
@@ -223,42 +265,50 @@ private static final String username="root";
 
         jLabel12.setText("Batch");
 
-        batchcbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         savebtn.setText("Save");
+        savebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                savebtnActionPerformed(evt);
+            }
+        });
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel13.setText("English Proficiency Test");
 
-        testprep.add(jCheckBox1);
-        jCheckBox1.setText("GRE");
+        testprep.add(gre);
+        gre.setText("GRE");
 
-        testprep.add(jCheckBox2);
-        jCheckBox2.setText("GMAT");
+        testprep.add(gmat);
+        gmat.setText("GMAT");
 
-        testprep.add(jCheckBox3);
-        jCheckBox3.setText("SAT");
+        testprep.add(sat);
+        sat.setText("SAT");
 
-        proftest.add(jCheckBox5);
-        jCheckBox5.setText("TOEFL");
+        proftest.add(toefl);
+        toefl.setText("TOEFL");
 
-        proftest.add(jCheckBox6);
-        jCheckBox6.setText("IELTS");
+        proftest.add(ielts);
+        ielts.setText("IELTS");
 
         jLabel14.setText("Prep Modes");
 
-        prepmodescbox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select--", "GRE Classroom Training", "GRE Online Training ", "GMAT Classroom Training", "GMATOnline Training ", "SAT Classroom Training", "SAT Online Training " }));
-        prepmodescbox1.addActionListener(new java.awt.event.ActionListener() {
+        prepmodescbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select--", "GRE Classroom Training", "GRE Online Training ", "GMAT Classroom Training", "GMAT Online Training ", "SAT Classroom Training", "SAT Online Training " }));
+        prepmodescbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                prepmodescbox1ActionPerformed(evt);
+                prepmodescboxActionPerformed(evt);
             }
         });
 
         jLabel15.setText("Batch");
 
-        prepmodestcbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select--", "TOEFL Classroom Training", "TOEFL OnlineTraining", "IELTS Classroom Training", "IELTS Online Training" }));
+        prepmodestcbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select--", "TOEFL Classroom Training", "TOEFL Online Training", "IELTS Classroom Training", "IELTS Online Training" }));
+        prepmodestcbox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                prepmodestcboxActionPerformed(evt);
+            }
+        });
 
-        batchtcbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        batchtcbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -268,33 +318,33 @@ private static final String username="root";
                 .addGap(138, 138, 138)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(gmat, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sat, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel12)
-                            .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(gre, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(13, 13, 13)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(batchcbox, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(prepmodescbox1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(prepmodescbox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(batchcbox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jCheckBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(toefl, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(prepmodestcbox, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(ielts, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel15)
                         .addGap(61, 61, 61)
-                        .addComponent(batchtcbox, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(229, 229, 229))
+                        .addComponent(batchtcbox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(prepmodestcbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(199, 199, 199))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(65, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -316,15 +366,15 @@ private static final String username="root";
                     .addComponent(jLabel13))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jCheckBox5)
-                    .addComponent(jCheckBox6))
+                    .addComponent(gre)
+                    .addComponent(toefl)
+                    .addComponent(ielts))
                 .addGap(18, 18, 18)
-                .addComponent(jCheckBox2)
+                .addComponent(gmat)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jCheckBox3))
+                        .addComponent(sat))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(4, 4, 4)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -333,7 +383,7 @@ private static final String username="root";
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(prepmodescbox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(prepmodescbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel15)
                     .addComponent(batchtcbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
@@ -364,10 +414,175 @@ private static final String username="root";
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void prepmodescbox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prepmodescbox1ActionPerformed
+    private void prepmodescboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prepmodescboxActionPerformed
         // TODO add your handling code here:
+        try{
+        if(prepmodescbox.getSelectedItem().equals("GRE Classroom Training")){
+            batchcbox.removeAllItems();
+            
+            batchcbox.addItem("Monday - 6.30pm to 9.30 pm");
+             batchcbox.addItem("Saturday - 11.30am to 2.30 pm");
+          
+            batchcbox.setSelectedItem(null);
+        }
+        else if (prepmodescbox.getSelectedItem().equals("GRE Online Training ")){
+            batchcbox.removeAllItems();
+            
+            batchcbox.addItem("Sunday - 9.30am to 12.30 pm");
+             
+          
+            batchcbox.setSelectedItem(null);
+        }
+         else if (prepmodescbox.getSelectedItem().equals("GMAT Classroom Training")){
+            batchcbox.removeAllItems();
+            
+            batchcbox.addItem("Tuesday - 6.30am to 9.30 pm");
+              batchcbox.addItem("Thursday - 6.30am to 9.30 pm");
+          
+            batchcbox.setSelectedItem(null);
+        }
+         else if (prepmodescbox.getSelectedItem().equals("GMAT Online Training ")){
+            batchcbox.removeAllItems();
+            
+            batchcbox.addItem("Sunday - 12.30am to 3.30 pm");
+             
+          
+            batchcbox.setSelectedItem(null);
+        }
+         else if (prepmodescbox.getSelectedItem().equals("SAT Classroom Training")){
+            batchcbox.removeAllItems();
+            
+            batchcbox.addItem("Wednesday - 6.30am to 9.30 pm");
+              batchcbox.addItem("Friday - 6.30am to 9.30 pm");
+             
+          
+            batchcbox.setSelectedItem(null);
+        }
+         else if (prepmodescbox.getSelectedItem().equals("SAT Online Training ")){
+            batchcbox.removeAllItems();
+            
+            batchcbox.addItem("Saturday - 6.30am to 9.30 pm");
+             
+          
+            batchcbox.setSelectedItem(null);
+        }
         
-    }//GEN-LAST:event_prepmodescbox1ActionPerformed
+        
+        }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(this, e);
+        }
+    }//GEN-LAST:event_prepmodescboxActionPerformed
+
+    private void prepmodestcboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prepmodestcboxActionPerformed
+        // TODO add your handling code here:
+         try{
+        if(prepmodestcbox.getSelectedItem().equals("TOEFL Classroom Training")){
+            batchtcbox.removeAllItems();
+            
+            batchtcbox.addItem("Monday - 6.30pm to 9.30 pm");
+             batchtcbox.addItem("Saturday - 11.30am to 2.30 pm");
+          
+            batchtcbox.setSelectedItem(null);
+        }
+        else if (prepmodestcbox.getSelectedItem().equals("TOEFL Online Training ")){
+            batchtcbox.removeAllItems();
+            
+            batchtcbox.addItem("Sunday - 9.30am to 12.30 pm");
+             
+          
+            batchtcbox.setSelectedItem(null);
+        }
+         else if (prepmodestcbox.getSelectedItem().equals("IELTS Classroom Training")){
+            batchtcbox.removeAllItems();
+            
+            batchtcbox.addItem("Tuesday - 6.30am to 9.30 pm");
+              batchtcbox.addItem("Thursday - 6.30am to 9.30 pm");
+          
+            batchtcbox.setSelectedItem(null);
+        }
+         else if (prepmodestcbox.getSelectedItem().equals("IELTS Online Training")){
+            batchtcbox.removeAllItems();
+            
+            batchtcbox.addItem("Sunday - 12.30am to 3.30 pm");
+             
+          
+            batchtcbox.setSelectedItem(null);
+        }
+        
+        
+        }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(this, e);
+        }
+                           
+    }//GEN-LAST:event_prepmodestcboxActionPerformed
+
+    private void savebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savebtnActionPerformed
+        // TODO add your handling code here:
+         try
+    {
+        
+        Class.forName("com.mysql.cj.jdbc.Driver");
+         sqlConn=DriverManager.getConnection(dataconn,username,password);
+         pst=sqlConn.prepareStatement("INSERT INTO studentclassdetailscoaching(Name,Email,TestPrep,PrepModes,Batch,EngTestPrep,EngPrepModes,EngBatch,Status,Test,EnglishTest)values(?,?,?,?,?,?,?,?,?,?,?)");
+         
+          pst.setString(1,namelbl.getText());
+          pst.setString(2,emaillbl.getText());
+             if(gre.isSelected())
+         {
+             testp=gre.getText()+"";
+         }
+                if(gmat.isSelected())
+         {
+             testp=gmat.getText()+"";
+         }
+                     if(sat.isSelected())
+         {
+             testp=sat.getText()+"";
+         }
+         pst.setString(3, testp);
+         prepmodes=prepmodescbox.getSelectedItem().toString();
+          pst.setString(4,prepmodes);
+         batch=batchcbox.getSelectedItem().toString();
+          pst.setString(5,batch);
+           if(toefl.isSelected())
+         {
+             testpt=toefl.getText()+"";
+         }
+                if(ielts.isSelected())
+         {
+             testpt=ielts.getText()+"";
+         }
+                 
+     
+         pst.setString(6, testpt);
+         prepmodest=prepmodestcbox.getSelectedItem().toString();
+          pst.setString(7,prepmodest);
+         batcht=batchtcbox.getSelectedItem().toString();
+          pst.setString(8,batcht);
+          
+         status="Class Scheduled";
+            pst.setString(9,status);
+            test="Pending";
+            pst.setString(10,test);
+    englishtest="Pending";
+       pst.setString(11,englishtest);
+       
+          pst.executeUpdate();
+         JOptionPane.showMessageDialog(this,"Student Profile Created Successfully");
+        upDateDb();
+        
+        
+        
+    }                                         
+catch(Exception e){
+        JOptionPane.showMessageDialog(null,e);
+    
+}
+    }//GEN-LAST:event_savebtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -384,11 +599,9 @@ private static final String username="root";
     public javax.swing.JLabel emaillbl;
     public javax.swing.JLabel enterpriselbl;
     public javax.swing.JLabel genderlbl;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
+    private javax.swing.JCheckBox gmat;
+    private javax.swing.JCheckBox gre;
+    private javax.swing.JCheckBox ielts;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -409,10 +622,12 @@ private static final String username="root";
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JLabel mobilelbl;
     public javax.swing.JLabel namelbl;
-    private javax.swing.JComboBox<String> prepmodescbox1;
+    private javax.swing.JComboBox<String> prepmodescbox;
     private javax.swing.JComboBox<String> prepmodestcbox;
     private javax.swing.ButtonGroup proftest;
+    private javax.swing.JCheckBox sat;
     private javax.swing.JButton savebtn;
     private javax.swing.ButtonGroup testprep;
+    private javax.swing.JCheckBox toefl;
     // End of variables declaration//GEN-END:variables
 }
