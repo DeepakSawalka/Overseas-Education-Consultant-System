@@ -9,6 +9,8 @@ package VisaEnterprise;
  * @author vatsal
  */
 import java.awt.Color;
+import java.awt.Desktop;
+import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -16,6 +18,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.util.Vector;
 import java.sql.*;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 public class StudentVisaDetailsJFrame extends javax.swing.JFrame {
@@ -30,12 +33,18 @@ private static final String username="root";
      String branch;
      String enterprise;
      String name,pass;
+     String filename = null;
      byte[] image;
      DefaultTableModel recordTable;
     /**
      * Creates new form StudentVisaDetailsJFrame
      */
     public StudentVisaDetailsJFrame() {
+        passporttick1.setVisible(false);
+        i20tick.setVisible(false);
+        marksheettick.setVisible(false);
+        dstick.setVisible(false);
+        sevistick.setVisible(false);
         initComponents();
     }
 
@@ -86,11 +95,11 @@ private static final String username="root";
         marksheetsviewbtn = new javax.swing.JButton();
         ds160viewbtn = new javax.swing.JButton();
         sevisfeeviewbtn = new javax.swing.JButton();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
+        i20tick = new javax.swing.JLabel();
+        passporttick1 = new javax.swing.JLabel();
+        marksheettick = new javax.swing.JLabel();
+        dstick = new javax.swing.JLabel();
+        sevistick = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -270,6 +279,11 @@ private static final String username="root";
         passportviewbtn.setBackground(new java.awt.Color(255, 102, 102));
         passportviewbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         passportviewbtn.setText("View");
+        passportviewbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passportviewbtnActionPerformed(evt);
+            }
+        });
 
         i20viewbtn.setBackground(new java.awt.Color(255, 102, 102));
         i20viewbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -287,15 +301,20 @@ private static final String username="root";
         sevisfeeviewbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         sevisfeeviewbtn.setText("View");
 
-        jLabel16.setText("jLabel16");
+        i20tick.setForeground(new java.awt.Color(51, 255, 51));
+        i20tick.setText("✔️");
 
-        jLabel17.setText("jLabel16");
+        passporttick1.setForeground(new java.awt.Color(51, 255, 51));
+        passporttick1.setText("✔️");
 
-        jLabel18.setText("jLabel16");
+        marksheettick.setForeground(new java.awt.Color(51, 255, 51));
+        marksheettick.setText("✔️");
 
-        jLabel19.setText("jLabel16");
+        dstick.setForeground(new java.awt.Color(51, 255, 51));
+        dstick.setText("✔️");
 
-        jLabel20.setText("jLabel16");
+        sevistick.setForeground(new java.awt.Color(51, 255, 51));
+        sevistick.setText("✔️");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -329,13 +348,13 @@ private static final String username="root";
                                 .addComponent(marksheetsviewbtn, javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(ds160viewbtn, javax.swing.GroupLayout.Alignment.TRAILING))
                             .addComponent(sevisfeeviewbtn, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(124, 124, 124)
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(i20tick)
+                            .addComponent(passporttick1)
+                            .addComponent(marksheettick)
+                            .addComponent(dstick)
+                            .addComponent(sevistick))))
                 .addContainerGap(237, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -345,37 +364,38 @@ private static final String username="root";
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addGap(20, 20, 20)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(passportuploadbtn)
                     .addComponent(passportviewbtn)
-                    .addComponent(jLabel16))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(passporttick1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(i20uploadbtn)
                     .addComponent(i20viewbtn)
-                    .addComponent(jLabel17))
+                    .addComponent(i20tick, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(marksheetsuploadbtn)
                     .addComponent(marksheetsviewbtn)
-                    .addComponent(jLabel18))
-                .addGap(11, 11, 11)
+                    .addComponent(marksheettick, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ds160uploadbtn)
                     .addComponent(ds160viewbtn)
-                    .addComponent(jLabel20))
+                    .addComponent(dstick, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sevisfeeuploadbtn)
-                    .addComponent(sevisfeeviewbtn)
-                    .addComponent(jLabel19))
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(sevisfeeuploadbtn)
+                        .addComponent(sevisfeeviewbtn))
+                    .addComponent(sevistick, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(144, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel3);
@@ -396,7 +416,31 @@ private static final String username="root";
 
     private void passportuploadbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passportuploadbtnActionPerformed
         // TODO add your handling code here:
+        JFileChooser chooser=new JFileChooser();
+        chooser.showOpenDialog(null);
+        File f =chooser.getSelectedFile();
+        filename=f.getAbsolutePath();
     }//GEN-LAST:event_passportuploadbtnActionPerformed
+
+    private void passportviewbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passportviewbtnActionPerformed
+        // TODO add your handling code here:
+        try{
+            File file = new File(filename);
+            if (file.exists()){
+                if(Desktop.isDesktopSupported()){
+                   Desktop.getDesktop().open(file);
+                }else{
+                    JOptionPane.showMessageDialog(this, "Not supported");
+                }
+            }else{
+                JOptionPane.showMessageDialog(this, "File Not exist");
+            }
+        }catch( Exception e){
+            e.printStackTrace();
+        }
+        
+        
+    }//GEN-LAST:event_passportviewbtnActionPerformed
 
     
 
@@ -407,9 +451,11 @@ private static final String username="root";
     public javax.swing.JLabel degreelbl;
     private javax.swing.JButton ds160uploadbtn;
     private javax.swing.JButton ds160viewbtn;
+    private javax.swing.JLabel dstick;
     public javax.swing.JLabel emaillbl;
     public javax.swing.JLabel enterpriselbl;
     public javax.swing.JLabel genderlbl;
+    private javax.swing.JLabel i20tick;
     private javax.swing.JButton i20uploadbtn;
     private javax.swing.JButton i20viewbtn;
     private javax.swing.JLabel jLabel1;
@@ -419,12 +465,7 @@ private static final String username="root";
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -438,11 +479,14 @@ private static final String username="root";
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton marksheetsuploadbtn;
     private javax.swing.JButton marksheetsviewbtn;
+    private javax.swing.JLabel marksheettick;
     public javax.swing.JLabel mobilelbl;
     public javax.swing.JLabel namelbl;
+    private javax.swing.JLabel passporttick1;
     private javax.swing.JButton passportuploadbtn;
     private javax.swing.JButton passportviewbtn;
     private javax.swing.JButton sevisfeeuploadbtn;
     private javax.swing.JButton sevisfeeviewbtn;
+    private javax.swing.JLabel sevistick;
     // End of variables declaration//GEN-END:variables
 }
