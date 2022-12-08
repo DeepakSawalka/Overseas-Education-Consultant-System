@@ -47,6 +47,8 @@ private static final String username="root";
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        testprep = new javax.swing.ButtonGroup();
+        proftest = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
@@ -82,8 +84,8 @@ private static final String username="root";
         jLabel14 = new javax.swing.JLabel();
         prepmodescbox1 = new javax.swing.JComboBox<>();
         jLabel15 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        prepmodestcbox = new javax.swing.JComboBox<>();
+        batchtcbox = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -228,14 +230,19 @@ private static final String username="root";
         jLabel13.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel13.setText("English Proficiency Test");
 
+        testprep.add(jCheckBox1);
         jCheckBox1.setText("GRE");
 
+        testprep.add(jCheckBox2);
         jCheckBox2.setText("GMAT");
 
+        testprep.add(jCheckBox3);
         jCheckBox3.setText("SAT");
 
+        proftest.add(jCheckBox5);
         jCheckBox5.setText("TOEFL");
 
+        proftest.add(jCheckBox6);
         jCheckBox6.setText("IELTS");
 
         jLabel14.setText("Prep Modes");
@@ -249,9 +256,9 @@ private static final String username="root";
 
         jLabel15.setText("Batch");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select--", "TOEFL Classroom Training", "TOEFL OnlineTraining", "IELTS Classroom Training", "IELTS Online Training" }));
+        prepmodestcbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select--", "TOEFL Classroom Training", "TOEFL OnlineTraining", "IELTS Classroom Training", "IELTS Online Training" }));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        batchtcbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -281,11 +288,11 @@ private static final String username="root";
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(prepmodestcbox, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel15)
                         .addGap(61, 61, 61)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(batchtcbox, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(229, 229, 229))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -322,13 +329,13 @@ private static final String username="root";
                         .addGap(4, 4, 4)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel14)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(prepmodestcbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(prepmodescbox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel15)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(batchtcbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
@@ -359,6 +366,7 @@ private static final String username="root";
 
     private void prepmodescbox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prepmodescbox1ActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_prepmodescbox1ActionPerformed
 
     /**
@@ -369,6 +377,7 @@ private static final String username="root";
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JLabel agelbl;
     private javax.swing.JComboBox<String> batchcbox;
+    private javax.swing.JComboBox<String> batchtcbox;
     public javax.swing.JLabel branchlbl;
     public javax.swing.JLabel countrieslbl;
     public javax.swing.JLabel degreelbl;
@@ -380,8 +389,6 @@ private static final String username="root";
     private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JCheckBox jCheckBox5;
     private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -403,6 +410,9 @@ private static final String username="root";
     public javax.swing.JLabel mobilelbl;
     public javax.swing.JLabel namelbl;
     private javax.swing.JComboBox<String> prepmodescbox1;
+    private javax.swing.JComboBox<String> prepmodestcbox;
+    private javax.swing.ButtonGroup proftest;
     private javax.swing.JButton savebtn;
+    private javax.swing.ButtonGroup testprep;
     // End of variables declaration//GEN-END:variables
 }
