@@ -93,8 +93,8 @@ public class VisaAdmin extends javax.swing.JFrame {
 
     private void credentialsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_credentialsbtnActionPerformed
         // TODO add your handling code here:
-        ManageStudentProfileCo ms=new  ManageStudentProfileCo();
-        jSplitPane1.setBottomComponent(ms);
+        EmployeeVCredentialsJPanel ev=new  EmployeeVCredentialsJPanel();
+        jSplitPane1.setRightComponent(ev);
     }//GEN-LAST:event_credentialsbtnActionPerformed
 
     /**

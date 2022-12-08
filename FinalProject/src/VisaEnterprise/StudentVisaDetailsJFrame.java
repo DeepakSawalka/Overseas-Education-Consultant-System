@@ -69,6 +69,28 @@ private static final String username="root";
         enterpriselbl = new javax.swing.JLabel();
         countrieslbl = new javax.swing.JLabel();
         degreelbl = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        passportuploadbtn = new javax.swing.JButton();
+        i20uploadbtn = new javax.swing.JButton();
+        marksheetsuploadbtn = new javax.swing.JButton();
+        ds160uploadbtn = new javax.swing.JButton();
+        sevisfeeuploadbtn = new javax.swing.JButton();
+        passportviewbtn = new javax.swing.JButton();
+        i20viewbtn = new javax.swing.JButton();
+        marksheetsviewbtn = new javax.swing.JButton();
+        ds160viewbtn = new javax.swing.JButton();
+        sevisfeeviewbtn = new javax.swing.JButton();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -185,21 +207,175 @@ private static final String username="root";
                 .addGap(29, 29, 29))
         );
 
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel10.setText("Documents Checklist for Visa:");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+        );
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel11.setText("2. I20:");
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel12.setText("1. Valid Passport:");
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel13.setText("4. DS-160 Form:");
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel14.setText("5. Sevis Fee Receipt:");
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel15.setText("3. Marksheets:");
+
+        passportuploadbtn.setBackground(new java.awt.Color(255, 51, 51));
+        passportuploadbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        passportuploadbtn.setText("Upload");
+        passportuploadbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        passportuploadbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passportuploadbtnActionPerformed(evt);
+            }
+        });
+
+        i20uploadbtn.setBackground(new java.awt.Color(255, 51, 51));
+        i20uploadbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        i20uploadbtn.setText("Upload");
+
+        marksheetsuploadbtn.setBackground(new java.awt.Color(255, 51, 51));
+        marksheetsuploadbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        marksheetsuploadbtn.setText("Upload");
+
+        ds160uploadbtn.setBackground(new java.awt.Color(255, 51, 51));
+        ds160uploadbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ds160uploadbtn.setText("Upload");
+
+        sevisfeeuploadbtn.setBackground(new java.awt.Color(255, 51, 51));
+        sevisfeeuploadbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        sevisfeeuploadbtn.setText("Upload");
+
+        passportviewbtn.setBackground(new java.awt.Color(255, 102, 102));
+        passportviewbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        passportviewbtn.setText("View");
+
+        i20viewbtn.setBackground(new java.awt.Color(255, 102, 102));
+        i20viewbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        i20viewbtn.setText("View");
+
+        marksheetsviewbtn.setBackground(new java.awt.Color(255, 102, 102));
+        marksheetsviewbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        marksheetsviewbtn.setText("View");
+
+        ds160viewbtn.setBackground(new java.awt.Color(255, 102, 102));
+        ds160viewbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ds160viewbtn.setText("View");
+
+        sevisfeeviewbtn.setBackground(new java.awt.Color(255, 102, 102));
+        sevisfeeviewbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        sevisfeeviewbtn.setText("View");
+
+        jLabel16.setText("jLabel16");
+
+        jLabel17.setText("jLabel16");
+
+        jLabel18.setText("jLabel16");
+
+        jLabel19.setText("jLabel16");
+
+        jLabel20.setText("jLabel16");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(236, Short.MAX_VALUE))
+                .addGap(89, 89, 89)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(63, 63, 63)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(ds160uploadbtn)
+                            .addComponent(marksheetsuploadbtn)
+                            .addComponent(i20uploadbtn)
+                            .addComponent(passportuploadbtn)
+                            .addComponent(sevisfeeuploadbtn))
+                        .addGap(127, 127, 127)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(passportviewbtn, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(i20viewbtn, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(marksheetsviewbtn, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(ds160viewbtn, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(sevisfeeviewbtn, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(124, 124, 124)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(237, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(75, 75, 75)
+                .addGap(34, 34, 34)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(372, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(passportuploadbtn)
+                    .addComponent(passportviewbtn)
+                    .addComponent(jLabel16))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(i20uploadbtn)
+                    .addComponent(i20viewbtn)
+                    .addComponent(jLabel17))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(marksheetsuploadbtn)
+                    .addComponent(marksheetsviewbtn)
+                    .addComponent(jLabel18))
+                .addGap(11, 11, 11)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ds160uploadbtn)
+                    .addComponent(ds160viewbtn)
+                    .addComponent(jLabel20))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sevisfeeuploadbtn)
+                    .addComponent(sevisfeeviewbtn)
+                    .addComponent(jLabel19))
+                .addContainerGap(139, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel3);
@@ -218,6 +394,10 @@ private static final String username="root";
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void passportuploadbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passportuploadbtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passportuploadbtnActionPerformed
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -225,11 +405,26 @@ private static final String username="root";
     public javax.swing.JLabel branchlbl;
     public javax.swing.JLabel countrieslbl;
     public javax.swing.JLabel degreelbl;
+    private javax.swing.JButton ds160uploadbtn;
+    private javax.swing.JButton ds160viewbtn;
     public javax.swing.JLabel emaillbl;
     public javax.swing.JLabel enterpriselbl;
     public javax.swing.JLabel genderlbl;
+    private javax.swing.JButton i20uploadbtn;
+    private javax.swing.JButton i20viewbtn;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -237,10 +432,17 @@ private static final String username="root";
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton marksheetsuploadbtn;
+    private javax.swing.JButton marksheetsviewbtn;
     public javax.swing.JLabel mobilelbl;
     public javax.swing.JLabel namelbl;
+    private javax.swing.JButton passportuploadbtn;
+    private javax.swing.JButton passportviewbtn;
+    private javax.swing.JButton sevisfeeuploadbtn;
+    private javax.swing.JButton sevisfeeviewbtn;
     // End of variables declaration//GEN-END:variables
 }
