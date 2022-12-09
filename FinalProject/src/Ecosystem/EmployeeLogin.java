@@ -5,6 +5,8 @@
 package Ecosystem;
 import CounsellingEnterprise.*;
 import CoachingEnterprise.*;
+import LoanEnterprise.LoanRepresentativeRole;
+import VisaEnterprise.AgentRole;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import java.sql.Connection;
@@ -260,7 +262,55 @@ public class EmployeeLogin extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,e);
         }}
         
-       
+        else if(user.equals("agent") && password.equals("agent123")){
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/finalproject","root","Rajkumar123#");
+            String s= "select * from employeevisacredentials where Username=? and Password=?";
+            PreparedStatement ps=conn.prepareStatement(s);
+            ps.setString(1, usernametxt.getText());
+            ps.setString(2, passwordtxt.getText());
+            ResultSet rs=ps.executeQuery();
+            if(rs.next()==true)
+            {
+                JOptionPane.showMessageDialog(this,"Login Successfull!!");
+                dispose();
+                new AgentRole().setVisible(true);
+                
+            
+            }
+            else{
+               JOptionPane.showMessageDialog(this,"Please Enter Correct Details.");
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }}
+        else if(user.equals("loan") && password.equals("loan123")){
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/finalproject","root","Rajkumar123#");
+            String s= "select * from employeeloancredentials where Username=? and Password=?";
+            PreparedStatement ps=conn.prepareStatement(s);
+            ps.setString(1, usernametxt.getText());
+            ps.setString(2, passwordtxt.getText());
+            ResultSet rs=ps.executeQuery();
+            if(rs.next()==true)
+            {
+                JOptionPane.showMessageDialog(this,"Login Successfull!!");
+                dispose();
+                new LoanRepresentativeRole().setVisible(true);
+                
+            
+            }
+            else{
+               JOptionPane.showMessageDialog(this,"Please Enter Correct Details.");
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }}
+        
         else {
             JOptionPane.showMessageDialog(this,"Please Enter all the details.");
         }
