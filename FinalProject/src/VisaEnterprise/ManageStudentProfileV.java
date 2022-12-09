@@ -192,7 +192,7 @@ private static final String username="root";
          
          StudentVisaDetailsJFrame sc=new StudentVisaDetailsJFrame();
          
-         sc.namelbl.setText(recordTable.getValueAt(SelectedRows, 1).toString());
+         sc.nametxt.setText(recordTable.getValueAt(SelectedRows, 1).toString());
 sc.agelbl.setText(recordTable.getValueAt(SelectedRows, 2).toString());
 sc.genderlbl.setText(recordTable.getValueAt(SelectedRows, 3).toString());
 sc.emaillbl.setText(recordTable.getValueAt(SelectedRows, 4).toString());
