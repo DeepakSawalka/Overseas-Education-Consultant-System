@@ -43,7 +43,7 @@ public void upDateDb()
     {
         Class.forName("com.mysql.cj.jdbc.Driver");
          sqlConn=DriverManager.getConnection(dataconn,username,password);
-         pst=sqlConn.prepareStatement("select * from employeecoachingcredentials");
+         pst=sqlConn.prepareStatement("select * from employeeloancredentials");
          
          rs=pst.executeQuery();
          ResultSetMetaData stData= rs.getMetaData();
@@ -263,7 +263,7 @@ public void upDateDb()
         {
             Class.forName("com.mysql.cj.jdbc.Driver");
             sqlConn=DriverManager.getConnection(dataconn,username,password);
-            pst=sqlConn.prepareStatement("INSERT INTO employeecoachingcredentials(EmployeeType,Username,Password)values(?,?,?)");
+            pst=sqlConn.prepareStatement("INSERT INTO employeeloancredentials(EmployeeType,Username,Password)values(?,?,?)");
             pst.setString(1,typetxt.getText());
             pst.setString(2,usernametxt.getText());
             pst.setString(3,passwordtxt.getText());
@@ -283,7 +283,7 @@ public void upDateDb()
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             sqlConn=DriverManager.getConnection(dataconn,username,password);
-            pst=sqlConn.prepareStatement("select * from employeecoachingcredentials");
+            pst=sqlConn.prepareStatement("select * from employeeloancredentials");
 
             rs=pst.executeQuery();
             DefaultTableModel model=(DefaultTableModel)credentialstbl.getModel();
@@ -313,7 +313,7 @@ public void upDateDb()
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             sqlConn=DriverManager.getConnection(dataconn,username,password);
-            pst=sqlConn.prepareStatement("select * from employeecoachingcredentials");
+            pst=sqlConn.prepareStatement("select * from employeeloanncredentials");
 
             rs=pst.executeQuery();
             DefaultTableModel model=(DefaultTableModel)credentialstbl.getModel();
@@ -343,7 +343,7 @@ public void upDateDb()
         {
             Class.forName("com.mysql.cj.jdbc.Driver");
             sqlConn=DriverManager.getConnection(dataconn,username,password);
-            pst=sqlConn.prepareStatement("update employeecoachingcredentials set EmployeeType=?,Username=?,Password=? where Password=?");
+            pst=sqlConn.prepareStatement("update employeeloancredentials set EmployeeType=?,Username=?,Password=? where Password=?");
 
             pst.setString(1,typetxt.getText());
             pst.setString(2,usernametxt.getText());
@@ -364,7 +364,7 @@ public void upDateDb()
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             sqlConn=DriverManager.getConnection(dataconn,username,password);
-            pst=sqlConn.prepareStatement("select * from employeecounsellingcredentials");
+            pst=sqlConn.prepareStatement("select * from employeeloancredentials");
 
             rs=pst.executeQuery();
             DefaultTableModel model=(DefaultTableModel)credentialstbl.getModel();
