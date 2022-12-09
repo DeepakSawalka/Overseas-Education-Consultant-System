@@ -80,6 +80,58 @@ public void upDateDb()
         JOptionPane.showMessageDialog(null,e);
     
     }}
+
+public void upDateDb1()
+    {
+    try
+    {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+         sqlConn=DriverManager.getConnection(dataconn,username,password);
+         pst=sqlConn.prepareStatement("select * from studentclassdetailscoachingall");
+         
+         rs=pst.executeQuery();
+         ResultSetMetaData stData= rs.getMetaData();
+         q=stData.getColumnCount();
+         
+   
+         while (rs.next())
+         {
+            Vector columnData = new Vector();
+            
+            
+                for(i=1;i<q;i++){
+                  
+                  columnData.add(rs.getString("ID"));
+                  columnData.add(rs.getString("Name"));
+      
+                  columnData.add(rs.getString("Age"));
+                  columnData.add(rs.getString("Gender"));
+                  columnData.add(rs.getString("Email"));
+                  columnData.add(rs.getString("Mobile"));
+                  columnData.add(rs.getString("Branch"));
+                  columnData.add(rs.getString("Enterprise"));
+                  columnData.add(rs.getString("Degree"));
+                   columnData.add(rs.getString("Status"));
+                  columnData.add(rs.getString("Test"));
+                  columnData.add(rs.getString("EnglishTest"));
+                  columnData.add(rs.getString("Countries"));
+                  columnData.add(rs.getString("TestPrep"));
+                  columnData.add(rs.getString("PrepModes"));
+                  columnData.add(rs.getString("Batch"));
+                  columnData.add(rs.getString("EngTestPrep"));
+                  columnData.add(rs.getString("EngPrepModes"));
+                  columnData.add(rs.getBlob("EngBatch"));
+                 
+                }         
+            
+             
+         }
+         
+} 
+    catch(Exception e){
+        JOptionPane.showMessageDialog(null,e);
+    
+    }}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -128,6 +180,7 @@ public void upDateDb()
         jLabel15 = new javax.swing.JLabel();
         prepmodestcbox = new javax.swing.JComboBox<>();
         batchtcbox = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -310,6 +363,13 @@ public void upDateDb()
 
         batchtcbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
 
+        jButton1.setText("confirm");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -346,14 +406,16 @@ public void upDateDb()
                         .addComponent(prepmodestcbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(199, 199, 199))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(65, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(57, 57, 57))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(savebtn)
-                        .addGap(329, 329, 329))))
+                        .addGap(38, 38, 38)
+                        .addComponent(jButton1)
+                        .addGap(216, 216, 216))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -391,7 +453,9 @@ public void upDateDb()
                     .addComponent(jLabel12)
                     .addComponent(batchcbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(savebtn)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(savebtn)
+                    .addComponent(jButton1))
                 .addContainerGap(87, Short.MAX_VALUE))
         );
 
@@ -582,7 +646,81 @@ catch(Exception e){
         JOptionPane.showMessageDialog(null,e);
     
 }
+     try
+    {
+        
+        Class.forName("com.mysql.cj.jdbc.Driver");
+         sqlConn=DriverManager.getConnection(dataconn,username,password);
+         pst=sqlConn.prepareStatement("INSERT INTO studentclassdetailscoachingall(Name,Age,Gender,Email,Mobile,Branch,Enterprise,Degree,Status,Test,EnglishTest,Countries,TestPrep,PrepModes,Batch,EngTestPrep,EngPrepModes,EngBatch)values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+         
+          pst.setString(1,namelbl.getText());
+          pst.setString(2,agelbl.getText());
+           pst.setString(3,genderlbl.getText());
+          pst.setString(4,emaillbl.getText());
+           pst.setString(5,mobilelbl.getText());
+          pst.setString(6,branchlbl.getText());
+           pst.setString(7,enterpriselbl.getText());
+          pst.setString(8,degreelbl.getText());
+          status="Class Scheduled";
+            pst.setString(9,status);
+            test="Pending";
+            pst.setString(10,test);
+    englishtest="Pending";
+       pst.setString(11,englishtest);
+          pst.setString(12,countrieslbl.getText());
+             if(gre.isSelected())
+         {
+             testp=gre.getText()+"";
+         }
+                if(gmat.isSelected())
+         {
+             testp=gmat.getText()+"";
+         }
+                     if(sat.isSelected())
+         {
+             testp=sat.getText()+"";
+         }
+         pst.setString(13, testp);
+         prepmodes=prepmodescbox.getSelectedItem().toString();
+          pst.setString(14,prepmodes);
+         batch=batchcbox.getSelectedItem().toString();
+          pst.setString(15,batch);
+           if(toefl.isSelected())
+         {
+             testpt=toefl.getText()+"";
+         }
+                if(ielts.isSelected())
+         {
+             testpt=ielts.getText()+"";
+         }
+                 
+     
+         pst.setString(16, testpt);
+         prepmodest=prepmodestcbox.getSelectedItem().toString();
+          pst.setString(17,prepmodest);
+         batcht=batchtcbox.getSelectedItem().toString();
+          pst.setString(18,batcht);
+          
+        
+       
+          pst.executeUpdate();
+        
+        upDateDb1();
+        
+        
+        
+    }                                         
+catch(Exception e){
+        JOptionPane.showMessageDialog(null,e);
+    
+}      
+        
     }//GEN-LAST:event_savebtnActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -602,6 +740,7 @@ catch(Exception e){
     private javax.swing.JCheckBox gmat;
     private javax.swing.JCheckBox gre;
     private javax.swing.JCheckBox ielts;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
