@@ -95,11 +95,9 @@ private static final String username="root";
         jLabel13 = new javax.swing.JLabel();
         ds160yes = new javax.swing.JCheckBox();
         ds160no = new javax.swing.JCheckBox();
-        dstick = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         sevisyes = new javax.swing.JCheckBox();
         sevisno = new javax.swing.JCheckBox();
-        sevistick = new javax.swing.JLabel();
         submitbtn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
@@ -223,6 +221,11 @@ private static final String username="root";
 
         ds160yes.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ds160yes.setText("Yes");
+        ds160yes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ds160yesActionPerformed(evt);
+            }
+        });
 
         ds160no.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ds160no.setText("No");
@@ -231,9 +234,6 @@ private static final String username="root";
                 ds160noActionPerformed(evt);
             }
         });
-
-        dstick.setForeground(new java.awt.Color(51, 255, 51));
-        dstick.setText("✔️");
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel14.setText("5. Sevis Fee Receipt:");
@@ -248,9 +248,6 @@ private static final String username="root";
 
         sevisno.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         sevisno.setText("No");
-
-        sevistick.setForeground(new java.awt.Color(51, 255, 51));
-        sevistick.setText("✔️");
 
         submitbtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         submitbtn.setText("Submit");
@@ -332,17 +329,13 @@ private static final String username="root";
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(ds160no, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(dstick)
-                            .addComponent(marksheettick)))
+                        .addComponent(marksheettick))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel14)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(sevisyes, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(sevisno, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(sevistick)))
+                        .addComponent(sevisno, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(80, 80, 80))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(350, 350, 350)
@@ -417,8 +410,7 @@ private static final String username="root";
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ds160yes)
-                            .addComponent(ds160no)
-                            .addComponent(dstick, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(ds160no))))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
@@ -427,9 +419,8 @@ private static final String username="root";
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(sevisyes)
-                    .addComponent(sevisno)
-                    .addComponent(sevistick, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
+                    .addComponent(sevisno))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
                 .addComponent(submitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36))
         );
@@ -503,6 +494,14 @@ private static final String username="root";
             if (file.exists()){
                 if(Desktop.isDesktopSupported()){
                    Desktop.getDesktop().open(file);
+                // Tick Mark Shown
+                   
+                   if(filename.length()!=0){
+                       passporttick1.setVisible(true);
+                   }
+                   
+                   
+                   
                 }else{
                     JOptionPane.showMessageDialog(this, "Not supported");
                 }
@@ -531,6 +530,13 @@ private static final String username="root";
             if (file.exists()){
                 if(Desktop.isDesktopSupported()){
                    Desktop.getDesktop().open(file);
+                   
+                   
+                    // Tick Mark Shown
+                   
+                   if(filename.length()!=0){
+                       marksheettick.setVisible(true);
+                   }
                 }else{
                     JOptionPane.showMessageDialog(this, "Not supported");
                 }
@@ -565,6 +571,13 @@ private static final String username="root";
             if (file.exists()){
                 if(Desktop.isDesktopSupported()){
                    Desktop.getDesktop().open(file);
+                   
+                   
+                    // Tick Mark Shown
+                   
+                   if(filename.length()!=0){
+                       i20tick.setVisible(true);
+                   }
                 }else{
                     JOptionPane.showMessageDialog(this, "Not supported");
                 }
@@ -576,6 +589,11 @@ private static final String username="root";
         }
     }//GEN-LAST:event_i20viewbtnActionPerformed
 
+    private void ds160yesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ds160yesActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_ds160yesActionPerformed
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -585,7 +603,6 @@ private static final String username="root";
     public javax.swing.JTextField degreetxt;
     private javax.swing.JCheckBox ds160no;
     private javax.swing.JCheckBox ds160yes;
-    private javax.swing.JLabel dstick;
     public javax.swing.JTextField emailtxt;
     public javax.swing.JTextField enterprisetxt;
     public javax.swing.JTextField gendertxt;
@@ -622,7 +639,6 @@ private static final String username="root";
     private javax.swing.JButton passportuploadbtn;
     private javax.swing.JButton passportviewbtn;
     private javax.swing.JCheckBox sevisno;
-    private javax.swing.JLabel sevistick;
     private javax.swing.JCheckBox sevisyes;
     private javax.swing.JButton submitbtn;
     // End of variables declaration//GEN-END:variables
