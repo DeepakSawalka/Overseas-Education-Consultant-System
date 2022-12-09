@@ -82,6 +82,57 @@ public void upDateDb()
         JOptionPane.showMessageDialog(null,e);
     
     }}
+public void upDateDb1()
+    {
+    try
+    {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+         sqlConn=DriverManager.getConnection(dataconn,username,password);
+         pst=sqlConn.prepareStatement("select * from studentclassdetailscoachingall");
+         
+         rs=pst.executeQuery();
+         ResultSetMetaData stData= rs.getMetaData();
+         q=stData.getColumnCount();
+         
+   
+         while (rs.next())
+         {
+            Vector columnData = new Vector();
+            
+            
+                for(i=1;i<q;i++){
+                  
+                  columnData.add(rs.getString("ID"));
+                  columnData.add(rs.getString("Name"));
+      
+                  columnData.add(rs.getString("Age"));
+                  columnData.add(rs.getString("Gender"));
+                  columnData.add(rs.getString("Email"));
+                  columnData.add(rs.getString("Mobile"));
+                  columnData.add(rs.getString("Branch"));
+                  columnData.add(rs.getString("Enterprise"));
+                  columnData.add(rs.getString("Degree"));
+                   columnData.add(rs.getString("Status"));
+                  columnData.add(rs.getString("Test"));
+                  columnData.add(rs.getString("EnglishTest"));
+                  columnData.add(rs.getString("Countries"));
+                  columnData.add(rs.getString("TestPrep"));
+                  columnData.add(rs.getString("PrepModes"));
+                  columnData.add(rs.getString("Batch"));
+                  columnData.add(rs.getString("EngTestPrep"));
+                  columnData.add(rs.getString("EngPrepModes"));
+                  columnData.add(rs.getString("EngBatch"));
+                 
+                }         
+            
+             
+         }
+         
+} 
+    catch(Exception e){
+        JOptionPane.showMessageDialog(null,e);
+    
+    }}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -150,7 +201,7 @@ public void upDateDb()
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
          sqlConn=DriverManager.getConnection(dataconn,username,password);
-         pst=sqlConn.prepareStatement("select * from studentclassdetailscoaching");
+         pst=sqlConn.prepareStatement("select * from studentclassdetailscoachingall");
             
              rs=pst.executeQuery();
             DefaultTableModel model=(DefaultTableModel)detailstbl.getModel();
@@ -199,7 +250,7 @@ public void upDateDb()
     {
         Class.forName("com.mysql.cj.jdbc.Driver");
          sqlConn=DriverManager.getConnection(dataconn,username,password);
-         pst=sqlConn.prepareStatement("update studentclassdetailscoaching set ID=?,Name=?,Email=?,TestPrep=?,PrepModes=?, Batch=?,EngTestPrep=?,EngPrepModes=?,EngBatch=?,Status=?,Test=?,EnglishTest=? where ID=?");
+         pst=sqlConn.prepareStatement("update studentclassdetailscoachingall set ID=?,Name=?,Email=?,TestPrep=?,PrepModes=?, Batch=?,EngTestPrep=?,EngPrepModes=?,EngBatch=?,Status=?,Test=?,EnglishTest=? where ID=?");
          
        pst.setString(1,model.getValueAt(SelectedRows, 0).toString());
         pst.setString(2,model.getValueAt(SelectedRows, 1).toString());
@@ -221,7 +272,7 @@ catch(Exception e){
         JOptionPane.showMessageDialog(null,e);
          
     }
-     
+  
     }//GEN-LAST:event_detailstblMouseClicked
 
 
