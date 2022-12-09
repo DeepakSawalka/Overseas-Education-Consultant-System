@@ -48,11 +48,21 @@ public class AdmissionJPanel extends javax.swing.JPanel {
         jLabel2.setText("Step 2:");
 
         applicationbtn.setText("University Applications");
+        applicationbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                applicationbtnActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setText("Step 3:");
 
         decisionbtn.setText("University Decision");
+        decisionbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                decisionbtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -122,6 +132,18 @@ public class AdmissionJPanel extends javax.swing.JPanel {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 595, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void applicationbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_applicationbtnActionPerformed
+        // TODO add your handling code here:
+        UniversityApplicationJPanel ua=new UniversityApplicationJPanel();
+        jSplitPane1.setBottomComponent(ua);
+    }//GEN-LAST:event_applicationbtnActionPerformed
+
+    private void decisionbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decisionbtnActionPerformed
+        // TODO add your handling code here:
+         UniversityDecisionJPanel ud=new UniversityDecisionJPanel();
+        jSplitPane1.setBottomComponent(ud);
+    }//GEN-LAST:event_decisionbtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
