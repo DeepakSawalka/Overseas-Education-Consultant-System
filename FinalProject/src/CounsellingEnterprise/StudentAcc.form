@@ -76,12 +76,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jScrollPane1" alignment="0" pref="972" max="32767" attributes="0"/>
+          <Component id="jScrollPane1" alignment="0" pref="975" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jScrollPane1" alignment="0" pref="570" max="32767" attributes="0"/>
+          <Component id="jScrollPane1" alignment="0" pref="662" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -116,6 +116,10 @@
                                       <Component id="docbtn" max="32767" attributes="0"/>
                                       <Component id="profilebtn" min="-2" pref="58" max="-2" attributes="0"/>
                                       <Component id="unibtn" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="visabtn" max="32767" attributes="0"/>
+                                      <Component id="loanbtn" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="contactbtn" max="32767" attributes="0"/>
+                                      <Component id="feedbackbtn" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -138,7 +142,15 @@
                           <Component id="docbtn" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           <Component id="unibtn" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="314" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="visabtn" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                          <Component id="loanbtn" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                          <Component id="contactbtn" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                          <Component id="feedbackbtn" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="82" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -199,6 +211,26 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="unibtnActionPerformed"/>
                   </Events>
                 </Component>
+                <Component class="javax.swing.JButton" name="visabtn">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="VISA"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="loanbtn">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Loan Management"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="contactbtn">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Contact Us"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="feedbackbtn">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Counselling Feedback"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="jPanel3">
@@ -212,16 +244,16 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
+                          <EmptySpace pref="104" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                                   <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                                   <Component id="jPanel8" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="39" max="32767" attributes="0"/>
                       </Group>
