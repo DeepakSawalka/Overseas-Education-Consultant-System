@@ -180,7 +180,6 @@ public void upDateDb1()
         jLabel15 = new javax.swing.JLabel();
         prepmodestcbox = new javax.swing.JComboBox<>();
         batchtcbox = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -363,13 +362,6 @@ public void upDateDb1()
 
         batchtcbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
 
-        jButton1.setText("confirm");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -413,9 +405,7 @@ public void upDateDb1()
                         .addGap(57, 57, 57))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(savebtn)
-                        .addGap(38, 38, 38)
-                        .addComponent(jButton1)
-                        .addGap(216, 216, 216))))
+                        .addGap(326, 326, 326))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -453,9 +443,7 @@ public void upDateDb1()
                     .addComponent(jLabel12)
                     .addComponent(batchcbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(savebtn)
-                    .addComponent(jButton1))
+                .addComponent(savebtn)
                 .addContainerGap(87, Short.MAX_VALUE))
         );
 
@@ -717,11 +705,6 @@ catch(Exception e){
         
     }//GEN-LAST:event_savebtnActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -740,7 +723,6 @@ catch(Exception e){
     private javax.swing.JCheckBox gmat;
     private javax.swing.JCheckBox gre;
     private javax.swing.JCheckBox ielts;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
