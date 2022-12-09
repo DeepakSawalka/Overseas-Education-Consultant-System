@@ -69,7 +69,6 @@ private static final String username="root";
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        namelbl = new javax.swing.JLabel();
         agelbl = new javax.swing.JLabel();
         genderlbl = new javax.swing.JLabel();
         emaillbl = new javax.swing.JLabel();
@@ -78,6 +77,7 @@ private static final String username="root";
         enterpriselbl = new javax.swing.JLabel();
         countrieslbl = new javax.swing.JLabel();
         degreelbl = new javax.swing.JLabel();
+        nametxt = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -125,8 +125,6 @@ private static final String username="root";
 
         jLabel9.setText("Countries:");
 
-        namelbl.setText("jLabel10");
-
         agelbl.setText("jLabel10");
 
         genderlbl.setText("jLabel10");
@@ -143,12 +141,14 @@ private static final String username="root";
 
         degreelbl.setText("jLabel10");
 
+        nametxt.setText("jTextField1");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -159,8 +159,8 @@ private static final String username="root";
                         .addComponent(genderlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(namelbl, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(nametxt, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(116, 116, 116)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -195,10 +195,10 @@ private static final String username="root";
                     .addComponent(jLabel1)
                     .addComponent(jLabel4)
                     .addComponent(jLabel7)
-                    .addComponent(namelbl)
                     .addComponent(emaillbl)
-                    .addComponent(enterpriselbl))
-                .addGap(75, 75, 75)
+                    .addComponent(enterpriselbl)
+                    .addComponent(nametxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(72, 72, 72)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel5)
@@ -535,7 +535,7 @@ private static final String username="root";
     private javax.swing.JButton marksheetsviewbtn;
     private javax.swing.JLabel marksheettick;
     public javax.swing.JLabel mobilelbl;
-    public javax.swing.JLabel namelbl;
+    public javax.swing.JTextField nametxt;
     private javax.swing.JLabel passporttick1;
     private javax.swing.JButton passportuploadbtn;
     private javax.swing.JButton passportviewbtn;
