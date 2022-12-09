@@ -54,6 +54,7 @@ public class StudentAcc extends javax.swing.JFrame {
         backbtn = new javax.swing.JButton();
         namelbl = new javax.swing.JLabel();
         imglbl = new javax.swing.JLabel();
+        docbtn = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
@@ -114,6 +115,13 @@ public class StudentAcc extends javax.swing.JFrame {
 
         namelbl.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
 
+        docbtn.setText("Document Management");
+        docbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                docbtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -122,12 +130,14 @@ public class StudentAcc extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(backbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(imglbl, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                    .addComponent(imglbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(namelbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(profilebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(namelbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(44, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(docbtn)
+                            .addComponent(profilebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,7 +150,9 @@ public class StudentAcc extends javax.swing.JFrame {
                 .addComponent(namelbl, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(profilebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(434, Short.MAX_VALUE))
+                .addGap(43, 43, 43)
+                .addComponent(docbtn)
+                .addContainerGap(368, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(jPanel1);
@@ -373,6 +385,12 @@ Image img =mm.getScaledInstance(imglbl.getWidth(), imglbl.getHeight(), Image.SCA
       
     }//GEN-LAST:event_backbtnActionPerformed
 
+    private void docbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_docbtnActionPerformed
+        // TODO add your handling code here:
+        DocumentJPanel d=new DocumentJPanel();
+        jSplitPane1.setRightComponent(d);
+    }//GEN-LAST:event_docbtnActionPerformed
+
    
     /**
      * @param args the command line arguments
@@ -381,6 +399,7 @@ Image img =mm.getScaledInstance(imglbl.getWidth(), imglbl.getHeight(), Image.SCA
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backbtn;
+    private javax.swing.JButton docbtn;
     public javax.swing.JLabel imglbl;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
