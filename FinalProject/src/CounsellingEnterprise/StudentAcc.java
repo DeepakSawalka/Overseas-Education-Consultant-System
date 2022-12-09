@@ -55,6 +55,7 @@ public class StudentAcc extends javax.swing.JFrame {
         namelbl = new javax.swing.JLabel();
         imglbl = new javax.swing.JLabel();
         docbtn = new javax.swing.JButton();
+        unibtn = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
@@ -122,6 +123,13 @@ public class StudentAcc extends javax.swing.JFrame {
             }
         });
 
+        unibtn.setText("University Shortlisting");
+        unibtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                unibtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -134,9 +142,10 @@ public class StudentAcc extends javax.swing.JFrame {
                     .addComponent(namelbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(docbtn)
-                            .addComponent(profilebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(docbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(profilebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(unibtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -152,7 +161,9 @@ public class StudentAcc extends javax.swing.JFrame {
                 .addComponent(profilebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
                 .addComponent(docbtn)
-                .addContainerGap(368, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addComponent(unibtn)
+                .addContainerGap(314, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(jPanel1);
@@ -391,6 +402,12 @@ Image img =mm.getScaledInstance(imglbl.getWidth(), imglbl.getHeight(), Image.SCA
         jSplitPane1.setRightComponent(d);
     }//GEN-LAST:event_docbtnActionPerformed
 
+    private void unibtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unibtnActionPerformed
+        // TODO add your handling code here:
+        AdmissionJPanel a=new AdmissionJPanel();
+        jSplitPane1.setRightComponent(a);
+    }//GEN-LAST:event_unibtnActionPerformed
+
    
     /**
      * @param args the command line arguments
@@ -420,5 +437,6 @@ Image img =mm.getScaledInstance(imglbl.getWidth(), imglbl.getHeight(), Image.SCA
     private javax.swing.JSplitPane jSplitPane1;
     public javax.swing.JLabel namelbl;
     public javax.swing.JButton profilebtn;
+    private javax.swing.JButton unibtn;
     // End of variables declaration//GEN-END:variables
 }
