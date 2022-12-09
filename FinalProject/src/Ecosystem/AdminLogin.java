@@ -6,6 +6,8 @@ package Ecosystem;
 
 import CounsellingEnterprise.*;
 import CoachingEnterprise.*;
+import LoanEnterprise.LoanAdmin;
+import VisaEnterprise.VisaAdmin;
 //import VisaEnterprise.*;/
 //import LoanEnterprise.*;
 
@@ -256,7 +258,7 @@ ImageIcon icon=new ImageIcon("C:\\Users\\Deepak Sawalka\\Documents\\NetBeansProj
             {
                 JOptionPane.showMessageDialog(this,"Login Successfull!!");
                 dispose();
-               // new VisaAdmin().setVisible(true);
+               new VisaAdmin().setVisible(true);
                 
             
             }
@@ -280,7 +282,7 @@ ImageIcon icon=new ImageIcon("C:\\Users\\Deepak Sawalka\\Documents\\NetBeansProj
             if(rs.next()==true)
             {
                 JOptionPane.showMessageDialog(this,"Login Successfull!!");
-                //new LoanAdmin().setVisible(true);
+                new LoanAdmin().setVisible(true);
                 dispose();
             
             }
