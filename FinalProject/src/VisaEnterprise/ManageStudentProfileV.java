@@ -193,14 +193,14 @@ private static final String username="root";
          StudentVisaDetailsJFrame sc=new StudentVisaDetailsJFrame();
          
          sc.nametxt.setText(recordTable.getValueAt(SelectedRows, 1).toString());
-sc.agelbl.setText(recordTable.getValueAt(SelectedRows, 2).toString());
-sc.genderlbl.setText(recordTable.getValueAt(SelectedRows, 3).toString());
-sc.emaillbl.setText(recordTable.getValueAt(SelectedRows, 4).toString());
-sc.mobilelbl.setText(recordTable.getValueAt(SelectedRows, 5).toString());
-sc.branchlbl.setText(recordTable.getValueAt(SelectedRows, 6).toString());
-sc.enterpriselbl.setText(recordTable.getValueAt(SelectedRows, 7).toString());
-sc.degreelbl.setText(recordTable.getValueAt(SelectedRows, 8).toString());
-sc.countrieslbl.setText(recordTable.getValueAt(SelectedRows, 9).toString());
+sc.agetxt.setText(recordTable.getValueAt(SelectedRows, 2).toString());
+sc.gendertxt.setText(recordTable.getValueAt(SelectedRows, 3).toString());
+sc.emailtxt.setText(recordTable.getValueAt(SelectedRows, 4).toString());
+sc.mobiletxt.setText(recordTable.getValueAt(SelectedRows, 5).toString());
+sc.branchtxt.setText(recordTable.getValueAt(SelectedRows, 6).toString());
+sc.enterprisetxt.setText(recordTable.getValueAt(SelectedRows, 7).toString());
+sc.degreetxt.setText(recordTable.getValueAt(SelectedRows, 8).toString());
+sc.countriestxt.setText(recordTable.getValueAt(SelectedRows, 9).toString());
 sc.setVisible(true);
     }//GEN-LAST:event_managetblMouseClicked
 
