@@ -178,12 +178,15 @@
                                                           <EmptySpace max="-2" attributes="0"/>
                                                           <Component id="othersbtn" min="-2" max="-2" attributes="0"/>
                                                       </Group>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                          <Group type="103" groupAlignment="0" attributes="0">
-                                                              <Component id="itrbtn" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="incomecbox" min="-2" max="-2" attributes="0"/>
+                                                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                                          <Group type="102" attributes="0">
+                                                              <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                                  <Component id="itrbtn" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="incomecbox" min="-2" max="-2" attributes="0"/>
+                                                              </Group>
                                                           </Group>
                                                       </Group>
                                                   </Group>
@@ -311,7 +314,10 @@
                                       <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
-                                  <Component id="submitbtn" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="submitbtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
@@ -592,6 +598,11 @@
                 <Component class="javax.swing.JLabel" name="jLabel19">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Eng Profiency Score:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="jButton1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="cancel"/>
                   </Properties>
                 </Component>
               </SubComponents>

@@ -62,6 +62,7 @@ public class MainFrame extends javax.swing.JFrame {
         vlbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
 
         videolbl.setIcon(new javax.swing.ImageIcon("C:\\Users\\Deepak Sawalka\\Documents\\NetBeansProjects\\FinalProject\\src\\icon\\20.11_compressed.gif")); // NOI18N
         videolbl.setPreferredSize(new java.awt.Dimension(1200, 520));
@@ -226,7 +227,7 @@ public class MainFrame extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(chatbotbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)))
-                .addGap(0, 56, Short.MAX_VALUE))
+                .addGap(0, 128, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -246,20 +247,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(jPanel1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1394, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 894, Short.MAX_VALUE))
-        );
+        getContentPane().add(jScrollPane1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

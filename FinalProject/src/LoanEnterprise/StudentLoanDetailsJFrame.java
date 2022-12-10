@@ -140,6 +140,7 @@ public void upDateDb()
         jLabel18 = new javax.swing.JLabel();
         engtestscoretxt = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
 
@@ -239,6 +240,8 @@ public void upDateDb()
 
         jLabel19.setText("Eng Profiency Score:");
 
+        jButton1.setText("cancel");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -318,12 +321,14 @@ public void upDateDb()
                                                 .addComponent(parentsbtn)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(othersbtn))
-                                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                                .addComponent(jLabel14)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(itrbtn)
-                                                    .addComponent(incomecbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(jButton1)
+                                                .addGroup(jPanel4Layout.createSequentialGroup()
+                                                    .addComponent(jLabel14)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(itrbtn)
+                                                        .addComponent(incomecbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                         .addGroup(jPanel4Layout.createSequentialGroup()
                                             .addComponent(jLabel15)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -415,7 +420,9 @@ public void upDateDb()
                             .addComponent(phntxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel17))
                         .addGap(95, 95, 95)
-                        .addComponent(submitbtn)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(submitbtn)
+                            .addComponent(jButton1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel16)
@@ -553,6 +560,7 @@ catch(Exception e){
     public javax.swing.JTextField gendertxt;
     private javax.swing.JComboBox<String> incomecbox;
     private javax.swing.JButton itrbtn;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
