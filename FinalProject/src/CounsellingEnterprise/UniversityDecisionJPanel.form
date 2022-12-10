@@ -181,20 +181,22 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="appidonetxt" alignment="3" pref="73" max="32767" attributes="0"/>
-                              <Component id="courseonetxt" alignment="3" pref="73" max="32767" attributes="0"/>
-                              <Component id="unionetxt" alignment="3" pref="73" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   <Component id="freezeone" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <Component id="decisiononebtn" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="comboone" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="appidonetxt" alignment="3" pref="73" max="32767" attributes="0"/>
+                                  <Component id="courseonetxt" alignment="3" pref="73" max="32767" attributes="0"/>
+                                  <Component id="unionetxt" alignment="3" pref="73" max="32767" attributes="0"/>
+                                  <Component id="comboone" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -496,7 +498,6 @@
                                   <Component id="decisionfourbtn" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="freezefour" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
