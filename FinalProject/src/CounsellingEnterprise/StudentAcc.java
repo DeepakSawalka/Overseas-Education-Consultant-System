@@ -139,8 +139,18 @@ public class StudentAcc extends javax.swing.JFrame {
         loanbtn.setText("Loan Management");
 
         contactbtn.setText("Contact Us");
+        contactbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contactbtnActionPerformed(evt);
+            }
+        });
 
         feedbackbtn.setText("Counselling Feedback");
+        feedbackbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                feedbackbtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -431,6 +441,18 @@ Image img =mm.getScaledInstance(imglbl.getWidth(), imglbl.getHeight(), Image.SCA
         AdmissionJPanel a=new AdmissionJPanel();
         jSplitPane1.setRightComponent(a);
     }//GEN-LAST:event_unibtnActionPerformed
+
+    private void contactbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactbtnActionPerformed
+        // TODO add your handling code here:
+        ContactUsJPanel cu=new ContactUsJPanel();
+        jSplitPane1.setRightComponent(cu);
+    }//GEN-LAST:event_contactbtnActionPerformed
+
+    private void feedbackbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_feedbackbtnActionPerformed
+        // TODO add your handling code here:
+          FeedbackJPanel f=new FeedbackJPanel();
+        jSplitPane1.setRightComponent(f);
+    }//GEN-LAST:event_feedbackbtnActionPerformed
 
    
     /**
