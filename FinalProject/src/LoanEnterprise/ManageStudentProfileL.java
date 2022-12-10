@@ -46,7 +46,7 @@ private static final String username="root";
     {
         Class.forName("com.mysql.cj.jdbc.Driver");
          sqlConn=DriverManager.getConnection(dataconn,username,password);
-         pst=sqlConn.prepareStatement("select * from managestudentprofilecounsellor");
+         pst=sqlConn.prepareStatement("select * from studentclassdetailscoachingall");
          
          rs=pst.executeQuery();
          ResultSetMetaData stData= rs.getMetaData();
@@ -59,8 +59,7 @@ private static final String username="root";
             
             
                 for(i=1;i<q;i++){
-                  
-                  columnData.add(rs.getString("ID"));
+                   columnData.add(rs.getString("ID"));
                   columnData.add(rs.getString("Name"));
                   columnData.add(rs.getString("Age"));
                   columnData.add(rs.getString("Gender"));
@@ -70,9 +69,9 @@ private static final String username="root";
                   columnData.add(rs.getString("Enterprise"));
                   columnData.add(rs.getString("Degree"));
                   columnData.add(rs.getString("Countries"));
-                  columnData.add(rs.getBytes("Image"));
-                  columnData.add(rs.getString("Username"));
-                  columnData.add(rs.getString("Password"));
+                  columnData.add(rs.getBytes("Test"));
+                  columnData.add(rs.getString("EnglishTest"));
+                  
                 }         
             
              
@@ -102,13 +101,13 @@ private static final String username="root";
 
         managetbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Name", "Age", "Gender", "Email", "Mobile", "Branch", "Enterprise", "Degree", "Countries", "Image", "Username", "Password"
+                "ID", "Name", "Age", "Gender", "Email", "Mobile", "Branch", "Enterprise", "Degree", "Countries", "Test", "Eng Test"
             }
         ));
         managetbl.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -129,21 +128,22 @@ private static final String username="root";
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 935, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(410, 410, 410)
-                .addComponent(viewbtn)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(410, 410, 410)
+                        .addComponent(viewbtn))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 967, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
+                .addGap(53, 53, 53)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
+                .addGap(51, 51, 51)
                 .addComponent(viewbtn)
                 .addContainerGap(249, Short.MAX_VALUE))
         );
@@ -155,9 +155,9 @@ private static final String username="root";
             .addGap(0, 1025, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGap(0, 15, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 15, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,7 +189,6 @@ private static final String username="root";
          int SelectedRows= managetbl.getSelectedRow();
          
          StudentLoanDetailsJFrame sc=new StudentLoanDetailsJFrame();
-         sc.setVisible(true);
          sc.nametxt.setText(recordTable.getValueAt(SelectedRows, 1).toString());
 sc.agetxt.setText(recordTable.getValueAt(SelectedRows, 2).toString());
 sc.gendertxt.setText(recordTable.getValueAt(SelectedRows, 3).toString());
@@ -199,14 +198,19 @@ sc.branchtxt.setText(recordTable.getValueAt(SelectedRows, 6).toString());
 sc.enterprisetxt.setText(recordTable.getValueAt(SelectedRows, 7).toString());
 sc.degreetxt.setText(recordTable.getValueAt(SelectedRows, 8).toString());
 sc.countriestxt.setText(recordTable.getValueAt(SelectedRows, 9).toString());
+sc.testscoretxt.setText(recordTable.getValueAt(SelectedRows, 10).toString());
+sc.engtestscoretxt.setText(recordTable.getValueAt(SelectedRows, 11).toString());
+sc.setVisible(true);
+         sc.setVisible(true);
+         
     }//GEN-LAST:event_managetblMouseClicked
 
     private void viewbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewbtnActionPerformed
         // TODO add your handling code here:
-        try{
+       try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             sqlConn=DriverManager.getConnection(dataconn,username,password);
-            pst=sqlConn.prepareStatement("select * from managestudentprofilecounsellor");
+            pst=sqlConn.prepareStatement("select * from studentclassdetailscoachingall");
 
             rs=pst.executeQuery();
             DefaultTableModel model=(DefaultTableModel)managetbl.getModel();
@@ -224,11 +228,11 @@ sc.countriestxt.setText(recordTable.getValueAt(SelectedRows, 9).toString());
                 String enterprise=String.valueOf(rs.getString("Enterprise"));
                 String degree=String.valueOf(rs.getString("Degree"));
                 String countries=String.valueOf(rs.getString("Countries"));
-                String image=String.valueOf(rs.getBytes("Image"));
-                String username=String.valueOf(rs.getString("Username"));
-                String password=String.valueOf(rs.getString("Password"));
+               
+                String test=String.valueOf(rs.getString("Test"));
+                String engtest=String.valueOf(rs.getString("EnglishTest"));
 
-                String tbdata[]={id,name,age,gender,email,mobile,branch,enterprise,degree,countries,image,username,password};
+                String tbdata[]={id,name,age,gender,email,mobile,branch,enterprise,degree,countries,test,engtest};
 
                 model.addRow(tbdata);
             }

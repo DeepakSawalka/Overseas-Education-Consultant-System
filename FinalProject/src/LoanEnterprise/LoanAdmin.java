@@ -121,7 +121,8 @@ public class LoanAdmin extends javax.swing.JFrame {
 
     private void managebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managebtnActionPerformed
         // TODO add your handling code here:
-        
+        ManageStudentProfileL ml=new ManageStudentProfileL();
+        jSplitPane1.setRightComponent(ml);
     }//GEN-LAST:event_managebtnActionPerformed
 
     /**

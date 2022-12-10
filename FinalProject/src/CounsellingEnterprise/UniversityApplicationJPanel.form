@@ -40,6 +40,76 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jPanel2" max="32767" attributes="0"/>
                           <Component id="jPanel3" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="oneuninametxt" min="-2" pref="125" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                                      <Component id="onecoursenametxt" min="-2" pref="125" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="oneunilinktxt" min="-2" pref="168" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="oneappidtxt" min="-2" pref="167" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="onestudenttxt" min="-2" pref="250" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="threeuninametxt" min="-2" pref="125" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="threecoursenametxt" min="-2" pref="125" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="threeunilinktxt" min="-2" pref="168" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="threeappidtxt" min="-2" pref="167" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="threestudenttxt" min="-2" pref="250" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="fouruninametxt" min="-2" pref="125" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="fourcoursenametxt" min="-2" pref="125" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="fourunilinktxt" min="-2" pref="168" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="fourappidtxt" min="-2" pref="167" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="fourstudenttxt" min="-2" pref="250" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="fiveuninametxt" min="-2" pref="125" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="fivecoursenametxt" min="-2" pref="125" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="fiveunilinktxt" min="-2" pref="168" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="fiveappidtxt" min="-2" pref="167" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="fivestudenttxt" min="-2" pref="250" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="twouninametxt" min="-2" pref="125" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="twocoursenametxt" min="-2" pref="125" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="twounilinktxt" min="-2" pref="168" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="twoappidtxt" min="-2" pref="167" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="twostudenttxt" min="-2" pref="250" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -52,7 +122,52 @@
                       <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="558" max="32767" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="oneuninametxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="onecoursenametxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="oneunilinktxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="oneappidtxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="onestudenttxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="twouninametxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="twocoursenametxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="twounilinktxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="twoappidtxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="twostudenttxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="threeuninametxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="threecoursenametxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="threeunilinktxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="threeappidtxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="threestudenttxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="fouruninametxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="fourcoursenametxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="fourunilinktxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="fourappidtxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="fourstudenttxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="fiveuninametxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="fivecoursenametxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="fiveunilinktxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="fiveappidtxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="fivestudenttxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="388" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -129,11 +244,104 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="SN       University Name             Course Name                  University Link                       Application ID                               Student&apos;s Comment"/>
+                    <Property name="text" type="java.lang.String" value="SN     University Name         Course Name                  University Link                       Application ID                               Student&apos;s Comment"/>
                   </Properties>
                 </Component>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JTextField" name="oneuninametxt">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="oneuninametxtActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="onecoursenametxt">
+            </Component>
+            <Component class="javax.swing.JTextField" name="oneunilinktxt">
+            </Component>
+            <Component class="javax.swing.JTextField" name="oneappidtxt">
+            </Component>
+            <Component class="javax.swing.JTextField" name="onestudenttxt">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="2."/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="1."/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel5">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="3."/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel6">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="4."/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel7">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="5."/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="twouninametxt">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="twouninametxtActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="threeuninametxt">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="threeuninametxtActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="fouruninametxt">
+            </Component>
+            <Component class="javax.swing.JTextField" name="fiveuninametxt">
+            </Component>
+            <Component class="javax.swing.JTextField" name="twocoursenametxt">
+            </Component>
+            <Component class="javax.swing.JTextField" name="threecoursenametxt">
+            </Component>
+            <Component class="javax.swing.JTextField" name="fourcoursenametxt">
+            </Component>
+            <Component class="javax.swing.JTextField" name="fivecoursenametxt">
+            </Component>
+            <Component class="javax.swing.JTextField" name="twounilinktxt">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="twounilinktxtActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="threeunilinktxt">
+            </Component>
+            <Component class="javax.swing.JTextField" name="fourunilinktxt">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fourunilinktxtActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="fiveunilinktxt">
+            </Component>
+            <Component class="javax.swing.JTextField" name="twoappidtxt">
+            </Component>
+            <Component class="javax.swing.JTextField" name="threeappidtxt">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="threeappidtxtActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="fourappidtxt">
+            </Component>
+            <Component class="javax.swing.JTextField" name="fiveappidtxt">
+            </Component>
+            <Component class="javax.swing.JTextField" name="twostudenttxt">
+            </Component>
+            <Component class="javax.swing.JTextField" name="threestudenttxt">
+            </Component>
+            <Component class="javax.swing.JTextField" name="fourstudenttxt">
+            </Component>
+            <Component class="javax.swing.JTextField" name="fivestudenttxt">
+            </Component>
           </SubComponents>
         </Container>
       </SubComponents>
