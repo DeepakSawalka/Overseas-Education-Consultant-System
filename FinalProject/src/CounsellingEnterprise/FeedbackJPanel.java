@@ -26,19 +26,302 @@ public class FeedbackJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton4 = new javax.swing.JRadioButton();
+        jRadioButton5 = new javax.swing.JRadioButton();
+        jRadioButton6 = new javax.swing.JRadioButton();
+        jRadioButton7 = new javax.swing.JRadioButton();
+        jRadioButton8 = new javax.swing.JRadioButton();
+        jRadioButton9 = new javax.swing.JRadioButton();
+        jRadioButton10 = new javax.swing.JRadioButton();
+        jRadioButton11 = new javax.swing.JRadioButton();
+        jRadioButton12 = new javax.swing.JRadioButton();
+        jRadioButton13 = new javax.swing.JRadioButton();
+        jRadioButton14 = new javax.swing.JRadioButton();
+        jRadioButton15 = new javax.swing.JRadioButton();
+        jRadioButton16 = new javax.swing.JRadioButton();
+        jRadioButton17 = new javax.swing.JRadioButton();
+        jRadioButton18 = new javax.swing.JRadioButton();
+        jRadioButton19 = new javax.swing.JRadioButton();
+        jRadioButton20 = new javax.swing.JRadioButton();
+        jRadioButton21 = new javax.swing.JRadioButton();
+        jRadioButton22 = new javax.swing.JRadioButton();
+        jRadioButton23 = new javax.swing.JRadioButton();
+        jRadioButton24 = new javax.swing.JRadioButton();
+        jRadioButton25 = new javax.swing.JRadioButton();
+        jButton1 = new javax.swing.JButton();
+
+        jPanel1.setLayout(null);
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setText("Counselling Feedback:");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanel1.add(jPanel2);
+        jPanel2.setBounds(6, 6, 1183, 69);
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setText("3. Choice of Careers/Courses/Universities suggested. *");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(6, 247, 557, 59);
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel3.setText("1. Knowledge base of Counselors with regards to the entire process. *");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(6, 93, 557, 59);
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel4.setText("2. Ability to guide in the entire process (documentation, answering queries, visa process). *");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(6, 170, 551, 59);
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel5.setText("Comments, compliments, suggestions?");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(6, 472, 238, 59);
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel6.setText("4. Promptness in communication. *");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(6, 324, 557, 59);
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel7.setText("5. Imperial is One Stop Shop. *");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(6, 401, 557, 59);
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane2.setViewportView(jTextArea1);
+
+        jPanel1.add(jScrollPane2);
+        jScrollPane2.setBounds(264, 485, 508, 86);
+
+        jRadioButton1.setText("Poor");
+        jPanel1.add(jRadioButton1);
+        jRadioButton1.setBounds(575, 113, 48, 21);
+
+        jRadioButton2.setText("Fair");
+        jPanel1.add(jRadioButton2);
+        jRadioButton2.setBounds(685, 113, 42, 21);
+
+        jRadioButton3.setText("Good");
+        jPanel1.add(jRadioButton3);
+        jRadioButton3.setBounds(795, 113, 52, 21);
+
+        jRadioButton4.setText("Very Good");
+        jPanel1.add(jRadioButton4);
+        jRadioButton4.setBounds(905, 113, 78, 21);
+
+        jRadioButton5.setText("Excellent");
+        jPanel1.add(jRadioButton5);
+        jRadioButton5.setBounds(1015, 113, 70, 21);
+
+        jRadioButton6.setText("Good");
+        jPanel1.add(jRadioButton6);
+        jRadioButton6.setBounds(795, 267, 52, 21);
+
+        jRadioButton7.setText("Fair");
+        jPanel1.add(jRadioButton7);
+        jRadioButton7.setBounds(685, 190, 42, 21);
+
+        jRadioButton8.setText("Very Good");
+        jPanel1.add(jRadioButton8);
+        jRadioButton8.setBounds(905, 190, 78, 21);
+
+        jRadioButton9.setText("Good");
+        jPanel1.add(jRadioButton9);
+        jRadioButton9.setBounds(795, 190, 52, 21);
+
+        jRadioButton10.setText("Excellent");
+        jPanel1.add(jRadioButton10);
+        jRadioButton10.setBounds(1015, 190, 70, 21);
+
+        jRadioButton11.setText("Poor");
+        jPanel1.add(jRadioButton11);
+        jRadioButton11.setBounds(575, 190, 48, 21);
+
+        jRadioButton12.setText("Poor");
+        jPanel1.add(jRadioButton12);
+        jRadioButton12.setBounds(575, 267, 48, 21);
+
+        jRadioButton13.setText("Very Good");
+        jPanel1.add(jRadioButton13);
+        jRadioButton13.setBounds(905, 267, 78, 21);
+
+        jRadioButton14.setText("Fair");
+        jPanel1.add(jRadioButton14);
+        jRadioButton14.setBounds(685, 267, 42, 21);
+
+        jRadioButton15.setText("Excellent");
+        jRadioButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton15ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jRadioButton15);
+        jRadioButton15.setBounds(1015, 267, 70, 21);
+
+        jRadioButton16.setText("Good");
+        jPanel1.add(jRadioButton16);
+        jRadioButton16.setBounds(802, 344, 52, 21);
+
+        jRadioButton17.setText("Poor");
+        jPanel1.add(jRadioButton17);
+        jRadioButton17.setBounds(575, 344, 48, 21);
+
+        jRadioButton18.setText("Fair");
+        jPanel1.add(jRadioButton18);
+        jRadioButton18.setBounds(692, 344, 42, 21);
+
+        jRadioButton19.setText("Very Good");
+        jPanel1.add(jRadioButton19);
+        jRadioButton19.setBounds(912, 344, 78, 21);
+
+        jRadioButton20.setText("Excellent");
+        jPanel1.add(jRadioButton20);
+        jRadioButton20.setBounds(1022, 344, 70, 21);
+
+        jRadioButton21.setText("Agree");
+        jRadioButton21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton21ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jRadioButton21);
+        jRadioButton21.setBounds(692, 421, 54, 21);
+
+        jRadioButton22.setText("Strongly Agree");
+        jPanel1.add(jRadioButton22);
+        jRadioButton22.setBounds(569, 421, 110, 21);
+
+        jRadioButton23.setText("No Answer");
+        jRadioButton23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton23ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jRadioButton23);
+        jRadioButton23.setBounds(809, 421, 81, 21);
+
+        jRadioButton24.setText("Disagree");
+        jRadioButton24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton24ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jRadioButton24);
+        jRadioButton24.setBounds(926, 421, 90, 21);
+
+        jRadioButton25.setText("Strongly Agree");
+        jPanel1.add(jRadioButton25);
+        jRadioButton25.setBounds(1024, 421, 120, 21);
+
+        jButton1.setText("Submit");
+        jPanel1.add(jButton1);
+        jButton1.setBounds(605, 589, 139, 40);
+
+        jScrollPane1.setViewportView(jPanel1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1167, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 656, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jRadioButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton15ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton15ActionPerformed
+
+    private void jRadioButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton21ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton21ActionPerformed
+
+    private void jRadioButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton23ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton23ActionPerformed
+
+    private void jRadioButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton24ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton24ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton10;
+    private javax.swing.JRadioButton jRadioButton11;
+    private javax.swing.JRadioButton jRadioButton12;
+    private javax.swing.JRadioButton jRadioButton13;
+    private javax.swing.JRadioButton jRadioButton14;
+    private javax.swing.JRadioButton jRadioButton15;
+    private javax.swing.JRadioButton jRadioButton16;
+    private javax.swing.JRadioButton jRadioButton17;
+    private javax.swing.JRadioButton jRadioButton18;
+    private javax.swing.JRadioButton jRadioButton19;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton20;
+    private javax.swing.JRadioButton jRadioButton21;
+    private javax.swing.JRadioButton jRadioButton22;
+    private javax.swing.JRadioButton jRadioButton23;
+    private javax.swing.JRadioButton jRadioButton24;
+    private javax.swing.JRadioButton jRadioButton25;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioButton5;
+    private javax.swing.JRadioButton jRadioButton6;
+    private javax.swing.JRadioButton jRadioButton7;
+    private javax.swing.JRadioButton jRadioButton8;
+    private javax.swing.JRadioButton jRadioButton9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
