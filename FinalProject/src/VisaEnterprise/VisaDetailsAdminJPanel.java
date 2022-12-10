@@ -233,12 +233,12 @@ catch(Exception e){
     }
   
     }//GEN-LAST:event_visatblMouseClicked
-public void changeTable(JTable visatbl, int column_index) {
-        visatbl.getColumnModel().getColumn(column_index).setCellRenderer(new DefaultTableCellRenderer() {
+public void changeTable(JTable table, int column_index) {
+        table.getColumnModel().getColumn(column_index).setCellRenderer(new DefaultTableCellRenderer() {
             @Override
-            public Component getTableCellRendererComponent(JTable visatbl, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-                final Component c = super.getTableCellRendererComponent(visatbl, value, isSelected, hasFocus, row, column);
-               String status =visatbl.getValueAt(row, 12).toString();
+            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+                final Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+               String status =table.getValueAt(row, 12).toString();
                 
                 if (status =="Approve") {
                     c.setBackground(Color.GREEN);
