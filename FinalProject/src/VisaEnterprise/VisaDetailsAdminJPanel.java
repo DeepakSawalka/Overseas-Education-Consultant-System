@@ -192,7 +192,7 @@ public void upDateDb()
                
                  test=String.valueOf(rs.getString("Test"));
                 englishtest=String.valueOf(rs.getString("EnglishTest"));
-                  status =String.valueOf(rs.getString("Status"));
+                  status =String.valueOf(rs.getString("VisaStatus"));
                 
                 String tbdata[]={id,name,age,gender,email,mobile,branch,branch,enterprise,degree,countries,test,englishtest,status};
                 
