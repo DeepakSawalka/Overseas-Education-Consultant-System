@@ -30,7 +30,7 @@ public class AgentRole extends javax.swing.JFrame {
         jSplitPane1 = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
         managebtn = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        rejectbtn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -42,7 +42,12 @@ public class AgentRole extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Visa Rejects");
+        rejectbtn.setText("Visa Rejects");
+        rejectbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rejectbtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -54,7 +59,7 @@ public class AgentRole extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(managebtn))
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(rejectbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -63,7 +68,7 @@ public class AgentRole extends javax.swing.JFrame {
                 .addGap(179, 179, 179)
                 .addComponent(managebtn)
                 .addGap(49, 49, 49)
-                .addComponent(jButton1)
+                .addComponent(rejectbtn)
                 .addContainerGap(355, Short.MAX_VALUE))
         );
 
@@ -104,16 +109,21 @@ public class AgentRole extends javax.swing.JFrame {
         jSplitPane1.setRightComponent(mv);
     }//GEN-LAST:event_managebtnActionPerformed
 
+    private void rejectbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejectbtnActionPerformed
+        // TODO add your handling code here:
+      
+    }//GEN-LAST:event_rejectbtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
   
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JButton managebtn;
+    private javax.swing.JButton rejectbtn;
     // End of variables declaration//GEN-END:variables
 }

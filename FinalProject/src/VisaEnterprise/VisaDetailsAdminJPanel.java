@@ -101,7 +101,6 @@ public void upDateDb()
         jScrollPane1 = new javax.swing.JScrollPane();
         visatbl = new javax.swing.JTable();
         viewbtn = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
 
         visatbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -128,13 +127,6 @@ public void upDateDb()
             }
         });
 
-        jButton1.setText("Assign to Agent");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -146,9 +138,7 @@ public void upDateDb()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(453, 453, 453)
-                        .addComponent(viewbtn)
-                        .addGap(84, 84, 84)
-                        .addComponent(jButton1)))
+                        .addComponent(viewbtn)))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -157,9 +147,7 @@ public void upDateDb()
                 .addGap(68, 68, 68)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(80, 80, 80)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(viewbtn)
-                    .addComponent(jButton1))
+                .addComponent(viewbtn)
                 .addContainerGap(272, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -245,12 +233,6 @@ catch(Exception e){
     }
   
     }//GEN-LAST:event_visatblMouseClicked
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
 public void changeTable(JTable visatbl, int column_index) {
         visatbl.getColumnModel().getColumn(column_index).setCellRenderer(new DefaultTableCellRenderer() {
             @Override
@@ -279,7 +261,6 @@ class MyTableCellRenderer extends DefaultTableCellRenderer {
 }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton viewbtn;
     private javax.swing.JTable visatbl;
