@@ -70,7 +70,7 @@ private static final String username="root";
                   columnData.add(rs.getString("Degree"));
                   columnData.add(rs.getString("Countries"));
                   columnData.add(rs.getBytes("Test"));
-                  columnData.add(rs.getString("EngTest"));
+                  columnData.add(rs.getString("EnglishTest"));
                  
                 }         
             
@@ -232,7 +232,7 @@ sc.setVisible(true);
                 String countries=String.valueOf(rs.getString("Countries"));
                
                 String test=String.valueOf(rs.getString("Test"));
-                String engtest=String.valueOf(rs.getString("EngTest"));
+                String engtest=String.valueOf(rs.getString("EnglishTest"));
 
                 String tbdata[]={id,name,age,gender,email,mobile,branch,enterprise,degree,countries,test,engtest};
 
