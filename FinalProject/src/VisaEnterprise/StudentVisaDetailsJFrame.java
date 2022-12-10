@@ -698,12 +698,8 @@ private static final String username="root";
           pst.setString(12,visastatus);
           
           
-         
-          
-        
-       
           pst.executeUpdate();
-        
+        JOptionPane.showMessageDialog(this, "Student Visa Profile Created Successfully");
         upDateDb();
         
         
