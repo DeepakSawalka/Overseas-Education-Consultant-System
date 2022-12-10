@@ -4,6 +4,8 @@
  */
 package VisaEnterprise;
 
+import java.awt.Color;
+
 /**
  *
  * @author vatsal
@@ -36,6 +38,14 @@ public class AgentRole extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         managebtn.setText("Manage Profile");
+        managebtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                managebtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                managebtnMouseExited(evt);
+            }
+        });
         managebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 managebtnActionPerformed(evt);
@@ -113,6 +123,16 @@ public class AgentRole extends javax.swing.JFrame {
         // TODO add your handling code here:
       
     }//GEN-LAST:event_rejectbtnActionPerformed
+
+    private void managebtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managebtnMouseEntered
+        // TODO add your handling code here:
+         managebtn.setForeground(Color.RED);
+    }//GEN-LAST:event_managebtnMouseEntered
+
+    private void managebtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managebtnMouseExited
+        // TODO add your handling code here:
+        managebtn.setForeground(Color.RED);
+    }//GEN-LAST:event_managebtnMouseExited
 
     /**
      * @param args the command line arguments
