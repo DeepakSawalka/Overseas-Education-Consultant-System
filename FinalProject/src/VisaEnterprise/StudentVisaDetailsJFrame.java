@@ -220,6 +220,11 @@ private static final String username="root";
 
         ds160yes.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ds160yes.setText("Yes");
+        ds160yes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ds160yesActionPerformed(evt);
+            }
+        });
 
         ds160no.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ds160no.setText("No");
@@ -488,6 +493,14 @@ private static final String username="root";
             if (file.exists()){
                 if(Desktop.isDesktopSupported()){
                    Desktop.getDesktop().open(file);
+                // Tick Mark Shown
+                   
+                   if(filename.length()!=0){
+                       passporttick1.setVisible(true);
+                   }
+                   
+                   
+                   
                 }else{
                     JOptionPane.showMessageDialog(this, "Not supported");
                 }
@@ -516,6 +529,13 @@ private static final String username="root";
             if (file.exists()){
                 if(Desktop.isDesktopSupported()){
                    Desktop.getDesktop().open(file);
+                   
+                   
+                    // Tick Mark Shown
+                   
+                   if(filename.length()!=0){
+                       marksheettick.setVisible(true);
+                   }
                 }else{
                     JOptionPane.showMessageDialog(this, "Not supported");
                 }
@@ -550,6 +570,13 @@ private static final String username="root";
             if (file.exists()){
                 if(Desktop.isDesktopSupported()){
                    Desktop.getDesktop().open(file);
+                   
+                   
+                    // Tick Mark Shown
+                   
+                   if(filename.length()!=0){
+                       i20tick.setVisible(true);
+                   }
                 }else{
                     JOptionPane.showMessageDialog(this, "Not supported");
                 }
@@ -560,6 +587,11 @@ private static final String username="root";
             e.printStackTrace();
         }
     }//GEN-LAST:event_i20viewbtnActionPerformed
+
+    private void ds160yesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ds160yesActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_ds160yesActionPerformed
 
     
 
