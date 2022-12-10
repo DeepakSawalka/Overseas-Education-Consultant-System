@@ -45,7 +45,7 @@ private static final String username="root";
     {
         Class.forName("com.mysql.cj.jdbc.Driver");
          sqlConn=DriverManager.getConnection(dataconn,username,password);
-         pst=sqlConn.prepareStatement("select * from managestudentprofilecounsellor");
+         pst=sqlConn.prepareStatement("select * from studentclassdetailscoachingall");
          
          rs=pst.executeQuery();
          ResultSetMetaData stData= rs.getMetaData();
@@ -69,9 +69,9 @@ private static final String username="root";
                   columnData.add(rs.getString("Enterprise"));
                   columnData.add(rs.getString("Degree"));
                   columnData.add(rs.getString("Countries"));
-                  columnData.add(rs.getBytes("Image"));
-                  columnData.add(rs.getString("Username"));
-                  columnData.add(rs.getString("Password"));
+                  columnData.add(rs.getBytes("Test"));
+                  columnData.add(rs.getString("EngTest"));
+                 
                 }         
             
              
@@ -96,27 +96,9 @@ private static final String username="root";
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        viewbtn = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         managetbl = new javax.swing.JTable();
-        viewbtn = new javax.swing.JButton();
-
-        managetbl.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "ID", "Name", "Age", "Gender", "Email", "Mobile", "Branch", "Enterprise", "Degree", "Countries", "Image", "Username", "Password"
-            }
-        ));
-        managetbl.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                managetblMouseClicked(evt);
-            }
-        });
-        jScrollPane2.setViewportView(managetbl);
 
         viewbtn.setText("View");
         viewbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -129,44 +111,61 @@ private static final String username="root";
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 935, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(410, 410, 410)
                 .addComponent(viewbtn)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(491, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
+                .addGap(311, 311, 311)
                 .addComponent(viewbtn)
-                .addContainerGap(249, Short.MAX_VALUE))
+                .addContainerGap(307, Short.MAX_VALUE))
         );
+
+        managetbl.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Name", "Age", "Gender", "Email", "Mobile", "Branch", "Enterprise", "Degree", "Countries", "Test Score", "English Proficiency Test"
+            }
+        ));
+        managetbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                managetblMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(managetbl);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 976, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 961, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(59, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(13, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addContainerGap(40, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 631, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(407, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 16, Short.MAX_VALUE)))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -176,12 +175,14 @@ private static final String username="root";
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 967, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 997, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 643, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 659, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -201,6 +202,8 @@ sc.branchtxt.setText(recordTable.getValueAt(SelectedRows, 6).toString());
 sc.enterprisetxt.setText(recordTable.getValueAt(SelectedRows, 7).toString());
 sc.degreetxt.setText(recordTable.getValueAt(SelectedRows, 8).toString());
 sc.countriestxt.setText(recordTable.getValueAt(SelectedRows, 9).toString());
+sc.testscoretxt.setText(recordTable.getValueAt(SelectedRows, 10).toString());
+sc.engtestscoretxt.setText(recordTable.getValueAt(SelectedRows, 11).toString());
 sc.setVisible(true);
     }//GEN-LAST:event_managetblMouseClicked
 
@@ -209,7 +212,7 @@ sc.setVisible(true);
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             sqlConn=DriverManager.getConnection(dataconn,username,password);
-            pst=sqlConn.prepareStatement("select * from managestudentprofilecounsellor");
+            pst=sqlConn.prepareStatement("select * from studentclassdetailscoachingall");
 
             rs=pst.executeQuery();
             DefaultTableModel model=(DefaultTableModel)managetbl.getModel();
@@ -227,11 +230,11 @@ sc.setVisible(true);
                 String enterprise=String.valueOf(rs.getString("Enterprise"));
                 String degree=String.valueOf(rs.getString("Degree"));
                 String countries=String.valueOf(rs.getString("Countries"));
-                String image=String.valueOf(rs.getBytes("Image"));
-                String username=String.valueOf(rs.getString("Username"));
-                String password=String.valueOf(rs.getString("Password"));
+               
+                String test=String.valueOf(rs.getString("Test"));
+                String engtest=String.valueOf(rs.getString("EngTest"));
 
-                String tbdata[]={id,name,age,gender,email,mobile,branch,enterprise,degree,countries,image,username,password};
+                String tbdata[]={id,name,age,gender,email,mobile,branch,enterprise,degree,countries,test,engtest};
 
                 model.addRow(tbdata);
             }

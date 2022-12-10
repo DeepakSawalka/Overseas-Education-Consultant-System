@@ -3,6 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
+            <file>file:/C:/Users/vatsal/Documents/Github/Final_AED_Project/Final_AED_Project/FinalProject/src/VisaEnterprise/AgentRole.java</file>
+            <file>file:/C:/Users/vatsal/Documents/Github/Final_AED_Project/Final_AED_Project/FinalProject/src/VisaEnterprise/StudentVisaDetailsJFrame.java</file>
+            <file>file:/C:/Users/vatsal/Documents/Github/Final_AED_Project/Final_AED_Project/FinalProject/src/VisaEnterprise/VisaAdmin.java</file>
+            <file>file:/C:/Users/vatsal/Documents/Github/Final_AED_Project/Final_AED_Project/FinalProject/src/VisaEnterprise/ManageStudentProfileV.java</file>
+            <file>file:/C:/Users/vatsal/Documents/Github/Final_AED_Project/Final_AED_Project/FinalProject/src/VisaEnterprise/EmployeeVCredentialsJPanel.java</file>
+=======
             <file>file:/C:/Users/Deepak%20Sawalka/Documents/Final_AED_Project/FinalProject/src/CounsellingEnterprise/ContactUs.java</file>
             <file>file:/C:/Users/Deepak%20Sawalka/Documents/Final_AED_Project/FinalProject/src/CounsellingEnterprise/StudentManageProfileJPanel.java</file>
             <file>file:/C:/Users/Deepak%20Sawalka/Documents/Final_AED_Project/FinalProject/src/CounsellingEnterprise/DocumentJPanel.java</file>
@@ -35,6 +42,7 @@
             <file>file:/C:/Users/Deepak%20Sawalka/Documents/Final_AED_Project/FinalProject/src/CounsellingEnterprise/CreateStudentProfile.java</file>
             <file>file:/C:/Users/Deepak%20Sawalka/Documents/Final_AED_Project/FinalProject/src/CoachingEnterprise/CoachingAdmin.java</file>
             <file>file:/C:/Users/Deepak%20Sawalka/Documents/Final_AED_Project/FinalProject/src/CounsellingEnterprise/ManageStudentProfileCounsellorJPanel.java</file>
+>>>>>>> 02e452de2004e2e351a8a96cca12a9935df397ea
         </group>
     </open-files>
 </project-private>
