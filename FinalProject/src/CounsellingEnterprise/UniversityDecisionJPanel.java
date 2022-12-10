@@ -15,6 +15,11 @@ public class UniversityDecisionJPanel extends javax.swing.JPanel {
      */
     public UniversityDecisionJPanel() {
         initComponents();
+        freezeone.setVisible(false);
+        freezetwo.setVisible(false);
+        freezethree.setVisible(false);
+        freezefour.setVisible(false);
+        freezefive.setVisible(false);
     }
 
     /**
@@ -38,35 +43,35 @@ public class UniversityDecisionJPanel extends javax.swing.JPanel {
         appidonetxt = new javax.swing.JTextField();
         comboone = new javax.swing.JComboBox<>();
         decisiononebtn = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        freezeone = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         uninametwotxt = new javax.swing.JTextField();
         coursetwotxt = new javax.swing.JTextField();
         appidtwotxt = new javax.swing.JTextField();
         combotwo = new javax.swing.JComboBox<>();
         decisiontwobtn = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        freezetwo = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         uninamethreetxt = new javax.swing.JTextField();
         coursethreetxt = new javax.swing.JTextField();
         appidthreetxt = new javax.swing.JTextField();
         combothree = new javax.swing.JComboBox<>();
         decisionthreebtn = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
+        freezethree = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         uninamefourtxt = new javax.swing.JTextField();
         coursefourtxt = new javax.swing.JTextField();
         appidfourtxt = new javax.swing.JTextField();
         combofour = new javax.swing.JComboBox<>();
         decisionfourbtn = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
+        freezefour = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         uninamefivetxt = new javax.swing.JTextField();
         coursefivetxt = new javax.swing.JTextField();
         appidfivetxt = new javax.swing.JTextField();
         combofive = new javax.swing.JComboBox<>();
         decisionfivebtn = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
+        freezefive = new javax.swing.JLabel();
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -129,10 +134,10 @@ public class UniversityDecisionJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("FREEZE🔒");
+        freezeone.setBackground(new java.awt.Color(255, 255, 255));
+        freezeone.setForeground(new java.awt.Color(255, 0, 0));
+        freezeone.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        freezeone.setText("FREEZE🔒");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -150,7 +155,7 @@ public class UniversityDecisionJPanel extends javax.swing.JPanel {
                 .addGap(105, 105, 105)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(decisiononebtn, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(freezeone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(116, 116, 116))
         );
         jPanel4Layout.setVerticalGroup(
@@ -163,7 +168,7 @@ public class UniversityDecisionJPanel extends javax.swing.JPanel {
                     .addComponent(unionetxt, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel3)
+                        .addComponent(freezeone)
                         .addGap(15, 15, 15))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(decisiononebtn)
@@ -183,10 +188,15 @@ public class UniversityDecisionJPanel extends javax.swing.JPanel {
         combotwo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Please Choose--", "Admit", "Reject" }));
 
         decisiontwobtn.setText("Submit");
+        decisiontwobtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                decisiontwobtnActionPerformed(evt);
+            }
+        });
 
-        jLabel4.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("FREEZE🔒");
+        freezetwo.setForeground(new java.awt.Color(255, 0, 0));
+        freezetwo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        freezetwo.setText("FREEZE🔒");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -204,7 +214,7 @@ public class UniversityDecisionJPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(decisiontwobtn, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(freezetwo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(113, 113, 113))
         );
         jPanel5Layout.setVerticalGroup(
@@ -220,7 +230,7 @@ public class UniversityDecisionJPanel extends javax.swing.JPanel {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(decisiontwobtn)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel4)
+                        .addComponent(freezetwo)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -236,10 +246,15 @@ public class UniversityDecisionJPanel extends javax.swing.JPanel {
         combothree.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Please Choose--", "Admit", "Reject" }));
 
         decisionthreebtn.setText("Submit");
+        decisionthreebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                decisionthreebtnActionPerformed(evt);
+            }
+        });
 
-        jLabel5.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("FREEZE🔒");
+        freezethree.setForeground(new java.awt.Color(255, 0, 0));
+        freezethree.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        freezethree.setText("FREEZE🔒");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -257,7 +272,7 @@ public class UniversityDecisionJPanel extends javax.swing.JPanel {
                 .addGap(110, 110, 110)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(decisionthreebtn, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(freezethree, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(111, 111, 111))
         );
         jPanel6Layout.setVerticalGroup(
@@ -273,7 +288,7 @@ public class UniversityDecisionJPanel extends javax.swing.JPanel {
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(decisionthreebtn)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel5)
+                        .addComponent(freezethree)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -289,10 +304,15 @@ public class UniversityDecisionJPanel extends javax.swing.JPanel {
         combofour.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Please Choose--", "Admit", "Reject" }));
 
         decisionfourbtn.setText("Submit");
+        decisionfourbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                decisionfourbtnActionPerformed(evt);
+            }
+        });
 
-        jLabel6.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("FREEZE🔒");
+        freezefour.setForeground(new java.awt.Color(255, 0, 0));
+        freezefour.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        freezefour.setText("FREEZE🔒");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -310,7 +330,7 @@ public class UniversityDecisionJPanel extends javax.swing.JPanel {
                 .addGap(112, 112, 112)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(decisionfourbtn, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(freezefour, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(109, 109, 109))
         );
         jPanel7Layout.setVerticalGroup(
@@ -326,7 +346,7 @@ public class UniversityDecisionJPanel extends javax.swing.JPanel {
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(decisionfourbtn)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel6)
+                        .addComponent(freezefour)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -342,10 +362,15 @@ public class UniversityDecisionJPanel extends javax.swing.JPanel {
         combofive.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Please Choose--", "Admit", "Reject" }));
 
         decisionfivebtn.setText("Submit");
+        decisionfivebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                decisionfivebtnActionPerformed(evt);
+            }
+        });
 
-        jLabel7.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("FREEZE🔒");
+        freezefive.setForeground(new java.awt.Color(255, 0, 0));
+        freezefive.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        freezefive.setText("FREEZE🔒");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -363,7 +388,7 @@ public class UniversityDecisionJPanel extends javax.swing.JPanel {
                 .addGap(115, 115, 115)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(decisionfivebtn, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(freezefive, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(106, 106, 106))
         );
         jPanel8Layout.setVerticalGroup(
@@ -379,7 +404,7 @@ public class UniversityDecisionJPanel extends javax.swing.JPanel {
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(decisionfivebtn)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel7)
+                        .addComponent(freezefive)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -436,8 +461,31 @@ public class UniversityDecisionJPanel extends javax.swing.JPanel {
 
     private void decisiononebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decisiononebtnActionPerformed
         // TODO add your handling code here:
+          
+                       freezeone.setVisible(true);
+                   
         
     }//GEN-LAST:event_decisiononebtnActionPerformed
+
+    private void decisiontwobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decisiontwobtnActionPerformed
+        // TODO add your handling code here:
+         freezetwo.setVisible(true);
+    }//GEN-LAST:event_decisiontwobtnActionPerformed
+
+    private void decisionthreebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decisionthreebtnActionPerformed
+        // TODO add your handling code here:
+         freezethree.setVisible(true);
+    }//GEN-LAST:event_decisionthreebtnActionPerformed
+
+    private void decisionfourbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decisionfourbtnActionPerformed
+        // TODO add your handling code here:
+         freezefour.setVisible(true);
+    }//GEN-LAST:event_decisionfourbtnActionPerformed
+
+    private void decisionfivebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decisionfivebtnActionPerformed
+        // TODO add your handling code here:
+         freezefive.setVisible(true);
+    }//GEN-LAST:event_decisionfivebtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -461,13 +509,13 @@ public class UniversityDecisionJPanel extends javax.swing.JPanel {
     private javax.swing.JButton decisiononebtn;
     private javax.swing.JButton decisionthreebtn;
     private javax.swing.JButton decisiontwobtn;
+    private javax.swing.JLabel freezefive;
+    private javax.swing.JLabel freezefour;
+    private javax.swing.JLabel freezeone;
+    private javax.swing.JLabel freezethree;
+    private javax.swing.JLabel freezetwo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

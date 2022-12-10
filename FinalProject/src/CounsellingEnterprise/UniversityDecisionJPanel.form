@@ -171,7 +171,7 @@
                           <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="decisiononebtn" pref="113" max="32767" attributes="0"/>
-                              <Component id="jLabel3" max="32767" attributes="0"/>
+                              <Component id="freezeone" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
                       </Group>
@@ -187,7 +187,7 @@
                               <Component id="unionetxt" alignment="3" pref="73" max="32767" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="freezeone" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
@@ -239,7 +239,7 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="decisiononebtnActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel3">
+                <Component class="javax.swing.JLabel" name="freezeone">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -275,7 +275,7 @@
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="decisiontwobtn" pref="113" max="32767" attributes="0"/>
-                              <Component id="jLabel4" max="32767" attributes="0"/>
+                              <Component id="freezetwo" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
                       </Group>
@@ -295,7 +295,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="decisiontwobtn" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                  <Component id="freezetwo" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -338,8 +338,11 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Submit"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="decisiontwobtnActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel4">
+                <Component class="javax.swing.JLabel" name="freezetwo">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="ff" type="rgb"/>
@@ -372,7 +375,7 @@
                           <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="decisionthreebtn" pref="113" max="32767" attributes="0"/>
-                              <Component id="jLabel5" max="32767" attributes="0"/>
+                              <Component id="freezethree" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
                       </Group>
@@ -392,7 +395,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="decisionthreebtn" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="freezethree" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -435,8 +438,11 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Submit"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="decisionthreebtnActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel5">
+                <Component class="javax.swing.JLabel" name="freezethree">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="ff" type="rgb"/>
@@ -469,7 +475,7 @@
                           <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="decisionfourbtn" pref="113" max="32767" attributes="0"/>
-                              <Component id="jLabel6" max="32767" attributes="0"/>
+                              <Component id="freezefour" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
                       </Group>
@@ -489,7 +495,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="decisionfourbtn" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                  <Component id="freezefour" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -532,8 +538,11 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Submit"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="decisionfourbtnActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel6">
+                <Component class="javax.swing.JLabel" name="freezefour">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="ff" type="rgb"/>
@@ -566,7 +575,7 @@
                           <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="decisionfivebtn" pref="113" max="32767" attributes="0"/>
-                              <Component id="jLabel7" max="32767" attributes="0"/>
+                              <Component id="freezefive" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
                       </Group>
@@ -586,7 +595,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="decisionfivebtn" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                  <Component id="freezefive" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -629,8 +638,11 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Submit"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="decisionfivebtnActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel7">
+                <Component class="javax.swing.JLabel" name="freezefive">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="ff" type="rgb"/>
