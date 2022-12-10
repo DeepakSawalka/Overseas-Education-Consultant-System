@@ -42,11 +42,12 @@ private static final String username="root";
      * Creates new form StudentVisaDetailsJFrame
      */
     public StudentVisaDetailsJFrame() {
+         initComponents();
         passporttick1.setVisible(false);
         i20tick.setVisible(false);
         marksheettick.setVisible(false);
        
-        initComponents();
+       
     }
 
     public void upDateDb()

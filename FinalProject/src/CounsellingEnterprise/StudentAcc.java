@@ -135,6 +135,11 @@ public class StudentAcc extends javax.swing.JFrame {
         });
 
         visabtn.setText("VISA");
+        visabtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                visabtnActionPerformed(evt);
+            }
+        });
 
         loanbtn.setText("Loan Management");
 
@@ -453,6 +458,12 @@ Image img =mm.getScaledInstance(imglbl.getWidth(), imglbl.getHeight(), Image.SCA
           FeedbackJPanel f=new FeedbackJPanel();
         jSplitPane1.setRightComponent(f);
     }//GEN-LAST:event_feedbackbtnActionPerformed
+
+    private void visabtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visabtnActionPerformed
+        // TODO add your handling code here:
+        VisaJPanel v=new VisaJPanel();
+        jSplitPane1.setRightComponent(v);
+    }//GEN-LAST:event_visabtnActionPerformed
 
    
     /**
