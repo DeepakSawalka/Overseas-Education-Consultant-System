@@ -55,7 +55,7 @@ private static final String username="root";
     {
         Class.forName("com.mysql.cj.jdbc.Driver");
          sqlConn=DriverManager.getConnection(dataconn,username,password);
-         pst=sqlConn.prepareStatement("select * from studentclassdetailscoaching");
+         pst=sqlConn.prepareStatement("select * from studentclassdetailsvisaall");
          
          rs=pst.executeQuery();
          ResultSetMetaData stData= rs.getMetaData();
@@ -71,16 +71,17 @@ private static final String username="root";
                   
                   columnData.add(rs.getString("ID"));
                   columnData.add(rs.getString("Name"));
-                  columnData.add(rs.getString("Email"));
-                  columnData.add(rs.getString("TestPrep"));
-                  columnData.add(rs.getString("PrepModes"));
-                  columnData.add(rs.getString("Batch"));
-                  columnData.add(rs.getString("EngTestPrep"));
-                  columnData.add(rs.getString("EngPrepModes"));
-                  columnData.add(rs.getBlob("EngBatch"));
-                  columnData.add(rs.getString("Status"));
-                  columnData.add(rs.getString("Test"));
+                   columnData.add(rs.getString("Age"));
+                  columnData.add(rs.getString("Gender"));
+                   columnData.add(rs.getString("Email"));
+                  columnData.add(rs.getString("Mobile"));
+                   columnData.add(rs.getString("Branch"));
+                  columnData.add(rs.getString("Enterprise"));
+                   columnData.add(rs.getString("Degree"));
+                  columnData.add(rs.getString("Countries"));
+                   columnData.add(rs.getString("Test"));
                   columnData.add(rs.getString("EnglishTest"));
+                  columnData.add(rs.getString("VisaStatus"));
                 }         
             
              
@@ -92,53 +93,8 @@ private static final String username="root";
     
     }}
 
-public void upDateDb1()
-    {
-    try
-    {
-        Class.forName("com.mysql.cj.jdbc.Driver");
-         sqlConn=DriverManager.getConnection(dataconn,username,password);
-         pst=sqlConn.prepareStatement("select * from studentclassdetailsvisa");
-         
-         rs=pst.executeQuery();
-         ResultSetMetaData stData= rs.getMetaData();
-         q=stData.getColumnCount();
-         
-   
-         while (rs.next())
-         {
-            Vector columnData = new Vector();
-            
-            
-                for(i=1;i<q;i++){
-                  
-                  columnData.add(rs.getString("ID"));
-                  columnData.add(rs.getString("Name"));
-      
-                  columnData.add(rs.getString("Age"));
-                  columnData.add(rs.getString("Gender"));
-                  columnData.add(rs.getString("Email"));
-                  columnData.add(rs.getString("Mobile"));
-                  columnData.add(rs.getString("Branch"));
-                  columnData.add(rs.getString("Enterprise"));
-                  columnData.add(rs.getString("Degree"));
-                   
-                  columnData.add(rs.getString("Countries"));
-                  columnData.add(rs.getString("Test"));
-                  columnData.add(rs.getString("EngTest"));
-                   
-                  columnData.add(rs.getString("VisaStatus"));
-                 
-                }         
-            
+
              
-         }
-         
-} 
-    catch(Exception e){
-        JOptionPane.showMessageDialog(null,e);
-    
-    }}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -724,7 +680,7 @@ public void upDateDb1()
         
         Class.forName("com.mysql.cj.jdbc.Driver");
          sqlConn=DriverManager.getConnection(dataconn,username,password);
-         pst=sqlConn.prepareStatement("INSERT INTO studentclassdetailsvisaall(Name,Age,Gender,Email,Mobile,Branch,Enterprise,Degree,Countries,Test,EngTest,VisaStatus)values(?,?,?,?,?,?,?,?,?,?,?,?)");
+         pst=sqlConn.prepareStatement("INSERT INTO studentclassdetailsvisaall(Name,Age,Gender,Email,Mobile,Branch,Enterprise,Degree,Countries,Test,EnglishTest,VisaStatus)values(?,?,?,?,?,?,?,?,?,?,?,?)");
          
           pst.setString(1,nametxt.getText());
           pst.setString(2,agetxt.getText());

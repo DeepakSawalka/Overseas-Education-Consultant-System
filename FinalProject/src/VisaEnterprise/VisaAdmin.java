@@ -32,6 +32,7 @@ public class VisaAdmin extends javax.swing.JFrame {
         jSplitPane1 = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
         credentialsbtn = new javax.swing.JButton();
+        visadetailsbtn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -43,13 +44,22 @@ public class VisaAdmin extends javax.swing.JFrame {
             }
         });
 
+        visadetailsbtn.setText("Manage Visa Details");
+        visadetailsbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                visadetailsbtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(credentialsbtn)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(credentialsbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(visadetailsbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -57,7 +67,9 @@ public class VisaAdmin extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(216, 216, 216)
                 .addComponent(credentialsbtn)
-                .addContainerGap(434, Short.MAX_VALUE))
+                .addGap(44, 44, 44)
+                .addComponent(visadetailsbtn)
+                .addContainerGap(367, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(jPanel1);
@@ -97,6 +109,12 @@ public class VisaAdmin extends javax.swing.JFrame {
         jSplitPane1.setRightComponent(ev);
     }//GEN-LAST:event_credentialsbtnActionPerformed
 
+    private void visadetailsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visadetailsbtnActionPerformed
+        // TODO add your handling code here:
+        VisaDetailsAdminJPanel v=new VisaDetailsAdminJPanel();
+        jSplitPane1.setRightComponent(v);
+    }//GEN-LAST:event_visadetailsbtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -107,5 +125,6 @@ public class VisaAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JButton visadetailsbtn;
     // End of variables declaration//GEN-END:variables
 }
