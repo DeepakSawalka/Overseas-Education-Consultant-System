@@ -225,11 +225,17 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Contact Us"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="contactbtnActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="feedbackbtn">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Counselling Feedback"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="feedbackbtnActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
