@@ -33,7 +33,9 @@ private static final String username="root";
      String branch;
      String enterprise;
      String name,pass;
-     String filename = null;
+     String pfilename = null;
+      String ifilename = null;
+       String mfilename = null;
      byte[] image;
      DefaultTableModel recordTable;
     /**
@@ -47,6 +49,96 @@ private static final String username="root";
         initComponents();
     }
 
+    public void upDateDb()
+    {
+    try
+    {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+         sqlConn=DriverManager.getConnection(dataconn,username,password);
+         pst=sqlConn.prepareStatement("select * from studentclassdetailscoaching");
+         
+         rs=pst.executeQuery();
+         ResultSetMetaData stData= rs.getMetaData();
+         q=stData.getColumnCount();
+         
+   
+         while (rs.next())
+         {
+            Vector columnData = new Vector();
+            
+            
+                for(i=1;i<q;i++){
+                  
+                  columnData.add(rs.getString("ID"));
+                  columnData.add(rs.getString("Name"));
+                  columnData.add(rs.getString("Email"));
+                  columnData.add(rs.getString("TestPrep"));
+                  columnData.add(rs.getString("PrepModes"));
+                  columnData.add(rs.getString("Batch"));
+                  columnData.add(rs.getString("EngTestPrep"));
+                  columnData.add(rs.getString("EngPrepModes"));
+                  columnData.add(rs.getBlob("EngBatch"));
+                  columnData.add(rs.getString("Status"));
+                  columnData.add(rs.getString("Test"));
+                  columnData.add(rs.getString("EnglishTest"));
+                }         
+            
+             
+         }
+         
+} 
+    catch(Exception e){
+        JOptionPane.showMessageDialog(null,e);
+    
+    }}
+
+public void upDateDb1()
+    {
+    try
+    {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+         sqlConn=DriverManager.getConnection(dataconn,username,password);
+         pst=sqlConn.prepareStatement("select * from studentclassdetailsvisa");
+         
+         rs=pst.executeQuery();
+         ResultSetMetaData stData= rs.getMetaData();
+         q=stData.getColumnCount();
+         
+   
+         while (rs.next())
+         {
+            Vector columnData = new Vector();
+            
+            
+                for(i=1;i<q;i++){
+                  
+                  columnData.add(rs.getString("ID"));
+                  columnData.add(rs.getString("Name"));
+      
+                  columnData.add(rs.getString("Age"));
+                  columnData.add(rs.getString("Gender"));
+                  columnData.add(rs.getString("Email"));
+                  columnData.add(rs.getString("Mobile"));
+                  columnData.add(rs.getString("Branch"));
+                  columnData.add(rs.getString("Enterprise"));
+                  columnData.add(rs.getString("Degree"));
+                   
+                  columnData.add(rs.getString("Countries"));
+                  columnData.add(rs.getString("Test"));
+                  columnData.add(rs.getString("EngTest"));
+                   
+                  columnData.add(rs.getString("VisaStatus"));
+                 
+                }         
+            
+             
+         }
+         
+} 
+    catch(Exception e){
+        JOptionPane.showMessageDialog(null,e);
+    
+    }}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -98,6 +190,10 @@ private static final String username="root";
         sevisyes = new javax.swing.JCheckBox();
         sevisno = new javax.swing.JCheckBox();
         submitbtn = new javax.swing.JButton();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        testscoretxt = new javax.swing.JTextField();
+        engtestscoretxt = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
 
@@ -250,14 +346,35 @@ private static final String username="root";
 
         submitbtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         submitbtn.setText("Submit");
+        submitbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitbtnActionPerformed(evt);
+            }
+        });
+
+        jLabel17.setText("Test Score");
+
+        jLabel18.setText("English Proficiency Score");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(350, 350, 350)
+                .addComponent(submitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap(47, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel18)
+                        .addGap(18, 18, 18)
+                        .addComponent(engtestscoretxt))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addGap(18, 18, 18)
+                        .addComponent(testscoretxt))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -336,10 +453,6 @@ private static final String username="root";
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(sevisno, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(80, 80, 80))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(350, 350, 350)
-                .addComponent(submitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -414,12 +527,23 @@ private static final String username="root";
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
                     .addComponent(countriestxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(3, 3, 3)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sevisyes)
+                            .addComponent(sevisno)))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(testscoretxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel17))))
+                .addGap(16, 16, 16)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sevisyes)
-                    .addComponent(sevisno))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
+                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(engtestscoretxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
                 .addComponent(submitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36))
         );
@@ -483,19 +607,19 @@ private static final String username="root";
         JFileChooser chooser=new JFileChooser();
         chooser.showOpenDialog(null);
         File f =chooser.getSelectedFile();
-        filename=f.getAbsolutePath();
+        pfilename=f.getAbsolutePath();
     }//GEN-LAST:event_passportuploadbtnActionPerformed
 
     private void passportviewbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passportviewbtnActionPerformed
         // TODO add your handling code here:
         try{
-            File file = new File(filename);
+            File file = new File(pfilename);
             if (file.exists()){
                 if(Desktop.isDesktopSupported()){
                    Desktop.getDesktop().open(file);
                 // Tick Mark Shown
                    
-                   if(filename.length()!=0){
+                   if(pfilename.length()!=0){
                        passporttick1.setVisible(true);
                    }
                    
@@ -519,13 +643,13 @@ private static final String username="root";
         JFileChooser chooser=new JFileChooser();
         chooser.showOpenDialog(null);
         File f =chooser.getSelectedFile();
-        filename=f.getAbsolutePath();
+        mfilename=f.getAbsolutePath();
     }//GEN-LAST:event_marksheetsuploadbtnActionPerformed
 
     private void marksheetsviewbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_marksheetsviewbtnActionPerformed
         // TODO add your handling code here:
          try{
-            File file = new File(filename);
+            File file = new File(mfilename);
             if (file.exists()){
                 if(Desktop.isDesktopSupported()){
                    Desktop.getDesktop().open(file);
@@ -533,7 +657,7 @@ private static final String username="root";
                    
                     // Tick Mark Shown
                    
-                   if(filename.length()!=0){
+                   if(mfilename.length()!=0){
                        marksheettick.setVisible(true);
                    }
                 }else{
@@ -560,13 +684,13 @@ private static final String username="root";
          JFileChooser chooser=new JFileChooser();
         chooser.showOpenDialog(null);
         File f =chooser.getSelectedFile();
-        filename=f.getAbsolutePath();
+        ifilename=f.getAbsolutePath();
     }//GEN-LAST:event_i20uploadbtnActionPerformed
 
     private void i20viewbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_i20viewbtnActionPerformed
         // TODO add your handling code here:
          try{
-            File file = new File(filename);
+            File file = new File(ifilename);
             if (file.exists()){
                 if(Desktop.isDesktopSupported()){
                    Desktop.getDesktop().open(file);
@@ -574,7 +698,7 @@ private static final String username="root";
                    
                     // Tick Mark Shown
                    
-                   if(filename.length()!=0){
+                   if(ifilename.length()!=0){
                        i20tick.setVisible(true);
                    }
                 }else{
@@ -593,6 +717,48 @@ private static final String username="root";
         
     }//GEN-LAST:event_ds160yesActionPerformed
 
+    private void submitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitbtnActionPerformed
+        // TODO add your handling code here:
+          try
+    {
+        
+        Class.forName("com.mysql.cj.jdbc.Driver");
+         sqlConn=DriverManager.getConnection(dataconn,username,password);
+         pst=sqlConn.prepareStatement("INSERT INTO studentclassdetailsvisaall(Name,Age,Gender,Email,Mobile,Branch,Enterprise,Degree,Countries,Test,EngTest,VisaStatus)values(?,?,?,?,?,?,?,?,?,?,?,?)");
+         
+          pst.setString(1,nametxt.getText());
+          pst.setString(2,agetxt.getText());
+          pst.setString(3,gendertxt.getText());
+          pst.setString(4,emailtxt.getText());
+          pst.setString(5,mobiletxt.getText());
+          pst.setString(6,branchtxt.getText());
+          pst.setString(7,enterprisetxt.getText());
+          pst.setString(8,degreetxt.getText());
+          pst.setString(9,countriestxt.getText());
+          pst.setString(10,testscoretxt.getText());
+          pst.setString(11,engtestscoretxt.getText());
+          String visastatus="Pending";
+          pst.setString(12,visastatus);
+          
+          
+         
+          
+        
+       
+          pst.executeUpdate();
+        
+        upDateDb();
+        
+        
+        
+    }                                         
+catch(Exception e){
+        JOptionPane.showMessageDialog(null,e);
+    
+}      
+        
+    }//GEN-LAST:event_submitbtnActionPerformed
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -603,6 +769,7 @@ private static final String username="root";
     private javax.swing.JCheckBox ds160no;
     private javax.swing.JCheckBox ds160yes;
     public javax.swing.JTextField emailtxt;
+    public javax.swing.JTextField engtestscoretxt;
     public javax.swing.JTextField enterprisetxt;
     public javax.swing.JTextField gendertxt;
     private javax.swing.JLabel i20tick;
@@ -616,6 +783,8 @@ private static final String username="root";
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -640,5 +809,6 @@ private static final String username="root";
     private javax.swing.JCheckBox sevisno;
     private javax.swing.JCheckBox sevisyes;
     private javax.swing.JButton submitbtn;
+    public javax.swing.JTextField testscoretxt;
     // End of variables declaration//GEN-END:variables
 }
