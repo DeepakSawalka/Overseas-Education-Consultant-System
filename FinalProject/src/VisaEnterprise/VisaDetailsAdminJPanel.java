@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Image;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -19,6 +20,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.util.Vector;
 import java.sql.*;
+import javax.swing.ImageIcon;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 /**
@@ -44,7 +46,14 @@ private static final String username="root";
      */
     public VisaDetailsAdminJPanel() {
         initComponents();
+        scaleImage1();
     }
+     public void scaleImage1(){
+        ImageIcon icon=new ImageIcon("C:\\Users\\vatsal\\Documents\\Github\\Final_AED_Project\\Final_AED_Project\\FinalProject\\src\\icon\\logo.jpg");
+        Image img=icon.getImage();
+        Image imgScale=img.getScaledInstance(iconlbl.getWidth(), iconlbl.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon=new ImageIcon(imgScale);
+        iconlbl.setIcon(scaledIcon);}
 public void upDateDb()
     {
     try
@@ -101,6 +110,10 @@ public void upDateDb()
         jScrollPane1 = new javax.swing.JScrollPane();
         visatbl = new javax.swing.JTable();
         viewbtn = new javax.swing.JButton();
+        iconlbl = new javax.swing.JLabel();
+
+        setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(null);
 
         visatbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -120,36 +133,19 @@ public void upDateDb()
         });
         jScrollPane1.setViewportView(visatbl);
 
+        add(jScrollPane1);
+        jScrollPane1.setBounds(10, 180, 1000, 164);
+
         viewbtn.setText("View");
         viewbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewbtnActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(453, 453, 453)
-                        .addComponent(viewbtn)))
-                .addContainerGap(19, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80)
-                .addComponent(viewbtn)
-                .addContainerGap(272, Short.MAX_VALUE))
-        );
+        add(viewbtn);
+        viewbtn.setBounds(460, 370, 72, 23);
+        add(iconlbl);
+        iconlbl.setBounds(80, 30, 120, 110);
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewbtnActionPerformed
@@ -261,6 +257,7 @@ class MyTableCellRenderer extends DefaultTableCellRenderer {
 }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel iconlbl;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton viewbtn;
     private javax.swing.JTable visatbl;

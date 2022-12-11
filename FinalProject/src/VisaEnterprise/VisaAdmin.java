@@ -5,6 +5,9 @@
 package VisaEnterprise;
 
 import CoachingEnterprise.ManageStudentProfileCo;
+import CounsellingEnterprise.MainFrame;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -17,7 +20,15 @@ public class VisaAdmin extends javax.swing.JFrame {
      */
     public VisaAdmin() {
         initComponents();
+        scaleImage1();
     }
+     public void scaleImage1(){
+        ImageIcon icon=new ImageIcon("C:\\Users\\vatsal\\Documents\\Github\\Final_AED_Project\\Final_AED_Project\\FinalProject\\src\\icon\\10966.jpg");
+        Image img=icon.getImage();
+        Image imgScale=img.getScaledInstance(iconlbl.getWidth(), iconlbl.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon=new ImageIcon(imgScale);
+        iconlbl.setIcon(scaledIcon);}
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -33,10 +44,16 @@ public class VisaAdmin extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         credentialsbtn = new javax.swing.JButton();
         visadetailsbtn = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        iconlbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(255, 153, 51));
+
+        credentialsbtn.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
+        credentialsbtn.setForeground(new java.awt.Color(255, 255, 255));
         credentialsbtn.setText("Manage Credentials");
         credentialsbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -44,10 +61,21 @@ public class VisaAdmin extends javax.swing.JFrame {
             }
         });
 
+        visadetailsbtn.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 14)); // NOI18N
+        visadetailsbtn.setForeground(new java.awt.Color(255, 255, 255));
         visadetailsbtn.setText("Manage Visa Details");
         visadetailsbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 visadetailsbtnActionPerformed(evt);
+            }
+        });
+
+        jButton1.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("<<");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -57,33 +85,31 @@ public class VisaAdmin extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(credentialsbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(visadetailsbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(credentialsbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(visadetailsbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(216, 216, 216)
+                .addContainerGap()
+                .addComponent(jButton1)
+                .addGap(187, 187, 187)
                 .addComponent(credentialsbtn)
                 .addGap(44, 44, 44)
                 .addComponent(visadetailsbtn)
-                .addContainerGap(367, Short.MAX_VALUE))
+                .addContainerGap(1605, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(jPanel1);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 869, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 673, Short.MAX_VALUE)
-        );
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(null);
+        jPanel2.add(iconlbl);
+        iconlbl.setBounds(0, 0, 1120, 660);
 
         jSplitPane1.setRightComponent(jPanel2);
 
@@ -93,11 +119,11 @@ public class VisaAdmin extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1327, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 659, Short.MAX_VALUE)
         );
 
         pack();
@@ -115,16 +141,25 @@ public class VisaAdmin extends javax.swing.JFrame {
         jSplitPane1.setRightComponent(v);
     }//GEN-LAST:event_visadetailsbtnActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        MainFrame m = new MainFrame();
+        m.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
  
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton credentialsbtn;
+    public javax.swing.JButton credentialsbtn;
+    private javax.swing.JLabel iconlbl;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JButton visadetailsbtn;
+    public javax.swing.JButton visadetailsbtn;
     // End of variables declaration//GEN-END:variables
 }

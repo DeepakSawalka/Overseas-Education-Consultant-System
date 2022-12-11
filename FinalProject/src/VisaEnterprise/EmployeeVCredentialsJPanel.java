@@ -4,6 +4,7 @@
  */
 package VisaEnterprise;
 
+import java.awt.Image;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JOptionPane;
 import java.sql.Connection;
@@ -13,6 +14,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.util.Vector;
 import java.sql.*;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -36,7 +38,15 @@ private static final String username="root";
      */
     public EmployeeVCredentialsJPanel() {
         initComponents();
+        scaleImage1();
     }
+     public void scaleImage1(){
+        ImageIcon icon=new ImageIcon("C:\\Users\\vatsal\\Documents\\Github\\Final_AED_Project\\Final_AED_Project\\FinalProject\\src\\icon\\logo.jpg");
+        Image img=icon.getImage();
+        Image imgScale=img.getScaledInstance(iconlbl.getWidth(), iconlbl.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon=new ImageIcon(imgScale);
+        iconlbl.setIcon(scaledIcon);}
+    
     public void upDateDb()
     {
     try
@@ -96,6 +106,11 @@ private static final String username="root";
         viewbtn = new javax.swing.JButton();
         modifybtn = new javax.swing.JButton();
         typetxt = new javax.swing.JTextField();
+        iconlbl = new javax.swing.JLabel();
+        iconlbl1 = new javax.swing.JLabel();
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(null);
 
         credentialstbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -115,17 +130,33 @@ private static final String username="root";
         });
         jScrollPane2.setViewportView(credentialstbl);
 
+        jPanel2.add(jScrollPane2);
+        jScrollPane2.setBounds(410, 30, 452, 147);
+
+        jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
         jLabel1.setText("Type");
+        jPanel2.add(jLabel1);
+        jLabel1.setBounds(500, 280, 107, 15);
 
+        jLabel2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
         jLabel2.setText("Username");
+        jPanel2.add(jLabel2);
+        jLabel2.setBounds(490, 330, 66, 15);
 
+        jLabel3.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
         jLabel3.setText("Password");
+        jPanel2.add(jLabel3);
+        jLabel3.setBounds(490, 390, 66, 15);
+        jPanel2.add(usernametxt);
+        usernametxt.setBounds(600, 330, 157, 22);
 
         passwordtxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passwordtxtActionPerformed(evt);
             }
         });
+        jPanel2.add(passwordtxt);
+        passwordtxt.setBounds(600, 390, 157, 22);
 
         createbtn.setText("Create");
         createbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -133,6 +164,8 @@ private static final String username="root";
                 createbtnActionPerformed(evt);
             }
         });
+        jPanel2.add(createbtn);
+        createbtn.setBounds(550, 460, 72, 23);
 
         viewbtn.setText("View");
         viewbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -140,6 +173,8 @@ private static final String username="root";
                 viewbtnActionPerformed(evt);
             }
         });
+        jPanel2.add(viewbtn);
+        viewbtn.setBounds(420, 220, 72, 23);
 
         modifybtn.setText("Modify");
         modifybtn.addActionListener(new java.awt.event.ActionListener() {
@@ -147,64 +182,14 @@ private static final String username="root";
                 modifybtnActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(343, 343, 343)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(createbtn)
-                    .addComponent(usernametxt, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
-                    .addComponent(passwordtxt)
-                    .addComponent(typetxt))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(320, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(108, 108, 108)
-                        .addComponent(modifybtn)
-                        .addGap(159, 159, 159))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(viewbtn)
-                        .addGap(496, 496, 496))))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(107, 107, 107)
-                        .addComponent(modifybtn)))
-                .addGap(39, 39, 39)
-                .addComponent(viewbtn)
-                .addGap(48, 48, 48)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(typetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(usernametxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(passwordtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
-                .addComponent(createbtn)
-                .addContainerGap(193, Short.MAX_VALUE))
-        );
+        jPanel2.add(modifybtn);
+        modifybtn.setBounds(770, 220, 72, 23);
+        jPanel2.add(typetxt);
+        typetxt.setBounds(600, 280, 157, 22);
+        jPanel2.add(iconlbl);
+        iconlbl.setBounds(260, 30, 120, 110);
+        jPanel2.add(iconlbl1);
+        iconlbl1.setBounds(20, 20, 120, 110);
 
         jScrollPane1.setViewportView(jPanel2);
 
@@ -386,6 +371,8 @@ private static final String username="root";
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton createbtn;
     private javax.swing.JTable credentialstbl;
+    private javax.swing.JLabel iconlbl;
+    private javax.swing.JLabel iconlbl1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

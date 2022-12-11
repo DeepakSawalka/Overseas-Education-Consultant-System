@@ -5,6 +5,8 @@
 package VisaEnterprise;
 
 import java.awt.Color;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -17,7 +19,15 @@ public class AgentRole extends javax.swing.JFrame {
      */
     public AgentRole() {
         initComponents();
+        scaleImage1();
     }
+     public void scaleImage1(){
+        ImageIcon icon=new ImageIcon("C:\\Users\\Deepak Sawalka\\Documents\\Final_AED_Project\\FinalProject\\src\\icon\\Web_Photo_Editor.jpg");
+        Image img=icon.getImage();
+        Image imgScale=img.getScaledInstance(iconlbl.getWidth(), iconlbl.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon=new ImageIcon(imgScale);
+        iconlbl.setIcon(scaledIcon);}
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -33,9 +43,13 @@ public class AgentRole extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         managebtn = new javax.swing.JButton();
         rejectbtn = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        iconlbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(255, 153, 51));
 
         managebtn.setText("Manage Profile");
         managebtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -59,6 +73,8 @@ public class AgentRole extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("<<");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -69,13 +85,18 @@ public class AgentRole extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(managebtn))
-                    .addComponent(rejectbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(rejectbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(179, 179, 179)
+                .addContainerGap()
+                .addComponent(jButton1)
+                .addGap(150, 150, 150)
                 .addComponent(managebtn)
                 .addGap(49, 49, 49)
                 .addComponent(rejectbtn)
@@ -84,16 +105,10 @@ public class AgentRole extends javax.swing.JFrame {
 
         jSplitPane1.setLeftComponent(jPanel1);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 844, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 629, Short.MAX_VALUE)
-        );
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(null);
+        jPanel2.add(iconlbl);
+        iconlbl.setBounds(0, 0, 840, 630);
 
         jSplitPane1.setRightComponent(jPanel2);
 
@@ -139,6 +154,8 @@ public class AgentRole extends javax.swing.JFrame {
      */
   
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel iconlbl;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

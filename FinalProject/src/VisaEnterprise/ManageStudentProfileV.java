@@ -10,6 +10,7 @@ package VisaEnterprise;
  */
 import CoachingEnterprise.StudentClassDetailsJFrame;
 import java.awt.Color;
+import java.awt.Image;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -17,6 +18,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.util.Vector;
 import java.sql.*;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 public class ManageStudentProfileV extends javax.swing.JPanel {
@@ -38,7 +40,14 @@ private static final String username="root";
      */
     public ManageStudentProfileV() {
         initComponents();
+        scaleImage1();
     }
+     public void scaleImage1(){
+        ImageIcon icon=new ImageIcon("C:\\Users\\vatsal\\Documents\\Github\\Final_AED_Project\\Final_AED_Project\\FinalProject\\src\\icon\\logo.jpg");
+        Image img=icon.getImage();
+        Image imgScale=img.getScaledInstance(iconlbl.getWidth(), iconlbl.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon=new ImageIcon(imgScale);
+        iconlbl.setIcon(scaledIcon);}
     public void upDateDb()
     {
     try
@@ -98,6 +107,10 @@ private static final String username="root";
         jScrollPane2 = new javax.swing.JScrollPane();
         managetbl = new javax.swing.JTable();
         viewbtn = new javax.swing.JButton();
+        iconlbl = new javax.swing.JLabel();
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(null);
 
         managetbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -117,36 +130,19 @@ private static final String username="root";
         });
         jScrollPane2.setViewportView(managetbl);
 
+        jPanel1.add(jScrollPane2);
+        jScrollPane2.setBounds(20, 180, 961, 207);
+
         viewbtn.setText("View");
         viewbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewbtnActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 961, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(423, 423, 423)
-                        .addComponent(viewbtn)))
-                .addContainerGap(59, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(125, 125, 125)
-                .addComponent(viewbtn)
-                .addContainerGap(259, Short.MAX_VALUE))
-        );
+        jPanel1.add(viewbtn);
+        viewbtn.setBounds(450, 420, 72, 23);
+        jPanel1.add(iconlbl);
+        iconlbl.setBounds(90, 40, 120, 110);
 
         jScrollPane1.setViewportView(jPanel1);
 
@@ -228,6 +224,7 @@ sc.setVisible(true);
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel iconlbl;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
