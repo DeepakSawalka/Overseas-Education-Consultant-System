@@ -44,6 +44,7 @@ public class AdminLogin extends javax.swing.JFrame {
     public AdminLogin() {
         initComponents();
         scaleImage();
+         scaleImage1();
     }
 public void scaleImage(){
 ImageIcon icon=new ImageIcon("C:\\Users\\Deepak Sawalka\\Documents\\NetBeansProjects\\FinalProject\\src\\icon\\adminlogin.png");
@@ -51,6 +52,15 @@ ImageIcon icon=new ImageIcon("C:\\Users\\Deepak Sawalka\\Documents\\NetBeansProj
         Image imgScale=img.getScaledInstance(piclbl.getWidth(), piclbl.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon scaledIcon=new ImageIcon(imgScale);
         piclbl.setIcon(scaledIcon);}
+
+public void scaleImage1(){
+        ImageIcon icon=new ImageIcon("C:\\Users\\Deepak Sawalka\\Documents\\Final_AED_Project\\FinalProject\\src\\icon\\fulllogo.png");
+        Image img=icon.getImage();
+        Image imgScale=img.getScaledInstance(iconlbl.getWidth(), iconlbl.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon=new ImageIcon(imgScale);
+        iconlbl.setIcon(scaledIcon);
+        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -66,39 +76,50 @@ ImageIcon icon=new ImageIcon("C:\\Users\\Deepak Sawalka\\Documents\\NetBeansProj
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         usernametxt = new javax.swing.JTextField();
-        passwordtxt = new javax.swing.JTextField();
         submitbtn = new javax.swing.JButton();
+        passwordtxt = new javax.swing.JPasswordField();
         piclbl = new javax.swing.JLabel();
         adminlbl = new javax.swing.JLabel();
+        iconlbl = new javax.swing.JLabel();
+        backbtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 0, 51));
+        jLabel1.setForeground(new java.awt.Color(255, 153, 51));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Login to Continue");
         jLabel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 102, 102));
+        jLabel2.setForeground(new java.awt.Color(255, 153, 0));
         jLabel2.setText("Username:");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 102, 51));
+        jLabel3.setForeground(new java.awt.Color(255, 153, 51));
         jLabel3.setText("Password:");
 
-        usernametxt.setBackground(new java.awt.Color(255, 153, 153));
+        usernametxt.setBackground(new java.awt.Color(255, 153, 102));
+        usernametxt.setToolTipText("Enter Username");
 
-        passwordtxt.setBackground(new java.awt.Color(255, 153, 153));
-
-        submitbtn.setBackground(new java.awt.Color(255, 102, 102));
+        submitbtn.setBackground(new java.awt.Color(255, 153, 51));
         submitbtn.setForeground(new java.awt.Color(255, 255, 255));
         submitbtn.setText("Submit");
         submitbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitbtnActionPerformed(evt);
+            }
+        });
+
+        passwordtxt.setBackground(new java.awt.Color(255, 153, 102));
+        passwordtxt.setToolTipText("Enter Password");
+        passwordtxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordtxtActionPerformed(evt);
             }
         });
 
@@ -116,63 +137,84 @@ ImageIcon icon=new ImageIcon("C:\\Users\\Deepak Sawalka\\Documents\\NetBeansProj
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(69, 69, 69)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(usernametxt)
-                            .addComponent(passwordtxt, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE))))
+                            .addComponent(usernametxt, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
+                            .addComponent(passwordtxt))))
                 .addContainerGap(80, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(submitbtn)
-                .addGap(179, 179, 179))
+                .addGap(177, 177, 177))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(87, 87, 87)
+                .addGap(68, 68, 68)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(usernametxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51)
+                .addGap(50, 50, 50)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(passwordtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addComponent(submitbtn)
-                .addGap(44, 44, 44))
+                .addGap(30, 30, 30))
         );
 
         adminlbl.setBackground(new java.awt.Color(255, 102, 0));
         adminlbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        adminlbl.setForeground(new java.awt.Color(255, 102, 51));
+        adminlbl.setForeground(new java.awt.Color(255, 153, 51));
         adminlbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         adminlbl.setText("Admin Login");
         adminlbl.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        backbtn.setText("<<");
+        backbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backbtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(piclbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(adminlbl, javax.swing.GroupLayout.DEFAULT_SIZE, 405, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(piclbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(adminlbl, javax.swing.GroupLayout.DEFAULT_SIZE, 405, Short.MAX_VALUE)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(backbtn)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(iconlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17)))
+                .addGap(29, 29, 29))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(43, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(adminlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(piclbl, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(iconlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(backbtn)
+                .addGap(42, 42, 42)
+                .addComponent(adminlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(piclbl, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -207,10 +249,30 @@ ImageIcon icon=new ImageIcon("C:\\Users\\Deepak Sawalka\\Documents\\NetBeansProj
             ResultSet rs=ps.executeQuery();
             if(rs.next()==true)
             {
-                JOptionPane.showMessageDialog(this,"Login Successfull!!");
+                JOptionPane.showMessageDialog(this,"Counsellor login Successfull!!");
                 dispose();
-                new CounsellingAdmin().setVisible(true);
-                
+                CounsellingAdminJFrame c=new CounsellingAdminJFrame();
+                        c.setVisible(true);
+                c.backbtn.setOpaque(false);
+        c.backbtn.setContentAreaFilled(false);
+        c.backbtn.setBorderPainted(false);
+         
+                c.credentialsbtn.setOpaque(false);
+        c.credentialsbtn.setContentAreaFilled(false);
+        c.credentialsbtn.setBorderPainted(false);
+         
+                c.enquirybtn.setOpaque(false);
+        c.enquirybtn.setContentAreaFilled(false);
+        c.enquirybtn.setBorderPainted(false);
+       
+                c.profilebtn.setOpaque(false);
+        c.profilebtn.setContentAreaFilled(false);
+        c.profilebtn.setBorderPainted(false);
+         
+                c.studentbtn.setOpaque(false);
+        c.studentbtn.setContentAreaFilled(false);
+        c.studentbtn.setBorderPainted(false);
+         c.setVisible(true);      
             
             }
             else{
@@ -232,7 +294,7 @@ ImageIcon icon=new ImageIcon("C:\\Users\\Deepak Sawalka\\Documents\\NetBeansProj
             ResultSet rs=ps.executeQuery();
             if(rs.next()==true)
             {
-                JOptionPane.showMessageDialog(this,"Login Successfull!!");
+                JOptionPane.showMessageDialog(this,"Coaching login Successfull!!");
                 dispose();
                 new CoachingAdmin().setVisible(true);
                 
@@ -256,7 +318,7 @@ ImageIcon icon=new ImageIcon("C:\\Users\\Deepak Sawalka\\Documents\\NetBeansProj
             ResultSet rs=ps.executeQuery();
             if(rs.next()==true)
             {
-                JOptionPane.showMessageDialog(this,"Login Successfull!!");
+                JOptionPane.showMessageDialog(this," Visa login Successfull!!");
                 dispose();
                new VisaAdmin().setVisible(true);
                 
@@ -281,7 +343,7 @@ ImageIcon icon=new ImageIcon("C:\\Users\\Deepak Sawalka\\Documents\\NetBeansProj
             ResultSet rs=ps.executeQuery();
             if(rs.next()==true)
             {
-                JOptionPane.showMessageDialog(this,"Login Successfull!!");
+                JOptionPane.showMessageDialog(this,"Loan login Successfull!!");
                 new LoanAdmin().setVisible(true);
                 dispose();
             
@@ -299,6 +361,19 @@ ImageIcon icon=new ImageIcon("C:\\Users\\Deepak Sawalka\\Documents\\NetBeansProj
         }
     }//GEN-LAST:event_submitbtnActionPerformed
 
+    private void passwordtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordtxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordtxtActionPerformed
+
+    private void backbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbtnActionPerformed
+        // TODO add your handling code here:
+        
+        
+        dispose();
+        MainFrame m=new MainFrame();
+        m.setVisible(true);
+    }//GEN-LAST:event_backbtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -306,12 +381,14 @@ ImageIcon icon=new ImageIcon("C:\\Users\\Deepak Sawalka\\Documents\\NetBeansProj
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel adminlbl;
+    public javax.swing.JButton backbtn;
+    private javax.swing.JLabel iconlbl;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField passwordtxt;
+    private javax.swing.JPasswordField passwordtxt;
     private javax.swing.JLabel piclbl;
     private javax.swing.JButton submitbtn;
     private javax.swing.JTextField usernametxt;

@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package CounsellingEnterprise;
+import java.awt.Image;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -10,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.util.Vector;
 import java.sql.*;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 /**
@@ -33,7 +35,14 @@ public class FirstTimeJPanel extends javax.swing.JPanel {
      String enterprise;
     public FirstTimeJPanel() {
         initComponents();
+        scaleImage1();
     }
+     public void scaleImage1(){
+        ImageIcon icon=new ImageIcon("C:\\Users\\Deepak Sawalka\\Documents\\Final_AED_Project\\FinalProject\\src\\icon\\logo.jpg");
+        Image img=icon.getImage();
+        Image imgScale=img.getScaledInstance(iconlbl.getWidth(), iconlbl.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon=new ImageIcon(imgScale);
+        iconlbl.setIcon(scaledIcon);}
 public void upDateDb()
     {
     try
@@ -131,6 +140,10 @@ public void upDateDb1()
         firsttimetbl = new javax.swing.JTable();
         viewbtn = new javax.swing.JButton();
         assignedbtn = new javax.swing.JButton();
+        iconlbl = new javax.swing.JLabel();
+
+        setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(null);
 
         firsttimetbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -150,12 +163,17 @@ public void upDateDb1()
         });
         jScrollPane1.setViewportView(firsttimetbl);
 
+        add(jScrollPane1);
+        jScrollPane1.setBounds(40, 150, 817, 180);
+
         viewbtn.setText("View");
         viewbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewbtnActionPerformed(evt);
             }
         });
+        add(viewbtn);
+        viewbtn.setBounds(280, 370, 72, 23);
 
         assignedbtn.setText("Assigned");
         assignedbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -163,33 +181,10 @@ public void upDateDb1()
                 assignedbtnActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(80, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 817, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(317, 317, 317)
-                .addComponent(viewbtn)
-                .addGap(100, 100, 100)
-                .addComponent(assignedbtn)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(viewbtn)
-                    .addComponent(assignedbtn))
-                .addContainerGap(239, Short.MAX_VALUE))
-        );
+        add(assignedbtn);
+        assignedbtn.setBounds(460, 370, 90, 23);
+        add(iconlbl);
+        iconlbl.setBounds(20, 20, 120, 110);
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewbtnActionPerformed
@@ -297,6 +292,7 @@ catch(Exception e){
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton assignedbtn;
     private javax.swing.JTable firsttimetbl;
+    private javax.swing.JLabel iconlbl;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton viewbtn;
     // End of variables declaration//GEN-END:variables

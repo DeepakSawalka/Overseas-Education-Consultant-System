@@ -4,6 +4,7 @@
  */
 package CounsellingEnterprise;
 import java.awt.Color;
+import java.awt.Image;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -11,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.util.Vector;
 import java.sql.*;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 /**
@@ -36,7 +38,14 @@ private static final String username="root";
      */
     public ManageStudentProfileAdminJPanel() {
         initComponents();
+        scaleImage1();
     }
+     public void scaleImage1(){
+        ImageIcon icon=new ImageIcon("C:\\Users\\Deepak Sawalka\\Documents\\Final_AED_Project\\FinalProject\\src\\icon\\logo.jpg");
+        Image img=icon.getImage();
+        Image imgScale=img.getScaledInstance(iconlbl.getWidth(), iconlbl.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon=new ImageIcon(imgScale);
+        iconlbl.setIcon(scaledIcon);}
 public void upDateDb()
     {
     try
@@ -136,6 +145,10 @@ public void upDateDb1()
         jScrollPane1 = new javax.swing.JScrollPane();
         managetbl = new javax.swing.JTable();
         viewbtn = new javax.swing.JButton();
+        iconlbl = new javax.swing.JLabel();
+
+        setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(null);
 
         managetbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -155,36 +168,19 @@ public void upDateDb1()
         });
         jScrollPane1.setViewportView(managetbl);
 
+        add(jScrollPane1);
+        jScrollPane1.setBounds(12, 122, 963, 207);
+
         viewbtn.setText("View");
         viewbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewbtnActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 963, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(376, 376, 376)
-                        .addComponent(viewbtn)))
-                .addContainerGap(26, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63)
-                .addComponent(viewbtn)
-                .addContainerGap(241, Short.MAX_VALUE))
-        );
+        add(viewbtn);
+        viewbtn.setBounds(410, 370, 80, 30);
+        add(iconlbl);
+        iconlbl.setBounds(10, 10, 120, 110);
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewbtnActionPerformed
@@ -353,6 +349,7 @@ catch(Exception e){
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel iconlbl;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable managetbl;
     private javax.swing.JButton viewbtn;
