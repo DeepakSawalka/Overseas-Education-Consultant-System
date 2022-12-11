@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package CounsellingEnterprise;
+import java.awt.Image;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -10,6 +11,8 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.util.Vector;
 import java.sql.*;
+import javax.swing.ImageIcon;
+import javax.swing.InputVerifier;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 /**
@@ -34,7 +37,16 @@ public class EmployeeCCredentialsJPanel extends javax.swing.JPanel {
             int deleteItem;
     public EmployeeCCredentialsJPanel() {
         initComponents();
+        scaleImage1();
     }
+    public void scaleImage1(){
+        ImageIcon icon=new ImageIcon("C:\\Users\\Deepak Sawalka\\Documents\\Final_AED_Project\\FinalProject\\src\\icon\\logo.jpg");
+        Image img=icon.getImage();
+        Image imgScale=img.getScaledInstance(iconlbl.getWidth(), iconlbl.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon=new ImageIcon(imgScale);
+        iconlbl.setIcon(scaledIcon);}
+    
+        
 public void upDateDb()
     {
     try
@@ -89,6 +101,10 @@ public void upDateDb()
         createbtn = new javax.swing.JButton();
         viewbtn = new javax.swing.JButton();
         modifybtn = new javax.swing.JButton();
+        iconlbl = new javax.swing.JLabel();
+
+        setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(null);
 
         credentialstbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -101,6 +117,7 @@ public void upDateDb()
                 "EmployeeType", "Username", "Password"
             }
         ));
+        credentialstbl.setGridColor(new java.awt.Color(255, 153, 51));
         credentialstbl.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 credentialstblMouseClicked(evt);
@@ -108,19 +125,37 @@ public void upDateDb()
         });
         jScrollPane1.setViewportView(credentialstbl);
 
+        add(jScrollPane1);
+        jScrollPane1.setBounds(194, 40, 500, 110);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setText("Employee Type");
+        add(jLabel1);
+        jLabel1.setBounds(270, 270, 107, 16);
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setText("Username");
+        add(jLabel2);
+        jLabel2.setBounds(270, 330, 66, 16);
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel3.setText("Password");
+        add(jLabel3);
+        jLabel3.setBounds(270, 390, 66, 16);
 
-        typecbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select--", "Counsellor", "Admission", "Accomodation", "Travel Agent", "Medical" }));
+        typecbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select--", "Counsellor", "Admission", " " }));
+        add(typecbox);
+        typecbox.setBounds(420, 270, 157, 22);
+        add(usernametxt);
+        usernametxt.setBounds(420, 330, 157, 22);
 
         passwordtxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passwordtxtActionPerformed(evt);
             }
         });
+        add(passwordtxt);
+        passwordtxt.setBounds(420, 390, 157, 22);
 
         createbtn.setText("Create");
         createbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -128,6 +163,8 @@ public void upDateDb()
                 createbtnActionPerformed(evt);
             }
         });
+        add(createbtn);
+        createbtn.setBounds(410, 470, 72, 23);
 
         viewbtn.setText("View");
         viewbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -135,6 +172,8 @@ public void upDateDb()
                 viewbtnActionPerformed(evt);
             }
         });
+        add(viewbtn);
+        viewbtn.setBounds(200, 180, 72, 23);
 
         modifybtn.setText("Modify");
         modifybtn.addActionListener(new java.awt.event.ActionListener() {
@@ -142,65 +181,10 @@ public void upDateDb()
                 modifybtnActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(343, 343, 343)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(createbtn)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(typecbox, 0, 157, Short.MAX_VALUE)
-                        .addComponent(usernametxt)
-                        .addComponent(passwordtxt)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(233, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(55, 55, 55)
-                        .addComponent(modifybtn)
-                        .addGap(99, 99, 99))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(viewbtn)
-                        .addGap(445, 445, 445))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(111, 111, 111)
-                        .addComponent(modifybtn)))
-                .addGap(18, 18, 18)
-                .addComponent(viewbtn)
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(typecbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(usernametxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(passwordtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
-                .addComponent(createbtn)
-                .addContainerGap(46, Short.MAX_VALUE))
-        );
+        add(modifybtn);
+        modifybtn.setBounds(620, 180, 72, 23);
+        add(iconlbl);
+        iconlbl.setBounds(10, 10, 130, 110);
     }// </editor-fold>//GEN-END:initComponents
 
     private void passwordtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordtxtActionPerformed
@@ -359,16 +343,17 @@ catch(Exception e){
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton createbtn;
+    public javax.swing.JButton createbtn;
     private javax.swing.JTable credentialstbl;
+    private javax.swing.JLabel iconlbl;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton modifybtn;
+    public javax.swing.JButton modifybtn;
     private javax.swing.JTextField passwordtxt;
     private javax.swing.JComboBox<String> typecbox;
     private javax.swing.JTextField usernametxt;
-    private javax.swing.JButton viewbtn;
+    public javax.swing.JButton viewbtn;
     // End of variables declaration//GEN-END:variables
 }

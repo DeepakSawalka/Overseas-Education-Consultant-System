@@ -23,7 +23,10 @@ public class MainFrame extends javax.swing.JFrame {
     public MainFrame() {
         initComponents();
         this.setTitle("Overseas Educational Consultant System");
+        this.setSize(1300,500 );
+        
       scaleImage();
+      scaleImage1();
       
     }
     public void scaleImage(){
@@ -34,7 +37,14 @@ public class MainFrame extends javax.swing.JFrame {
         chatbotbtn.setIcon(scaledIcon);
         
     }
-   
+   public void scaleImage1(){
+        ImageIcon icon=new ImageIcon("C:\\Users\\Deepak Sawalka\\Documents\\Final_AED_Project\\FinalProject\\src\\icon\\emailicon.png");
+        Image img=icon.getImage();
+        Image imgScale=img.getScaledInstance(emailicon.getWidth(), emailicon.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon=new ImageIcon(imgScale);
+        emailicon.setIcon(scaledIcon);
+        
+    }
      
         
     
@@ -53,19 +63,16 @@ public class MainFrame extends javax.swing.JFrame {
         videolbl = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         contactusbtn = new javax.swing.JButton();
-        loansbtn = new javax.swing.JButton();
-        visabtn = new javax.swing.JButton();
-        visabtn1 = new javax.swing.JButton();
-        visabtn2 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         logincbox = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        emailicon = new javax.swing.JLabel();
         chatbotbtn = new javax.swing.JButton();
         vlbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1000, 800));
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
 
         jScrollPane1.setPreferredSize(new java.awt.Dimension(1000, 800));
@@ -86,85 +93,6 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        loansbtn.setBackground(new java.awt.Color(255, 102, 0));
-        loansbtn.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        loansbtn.setText("Loans");
-        loansbtn.setBorder(null);
-        loansbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loansbtnActionPerformed(evt);
-            }
-        });
-
-        visabtn.setBackground(new java.awt.Color(255, 102, 0));
-        visabtn.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        visabtn.setText("Getting Visa");
-        visabtn.setBorder(null);
-        visabtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                visabtnActionPerformed(evt);
-            }
-        });
-
-        visabtn1.setBackground(new java.awt.Color(255, 102, 0));
-        visabtn1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        visabtn1.setText("Test Prep");
-        visabtn1.setBorder(null);
-        visabtn1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                visabtn1ActionPerformed(evt);
-            }
-        });
-
-        visabtn2.setBackground(new java.awt.Color(255, 102, 0));
-        visabtn2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        visabtn2.setText("Career Counselling");
-        visabtn2.setBorder(null);
-        visabtn2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                visabtn2ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(visabtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(visabtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(visabtn, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(loansbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(contactusbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(100, 100, 100))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(contactusbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(loansbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(visabtn, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(visabtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(visabtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27))
-        );
-
-        jPanel3.setBackground(new java.awt.Color(153, 153, 153));
-
-        jLabel1.setText("G+");
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
-            }
-        });
-
         logincbox.setBackground(new java.awt.Color(255, 102, 51));
         logincbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select--", "Enterprise login", "Admin login", "Employee login", "Student login" }));
         logincbox.addActionListener(new java.awt.event.ActionListener() {
@@ -177,28 +105,71 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Login");
 
+        jLabel1.setText("G+");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap(519, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(324, 324, 324)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(logincbox, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(contactusbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(100, 100, 100))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(26, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(contactusbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(logincbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1))
+                .addGap(27, 27, 27))
+        );
+
+        jPanel3.setBackground(new java.awt.Color(51, 51, 51));
+
+        jLabel3.setBackground(new java.awt.Color(255, 255, 0));
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("info@imperial-overseas.com");
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(523, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(425, 425, 425)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(logincbox, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(113, 113, 113))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(emailicon, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1015, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(logincbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addGap(19, 19, 19))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(emailicon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         chatbotbtn.setBackground(new java.awt.Color(255, 153, 51));
@@ -217,35 +188,33 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(906, 906, 906)
-                .addComponent(chatbotbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(168, 168, 168)
+                .addGap(1140, 1140, 1140)
                 .addComponent(vlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(172, 249, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(videolbl, javax.swing.GroupLayout.PREFERRED_SIZE, 1260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(videolbl, javax.swing.GroupLayout.PREFERRED_SIZE, 1260, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(chatbotbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(593, 593, 593))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(videolbl, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(76, 76, 76)
-                        .addComponent(vlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addComponent(chatbotbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(553, Short.MAX_VALUE))
+                .addGap(42, 42, 42)
+                .addComponent(chatbotbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addComponent(vlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1316, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -262,22 +231,6 @@ public class MainFrame extends javax.swing.JFrame {
         c.setVisible(true);
 
     }//GEN-LAST:event_contactusbtnActionPerformed
-
-    private void loansbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loansbtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_loansbtnActionPerformed
-
-    private void visabtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visabtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_visabtnActionPerformed
-
-    private void visabtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visabtn1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_visabtn1ActionPerformed
-
-    private void visabtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visabtn2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_visabtn2ActionPerformed
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         // TODO add your handling code here:
@@ -306,9 +259,13 @@ public class MainFrame extends javax.swing.JFrame {
             l.setVisible(true);
         }
        if(logincbox.getSelectedItem()=="Admin login"){
+           
            dispose();
             AdminLogin l =new AdminLogin();
             l.setVisible(true);
+            l.backbtn.setOpaque(false);
+        l.backbtn.setContentAreaFilled(false);
+        l.backbtn.setBorderPainted(false);
         }
          if(logincbox.getSelectedItem()=="Employee login"){
            dispose();
@@ -324,7 +281,21 @@ public class MainFrame extends javax.swing.JFrame {
        
     }//GEN-LAST:event_logincboxActionPerformed
 
-   
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        // TODO add your handling code here:
+         Desktop browser=Desktop.getDesktop();
+        try{
+            browser.browse(new URI("https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox"));
+
+        }
+        catch(Exception e){
+
+            JOptionPane.showMessageDialog(null,e);}
+                                        
+
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+
     
     /**
      * @param args the command line arguments
@@ -364,18 +335,16 @@ public class MainFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton chatbotbtn;
     private javax.swing.JButton contactusbtn;
+    private javax.swing.JLabel emailicon;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton loansbtn;
     private javax.swing.JComboBox<String> logincbox;
     private javax.swing.JLabel videolbl;
-    private javax.swing.JButton visabtn;
-    private javax.swing.JButton visabtn1;
-    private javax.swing.JButton visabtn2;
     private javax.swing.JLabel vlbl;
     // End of variables declaration//GEN-END:variables
 }
