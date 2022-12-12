@@ -4,6 +4,8 @@
  */
 package CounsellingEnterprise;
 
+import java.awt.Desktop;
+import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -51,6 +53,11 @@ public class AdmissionJPanel extends javax.swing.JPanel {
         jLabel1.setText("Step 1:");
 
         suggestionbtn.setText("University Suggestion");
+        suggestionbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                suggestionbtnActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setText("Step 2:");
@@ -218,6 +225,30 @@ public class AdmissionJPanel extends javax.swing.JPanel {
          
   
     }//GEN-LAST:event_decisionbtnActionPerformed
+
+    private void suggestionbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suggestionbtnActionPerformed
+        // TODO add your handling code here:
+         try{
+            File file = new File("C:\\Users\\Deepak Sawalka\\Desktop\\documents\\uni.pdf");
+            if (file.exists()){
+                if(Desktop.isDesktopSupported()){
+                   Desktop.getDesktop().open(file);
+                // Tick Mark Shown
+                   
+                   
+                   
+                   
+                   
+                }else{
+                    JOptionPane.showMessageDialog(this, "Not supported");
+                }
+            }else{
+                JOptionPane.showMessageDialog(this, "File Not exist");
+            }
+        }catch( Exception e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_suggestionbtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.text.SimpleDateFormat;
 import java.util.Vector;
+import javax.swing.InputVerifier;
 import javax.swing.JOptionPane;
 
 /**
@@ -36,6 +37,26 @@ public class FirstTimeUser extends javax.swing.JFrame {
      String status;
     public FirstTimeUser() {
         initComponents();
+        addVerifiers();
+    }
+    
+   private void addVerifiers(){
+     InputVerifier integerVerifier=new IntegerVerifier();
+     mobiletxt.setInputVerifier(integerVerifier);
+     InputVerifier stringVerifier=new StringVerifier();
+     nametxt.setInputVerifier(stringVerifier);
+     
+     
+ }
+   
+   
+   private Boolean checkBlankInput(){
+    if(nametxt.getText().length()==0|| emailtxt.getText().length()==0||mobiletxt.getText().length()==0)
+    {return false;}
+        else{
+                return true;
+                }
+        
     }
 public void upDateDb()
     {

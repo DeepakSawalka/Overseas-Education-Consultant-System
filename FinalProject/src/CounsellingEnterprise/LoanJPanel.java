@@ -5,7 +5,9 @@
 package CounsellingEnterprise;
 
 import java.awt.Color;
+import java.awt.Desktop;
 import java.awt.Image;
+import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -147,6 +149,11 @@ public void upDateDb()
         );
 
         viewbtn.setText("View");
+        viewbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewbtnActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("More Details:");
 
@@ -309,6 +316,30 @@ catch(Exception e){
         }
         
     }//GEN-LAST:event_submitbtnActionPerformed
+
+    private void viewbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewbtnActionPerformed
+        // TODO add your handling code here:
+         try{
+            File file = new File("C:\\Users\\Deepak Sawalka\\Desktop\\documents\\loan.pdf");
+            if (file.exists()){
+                if(Desktop.isDesktopSupported()){
+                   Desktop.getDesktop().open(file);
+                // Tick Mark Shown
+                   
+                   
+                   
+                   
+                   
+                }else{
+                    JOptionPane.showMessageDialog(this, "Not supported");
+                }
+            }else{
+                JOptionPane.showMessageDialog(this, "File Not exist");
+            }
+        }catch( Exception e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_viewbtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

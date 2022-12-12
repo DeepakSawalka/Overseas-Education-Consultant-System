@@ -4,8 +4,11 @@
  */
 package CounsellingEnterprise;
 
+import java.awt.Desktop;
 import java.awt.Image;
+import java.net.URI;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -79,10 +82,20 @@ public class VisaJPanel extends javax.swing.JPanel {
         jLabel3.setBounds(50, 120, 110, 40);
 
         jButton1.setText("Pay");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         add(jButton1);
         jButton1.setBounds(210, 170, 72, 23);
 
         jButton2.setText("Fill Form");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         add(jButton2);
         jButton2.setBounds(210, 130, 76, 23);
 
@@ -120,6 +133,30 @@ public class VisaJPanel extends javax.swing.JPanel {
         add(backlbl);
         backlbl.setBounds(300, 60, 650, 520);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Desktop browser=Desktop.getDesktop();
+        try{
+            browser.browse(new URI("https://ceac.state.gov/genniv/"));
+
+        }
+        catch(Exception e){
+
+            JOptionPane.showMessageDialog(null,e);}
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+         Desktop browser=Desktop.getDesktop();
+        try{
+            browser.browse(new URI("https://fmjfee.com/i901fee/index.html"));
+
+        }
+        catch(Exception e){
+
+            JOptionPane.showMessageDialog(null,e);}
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

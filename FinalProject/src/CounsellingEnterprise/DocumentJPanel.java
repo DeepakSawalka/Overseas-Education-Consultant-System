@@ -256,7 +256,7 @@ public class DocumentJPanel extends javax.swing.JPanel {
     private void usrbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usrbtnActionPerformed
         // TODO add your handling code here:
          try{
-            File file = new File("C:\\Users\\Deepak Sawalka\\Desktop\\documents\\resume.docx");
+            File file = new File("C:\\Users\\Deepak Sawalka\\Desktop\\documents\\resume.doc");
             if (file.exists()){
                 if(Desktop.isDesktopSupported()){
                    Desktop.getDesktop().open(file);
@@ -304,7 +304,7 @@ public class DocumentJPanel extends javax.swing.JPanel {
     private void gerrbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerrbtnActionPerformed
         // TODO add your handling code here:
          try{
-            File file = new File("C:\\Users\\Deepak Sawalka\\Desktop\\documents\\resume.docx");
+            File file = new File("C:\\Users\\Deepak Sawalka\\Desktop\\documents\\resume.doc");
             if (file.exists()){
                 if(Desktop.isDesktopSupported()){
                    Desktop.getDesktop().open(file);

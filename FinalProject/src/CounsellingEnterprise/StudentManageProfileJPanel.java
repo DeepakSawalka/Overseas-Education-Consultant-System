@@ -16,6 +16,7 @@ import java.sql.ResultSetMetaData;
 import java.util.Vector;
 import java.sql.*;
 import javax.swing.ImageIcon;
+import javax.swing.InputVerifier;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -51,7 +52,18 @@ private static final String username="root";
      */
     public StudentManageProfileJPanel() {
         initComponents();
+        addVerifiers();
     }
+     private void addVerifiers(){
+     InputVerifier integerVerifier=new IntegerVerifier();
+     mobiletxt.setInputVerifier(integerVerifier);
+     InputVerifier stringVerifier=new StringVerifier();
+     nametxt.setInputVerifier(stringVerifier);
+     InputVerifier integerVerifier1=new IntegerVerifier();
+     agetxt.setInputVerifier(integerVerifier1);
+     
+     
+ }
 
     public void upDateDb()
     {

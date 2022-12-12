@@ -16,6 +16,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.util.Vector;
 import java.sql.*;
+import javax.swing.InputVerifier;
 import javax.swing.JOptionPane;
 /**
  *
@@ -39,9 +40,27 @@ public class ContactUs extends javax.swing.JFrame {
     public ContactUs() {
         initComponents(); 
         init();
+        addVerifiers();
     }
     
-    
+ private void addVerifiers(){
+     InputVerifier integerVerifier=new IntegerVerifier();
+     mobiletxt.setInputVerifier(integerVerifier);
+     InputVerifier stringVerifier=new StringVerifier();
+     nametxt.setInputVerifier(stringVerifier);
+     
+     
+ }
+     
+private Boolean checkBlankInput(){
+    if(nametxt.getText().length()==0|| emailtxt.getText().length()==0||mobiletxt.getText().length()==0||subjecttxt.getText().length()==0)
+    {return false;}
+        else{
+                return true;
+                }
+        
+    }
+
     public void upDateDb()
     {
     try
