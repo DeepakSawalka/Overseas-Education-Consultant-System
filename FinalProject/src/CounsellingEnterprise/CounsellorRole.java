@@ -77,6 +77,8 @@ private void filter(String q){
 
         jSplitPane1.setAutoscrolls(true);
 
+        jPanel1.setBackground(new java.awt.Color(255, 153, 0));
+
         managebtn.setText("Manage Profile");
         managebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,6 +129,8 @@ private void filter(String q){
 
         jSplitPane1.setLeftComponent(jPanel1);
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
         firsttimetbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},
@@ -147,6 +151,7 @@ private void filter(String q){
             }
         });
 
+        branchcbox.setBackground(new java.awt.Color(255, 153, 51));
         branchcbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select--", "Mumbai", "Bangalore" }));
         branchcbox.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {

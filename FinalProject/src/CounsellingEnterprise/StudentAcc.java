@@ -33,6 +33,15 @@ public class StudentAcc extends javax.swing.JFrame {
      int s=0;
     public StudentAcc() {
         initComponents();
+        scaleImage();
+    }
+     public void scaleImage(){
+        ImageIcon icon=new ImageIcon("C:\\Users\\Deepak Sawalka\\Documents\\FinalAEDProject_Github\\Final_AED_Project\\FinalProject\\src\\icon\\vector.jpg");
+        Image img=icon.getImage();
+        Image imgScale=img.getScaledInstance(welcomelbl.getWidth(), welcomelbl.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon=new ImageIcon(imgScale);
+        welcomelbl.setIcon(scaledIcon);
+        
     }
 
     /**
@@ -72,6 +81,7 @@ public class StudentAcc extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        welcomelbl = new javax.swing.JLabel();
 
         jPanel5.setBackground(new java.awt.Color(0, 255, 102));
 
@@ -104,8 +114,12 @@ public class StudentAcc extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(255, 153, 51));
+
         profilebtn.setBackground(new java.awt.Color(255, 153, 0));
-        profilebtn.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        profilebtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        profilebtn.setForeground(new java.awt.Color(255, 255, 255));
+        profilebtn.setText("Profile");
         profilebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 profilebtnActionPerformed(evt);
@@ -120,7 +134,10 @@ public class StudentAcc extends javax.swing.JFrame {
         });
 
         namelbl.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        namelbl.setForeground(new java.awt.Color(255, 255, 255));
 
+        docbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        docbtn.setForeground(new java.awt.Color(255, 255, 255));
         docbtn.setText("Document Management");
         docbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,6 +145,8 @@ public class StudentAcc extends javax.swing.JFrame {
             }
         });
 
+        unibtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        unibtn.setForeground(new java.awt.Color(255, 255, 255));
         unibtn.setText("University Shortlisting");
         unibtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,6 +154,8 @@ public class StudentAcc extends javax.swing.JFrame {
             }
         });
 
+        visabtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        visabtn.setForeground(new java.awt.Color(255, 255, 255));
         visabtn.setText("VISA");
         visabtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -142,6 +163,8 @@ public class StudentAcc extends javax.swing.JFrame {
             }
         });
 
+        loanbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        loanbtn.setForeground(new java.awt.Color(255, 255, 255));
         loanbtn.setText("Loan Management");
         loanbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,6 +172,8 @@ public class StudentAcc extends javax.swing.JFrame {
             }
         });
 
+        contactbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        contactbtn.setForeground(new java.awt.Color(255, 255, 255));
         contactbtn.setText("Contact Us");
         contactbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -156,6 +181,8 @@ public class StudentAcc extends javax.swing.JFrame {
             }
         });
 
+        feedbackbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        feedbackbtn.setForeground(new java.awt.Color(255, 255, 255));
         feedbackbtn.setText("Counselling Feedback");
         feedbackbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,6 +190,8 @@ public class StudentAcc extends javax.swing.JFrame {
             }
         });
 
+        forexbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        forexbtn.setForeground(new java.awt.Color(255, 255, 255));
         forexbtn.setText("Forex ");
         forexbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -184,13 +213,13 @@ public class StudentAcc extends javax.swing.JFrame {
                         .addGap(10, 10, 10)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(docbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(profilebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(unibtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(visabtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(loanbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(contactbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(feedbackbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(forexbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(forexbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(profilebtn))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -223,12 +252,17 @@ public class StudentAcc extends javax.swing.JFrame {
 
         jSplitPane1.setLeftComponent(jPanel1);
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(null);
+
         jButton1.setText("Sign Out");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel3.add(jButton1);
+        jButton1.setBounds(683, 16, 90, 23);
 
         jPanel4.setBackground(new java.awt.Color(0, 204, 255));
 
@@ -259,6 +293,9 @@ public class StudentAcc extends javax.swing.JFrame {
                 .addGap(14, 14, 14))
         );
 
+        jPanel3.add(jPanel4);
+        jPanel4.setBounds(104, 136, 192, 101);
+
         jPanel8.setBackground(new java.awt.Color(255, 51, 51));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -287,6 +324,9 @@ public class StudentAcc extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addGap(16, 16, 16))
         );
+
+        jPanel3.add(jPanel8);
+        jPanel8.setBounds(584, 136, 190, 101);
 
         jPanel6.setBackground(new java.awt.Color(0, 255, 102));
 
@@ -317,38 +357,10 @@ public class StudentAcc extends javax.swing.JFrame {
                 .addGap(15, 15, 15))
         );
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(104, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
-                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(39, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(63, 63, 63)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(34, 34, 34)
-                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(454, Short.MAX_VALUE))
-        );
+        jPanel3.add(jPanel6);
+        jPanel6.setBounds(338, 136, 196, 101);
+        jPanel3.add(welcomelbl);
+        welcomelbl.setBounds(0, 250, 780, 410);
 
         jSplitPane1.setRightComponent(jPanel3);
 
@@ -556,10 +568,10 @@ Image img =mm.getScaledInstance(imglbl.getWidth(), imglbl.getHeight(), Image.SCA
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backbtn;
-    private javax.swing.JButton contactbtn;
-    private javax.swing.JButton docbtn;
-    private javax.swing.JButton feedbackbtn;
-    private javax.swing.JButton forexbtn;
+    public javax.swing.JButton contactbtn;
+    public javax.swing.JButton docbtn;
+    public javax.swing.JButton feedbackbtn;
+    public javax.swing.JButton forexbtn;
     public javax.swing.JLabel imglbl;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -578,10 +590,11 @@ Image img =mm.getScaledInstance(imglbl.getWidth(), imglbl.getHeight(), Image.SCA
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JButton loanbtn;
+    public javax.swing.JButton loanbtn;
     public javax.swing.JLabel namelbl;
     public javax.swing.JButton profilebtn;
-    private javax.swing.JButton unibtn;
-    private javax.swing.JButton visabtn;
+    public javax.swing.JButton unibtn;
+    public javax.swing.JButton visabtn;
+    private javax.swing.JLabel welcomelbl;
     // End of variables declaration//GEN-END:variables
 }

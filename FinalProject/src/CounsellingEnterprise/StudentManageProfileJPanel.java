@@ -141,6 +141,8 @@ private static final String username="root";
         imglbl = new javax.swing.JLabel();
         updatebtn = new javax.swing.JButton();
 
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
         jLabel12.setText("Name");
 
         jLabel13.setText("Age");

@@ -67,6 +67,7 @@ public class FeedbackJPanel extends javax.swing.JPanel {
         jRadioButton25 = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -124,6 +125,7 @@ public class FeedbackJPanel extends javax.swing.JPanel {
         jPanel1.add(jLabel7);
         jLabel7.setBounds(6, 401, 557, 59);
 
+        jTextArea1.setBackground(new java.awt.Color(255, 153, 51));
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane2.setViewportView(jTextArea1);
@@ -137,11 +139,11 @@ public class FeedbackJPanel extends javax.swing.JPanel {
 
         jRadioButton2.setText("Fair");
         jPanel1.add(jRadioButton2);
-        jRadioButton2.setBounds(685, 113, 42, 21);
+        jRadioButton2.setBounds(685, 113, 90, 21);
 
         jRadioButton3.setText("Good");
         jPanel1.add(jRadioButton3);
-        jRadioButton3.setBounds(795, 113, 70, 21);
+        jRadioButton3.setBounds(795, 113, 90, 21);
 
         jRadioButton4.setText("Very Good");
         jPanel1.add(jRadioButton4);
@@ -153,11 +155,11 @@ public class FeedbackJPanel extends javax.swing.JPanel {
 
         jRadioButton6.setText("Good");
         jPanel1.add(jRadioButton6);
-        jRadioButton6.setBounds(795, 267, 60, 21);
+        jRadioButton6.setBounds(795, 267, 90, 21);
 
         jRadioButton7.setText("Fair");
         jPanel1.add(jRadioButton7);
-        jRadioButton7.setBounds(685, 190, 42, 21);
+        jRadioButton7.setBounds(685, 190, 90, 21);
 
         jRadioButton8.setText("Very Good");
         jPanel1.add(jRadioButton8);
@@ -165,7 +167,7 @@ public class FeedbackJPanel extends javax.swing.JPanel {
 
         jRadioButton9.setText("Good");
         jPanel1.add(jRadioButton9);
-        jRadioButton9.setBounds(795, 190, 60, 21);
+        jRadioButton9.setBounds(795, 190, 90, 21);
 
         jRadioButton10.setText("Excellent");
         jPanel1.add(jRadioButton10);
@@ -185,7 +187,7 @@ public class FeedbackJPanel extends javax.swing.JPanel {
 
         jRadioButton14.setText("Fair");
         jPanel1.add(jRadioButton14);
-        jRadioButton14.setBounds(685, 267, 42, 21);
+        jRadioButton14.setBounds(685, 267, 90, 21);
 
         jRadioButton15.setText("Excellent");
         jRadioButton15.addActionListener(new java.awt.event.ActionListener() {
@@ -198,7 +200,7 @@ public class FeedbackJPanel extends javax.swing.JPanel {
 
         jRadioButton16.setText("Good");
         jPanel1.add(jRadioButton16);
-        jRadioButton16.setBounds(802, 344, 60, 21);
+        jRadioButton16.setBounds(802, 344, 90, 21);
 
         jRadioButton17.setText("Poor");
         jPanel1.add(jRadioButton17);
@@ -206,7 +208,7 @@ public class FeedbackJPanel extends javax.swing.JPanel {
 
         jRadioButton18.setText("Fair");
         jPanel1.add(jRadioButton18);
-        jRadioButton18.setBounds(692, 344, 42, 21);
+        jRadioButton18.setBounds(692, 344, 90, 21);
 
         jRadioButton19.setText("Very Good");
         jPanel1.add(jRadioButton19);
@@ -223,7 +225,7 @@ public class FeedbackJPanel extends javax.swing.JPanel {
             }
         });
         jPanel1.add(jRadioButton21);
-        jRadioButton21.setBounds(692, 421, 54, 21);
+        jRadioButton21.setBounds(692, 421, 100, 21);
 
         jRadioButton22.setText("Strongly Agree");
         jPanel1.add(jRadioButton22);

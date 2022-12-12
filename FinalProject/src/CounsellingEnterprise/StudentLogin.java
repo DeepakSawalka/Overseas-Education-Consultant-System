@@ -276,6 +276,37 @@ Image img =mm.getScaledInstance(sa.imglbl.getWidth(), sa.imglbl.getHeight(), Ima
       
        sa.namelbl.setText(name);
         sa.imglbl.setIcon(imgae);
+         sa.docbtn.setOpaque(false);
+        sa.docbtn.setContentAreaFilled(false);
+        sa.docbtn.setBorderPainted(false);
+         
+                sa.unibtn.setOpaque(false);
+        sa.unibtn.setContentAreaFilled(false);
+        sa.unibtn.setBorderPainted(false);
+         
+                sa.visabtn.setOpaque(false);
+        sa.visabtn.setContentAreaFilled(false);
+        sa.visabtn.setBorderPainted(false);
+       
+                sa.loanbtn.setOpaque(false);
+        sa.loanbtn.setContentAreaFilled(false);
+        sa.loanbtn.setBorderPainted(false);
+         
+                sa.feedbackbtn.setOpaque(false);
+        sa.feedbackbtn.setContentAreaFilled(false);
+        sa.feedbackbtn.setBorderPainted(false);
+        
+          sa.contactbtn.setOpaque(false);
+        sa.contactbtn.setContentAreaFilled(false);
+        sa.contactbtn.setBorderPainted(false);
+       
+                sa.profilebtn.setOpaque(false);
+        sa.profilebtn.setContentAreaFilled(false);
+        sa.profilebtn.setBorderPainted(false);
+         
+                sa.forexbtn.setOpaque(false);
+        sa.forexbtn.setContentAreaFilled(false);
+        sa.forexbtn.setBorderPainted(false);
         dispose();
             sa.setVisible(true);
             

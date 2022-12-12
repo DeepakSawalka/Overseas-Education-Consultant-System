@@ -270,9 +270,9 @@ public void upDateDb1()
 
         jLabel12.setText("Course Name");
 
-        unicbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select University--", "Northeastern Univerty", "New York University", " " }));
+        unicbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select University--", "Northeastern Univerty", "New York University", "Harvard University", "MIT", "Stanford University", "Pace University", "UCLA", " " }));
 
-        coursecbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select Course--", "MS in Computer Science", "MS in Mechanical Engineering" }));
+        coursecbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select Course--", "MS in Computer Science", "MS in Mechanical Engineering", "MIS", "MEM", " " }));
 
         submitbtn.setText("Submit");
         submitbtn.addActionListener(new java.awt.event.ActionListener() {

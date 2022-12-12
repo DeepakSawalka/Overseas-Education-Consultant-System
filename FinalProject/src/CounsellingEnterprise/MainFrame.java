@@ -27,7 +27,8 @@ public class MainFrame extends javax.swing.JFrame {
         
       scaleImage();
       scaleImage1();
-      
+      scaleImage2();
+      scaleImage3();
     }
     public void scaleImage(){
         ImageIcon icon=new ImageIcon("C:\\Users\\Deepak Sawalka\\Documents\\NetBeansProjects\\FinalProject\\src\\icon\\chatbot.png");
@@ -43,6 +44,22 @@ public class MainFrame extends javax.swing.JFrame {
         Image imgScale=img.getScaledInstance(emailicon.getWidth(), emailicon.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon scaledIcon=new ImageIcon(imgScale);
         emailicon.setIcon(scaledIcon);
+        
+    }
+   public void scaleImage2(){
+        ImageIcon icon=new ImageIcon("C:\\Users\\Deepak Sawalka\\Documents\\FinalAEDProject_Github\\Final_AED_Project\\FinalProject\\src\\icon\\fulllogo.png");
+        Image img=icon.getImage();
+        Image imgScale=img.getScaledInstance(logolbl.getWidth(), logolbl.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon=new ImageIcon(imgScale);
+        logolbl.setIcon(scaledIcon);
+        
+    }
+    public void scaleImage3(){
+        ImageIcon icon=new ImageIcon("C:\\Users\\Deepak Sawalka\\Documents\\FinalAEDProject_Github\\Final_AED_Project\\FinalProject\\src\\icon\\banner.png");
+        Image img=icon.getImage();
+        Image imgScale=img.getScaledInstance(bannerlbl.getWidth(), bannerlbl.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon=new ImageIcon(imgScale);
+        bannerlbl.setIcon(scaledIcon);
         
     }
      
@@ -63,22 +80,25 @@ public class MainFrame extends javax.swing.JFrame {
         videolbl = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         contactusbtn = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         adminbtn = new javax.swing.JButton();
         studentbtn = new javax.swing.JButton();
         enterprisebtn = new javax.swing.JButton();
         employeebtn = new javax.swing.JButton();
+        logolbl = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         emailicon = new javax.swing.JLabel();
         chatbotbtn = new javax.swing.JButton();
         vlbl = new javax.swing.JLabel();
+        bannerlbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
 
         jScrollPane1.setPreferredSize(new java.awt.Dimension(1000, 800));
+
+        jPanel1.setBackground(new java.awt.Color(255, 102, 0));
 
         videolbl.setIcon(new javax.swing.ImageIcon("C:\\Users\\Deepak Sawalka\\Documents\\NetBeansProjects\\FinalProject\\src\\icon\\20.11_compressed.gif")); // NOI18N
         videolbl.setPreferredSize(new java.awt.Dimension(1200, 520));
@@ -86,7 +106,7 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        contactusbtn.setBackground(new java.awt.Color(255, 102, 0));
+        contactusbtn.setBackground(new java.awt.Color(255, 153, 51));
         contactusbtn.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         contactusbtn.setText("Contact Us");
         contactusbtn.setBorder(null);
@@ -96,10 +116,6 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Login");
-
         jLabel1.setText("G+");
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -107,6 +123,8 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        adminbtn.setBackground(new java.awt.Color(255, 153, 51));
+        adminbtn.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         adminbtn.setText("Admin");
         adminbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,6 +132,8 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        studentbtn.setBackground(new java.awt.Color(255, 153, 51));
+        studentbtn.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         studentbtn.setText("Student");
         studentbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,6 +141,8 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        enterprisebtn.setBackground(new java.awt.Color(255, 153, 51));
+        enterprisebtn.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         enterprisebtn.setText("Enterprise");
         enterprisebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,6 +150,8 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        employeebtn.setBackground(new java.awt.Color(255, 153, 51));
+        employeebtn.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         employeebtn.setText("Employee");
         employeebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,16 +159,17 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        logolbl.setText("jLabel4");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(519, Short.MAX_VALUE)
+                .addComponent(logolbl, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 211, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(141, 141, 141)
                 .addComponent(enterprisebtn)
                 .addGap(18, 18, 18)
                 .addComponent(adminbtn)
@@ -159,16 +184,16 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
+                .addContainerGap(22, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(contactusbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
                     .addComponent(jLabel1)
                     .addComponent(studentbtn)
                     .addComponent(employeebtn)
                     .addComponent(adminbtn)
                     .addComponent(enterprisebtn))
                 .addGap(27, 27, 27))
+            .addComponent(logolbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel3.setBackground(new java.awt.Color(51, 51, 51));
@@ -220,19 +245,22 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(1140, 1140, 1140)
-                .addComponent(vlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(172, 249, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(1191, 1191, 1191)
+                        .addComponent(vlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(bannerlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 1073, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(chatbotbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(1812, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(videolbl, javax.swing.GroupLayout.PREFERRED_SIZE, 1260, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(chatbotbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(593, 593, 593))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -242,9 +270,14 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(videolbl, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addComponent(chatbotbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bannerlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(chatbotbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(98, 98, 98)
                 .addComponent(vlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(1316, Short.MAX_VALUE))
         );
@@ -366,18 +399,19 @@ public class MainFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton adminbtn;
+    private javax.swing.JLabel bannerlbl;
     private javax.swing.JButton chatbotbtn;
     private javax.swing.JButton contactusbtn;
     private javax.swing.JLabel emailicon;
     private javax.swing.JButton employeebtn;
     private javax.swing.JButton enterprisebtn;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel logolbl;
     private javax.swing.JButton studentbtn;
     private javax.swing.JLabel videolbl;
     private javax.swing.JLabel vlbl;

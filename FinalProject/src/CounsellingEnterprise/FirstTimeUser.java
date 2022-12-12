@@ -179,7 +179,7 @@ public void upDateDb()
         timeslotcbox.setBackground(new java.awt.Color(255, 153, 0));
         timeslotcbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select Time--", " " }));
 
-        registerbtn.setBackground(new java.awt.Color(255, 102, 102));
+        registerbtn.setBackground(new java.awt.Color(255, 153, 0));
         registerbtn.setText("Register");
         registerbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

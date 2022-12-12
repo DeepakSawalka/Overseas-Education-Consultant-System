@@ -92,6 +92,8 @@ public void upDateDb()
         managetbl = new javax.swing.JTable();
         viewbtn = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         managetbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null},
