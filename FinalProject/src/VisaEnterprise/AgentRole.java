@@ -4,6 +4,7 @@
  */
 package VisaEnterprise;
 
+import CounsellingEnterprise.MainFrame;
 import java.awt.Color;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -42,7 +43,6 @@ public class AgentRole extends javax.swing.JFrame {
         jSplitPane1 = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
         managebtn = new javax.swing.JButton();
-        rejectbtn = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         iconlbl = new javax.swing.JLabel();
@@ -66,14 +66,12 @@ public class AgentRole extends javax.swing.JFrame {
             }
         });
 
-        rejectbtn.setText("Visa Rejects");
-        rejectbtn.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("<<");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rejectbtnActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-
-        jButton1.setText("<<");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -85,7 +83,6 @@ public class AgentRole extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(managebtn))
-                    .addComponent(rejectbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -98,9 +95,7 @@ public class AgentRole extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addGap(150, 150, 150)
                 .addComponent(managebtn)
-                .addGap(49, 49, 49)
-                .addComponent(rejectbtn)
-                .addContainerGap(355, Short.MAX_VALUE))
+                .addContainerGap(427, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(jPanel1);
@@ -134,11 +129,6 @@ public class AgentRole extends javax.swing.JFrame {
         jSplitPane1.setRightComponent(mv);
     }//GEN-LAST:event_managebtnActionPerformed
 
-    private void rejectbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejectbtnActionPerformed
-        // TODO add your handling code here:
-      
-    }//GEN-LAST:event_rejectbtnActionPerformed
-
     private void managebtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managebtnMouseEntered
         // TODO add your handling code here:
          managebtn.setForeground(Color.RED);
@@ -148,6 +138,13 @@ public class AgentRole extends javax.swing.JFrame {
         // TODO add your handling code here:
         managebtn.setForeground(Color.RED);
     }//GEN-LAST:event_managebtnMouseExited
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        MainFrame m=new MainFrame();
+        m.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,6 +158,5 @@ public class AgentRole extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JButton managebtn;
-    private javax.swing.JButton rejectbtn;
     // End of variables declaration//GEN-END:variables
 }

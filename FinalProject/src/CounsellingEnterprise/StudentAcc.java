@@ -60,6 +60,7 @@ public class StudentAcc extends javax.swing.JFrame {
         loanbtn = new javax.swing.JButton();
         contactbtn = new javax.swing.JButton();
         feedbackbtn = new javax.swing.JButton();
+        forexbtn = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
@@ -142,6 +143,11 @@ public class StudentAcc extends javax.swing.JFrame {
         });
 
         loanbtn.setText("Loan Management");
+        loanbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loanbtnActionPerformed(evt);
+            }
+        });
 
         contactbtn.setText("Contact Us");
         contactbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -154,6 +160,13 @@ public class StudentAcc extends javax.swing.JFrame {
         feedbackbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 feedbackbtnActionPerformed(evt);
+            }
+        });
+
+        forexbtn.setText("Forex ");
+        forexbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                forexbtnActionPerformed(evt);
             }
         });
 
@@ -176,7 +189,8 @@ public class StudentAcc extends javax.swing.JFrame {
                             .addComponent(visabtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(loanbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(contactbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(feedbackbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(feedbackbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(forexbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -198,11 +212,13 @@ public class StudentAcc extends javax.swing.JFrame {
                 .addComponent(visabtn)
                 .addGap(27, 27, 27)
                 .addComponent(loanbtn)
-                .addGap(46, 46, 46)
+                .addGap(32, 32, 32)
+                .addComponent(forexbtn)
+                .addGap(18, 18, 18)
                 .addComponent(contactbtn)
-                .addGap(31, 31, 31)
+                .addGap(18, 18, 18)
                 .addComponent(feedbackbtn)
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(jPanel1);
@@ -443,8 +459,34 @@ Image img =mm.getScaledInstance(imglbl.getWidth(), imglbl.getHeight(), Image.SCA
 
     private void unibtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unibtnActionPerformed
         // TODO add your handling code here:
-        AdmissionJPanel a=new AdmissionJPanel();
-        jSplitPane1.setRightComponent(a);
+          String name=namelbl.getText();
+        
+         try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/finalproject","root","Rajkumar123#");
+            String s= "select * from createstudentprofile where Name=?";
+            PreparedStatement ps=conn.prepareStatement(s);
+            ps.setString(1, name);
+            ResultSet rs=ps.executeQuery();
+            if(rs.next()==true){
+               AdmissionJPanel a=new AdmissionJPanel();
+               String pname=String.valueOf(rs.getString("Name"));
+               
+             
+               
+                a.namelbl.setText(pname);
+               
+                
+                 
+               jSplitPane1.setRightComponent(a);
+            }
+        
+         }
+         catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+        
+       
     }//GEN-LAST:event_unibtnActionPerformed
 
     private void contactbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactbtnActionPerformed
@@ -465,6 +507,47 @@ Image img =mm.getScaledInstance(imglbl.getWidth(), imglbl.getHeight(), Image.SCA
         jSplitPane1.setRightComponent(v);
     }//GEN-LAST:event_visabtnActionPerformed
 
+    private void forexbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forexbtnActionPerformed
+        // TODO add your handling code here:
+        Forex f=new Forex();
+        jSplitPane1.setRightComponent(f);
+    }//GEN-LAST:event_forexbtnActionPerformed
+
+    private void loanbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loanbtnActionPerformed
+        // TODO add your handling code here:
+        
+        String name=namelbl.getText();
+        
+         try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/finalproject","root","Rajkumar123#");
+            String s= "select * from studentclassdetailsloanall where Name=?";
+            PreparedStatement ps=conn.prepareStatement(s);
+            ps.setString(1, name);
+            ResultSet rs=ps.executeQuery();
+            if(rs.next()==true){
+                LoanJPanel l=new LoanJPanel();
+               String pname=String.valueOf(rs.getString("Name"));
+                   String status=String.valueOf(rs.getString("Status"));
+              String score=String.valueOf(rs.getString("Test"));
+               
+                l.userlbl.setText(pname);
+                l.loanstatuslbl.setText(status);
+                l.grescoretxt.setText(score);
+               
+                
+                 
+               jSplitPane1.setRightComponent(l);
+            }
+        
+         }
+         catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+       
+        
+    }//GEN-LAST:event_loanbtnActionPerformed
+
    
     /**
      * @param args the command line arguments
@@ -476,6 +559,7 @@ Image img =mm.getScaledInstance(imglbl.getWidth(), imglbl.getHeight(), Image.SCA
     private javax.swing.JButton contactbtn;
     private javax.swing.JButton docbtn;
     private javax.swing.JButton feedbackbtn;
+    private javax.swing.JButton forexbtn;
     public javax.swing.JLabel imglbl;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

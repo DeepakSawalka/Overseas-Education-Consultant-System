@@ -195,7 +195,7 @@ private void init(){
             }
         });
 
-        branchcbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select--", "Mumbai", "Bangalore" }));
+        branchcbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select--", "Mumbai", "Bangalore", "Pune", "Hyderabad" }));
 
         messagelbl.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         messagelbl.setText("Message");

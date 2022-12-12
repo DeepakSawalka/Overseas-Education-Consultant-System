@@ -4,6 +4,12 @@
  */
 package CounsellingEnterprise;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Deepak
@@ -35,6 +41,8 @@ public class AdmissionJPanel extends javax.swing.JPanel {
         applicationbtn = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         decisionbtn = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        namelbl = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
 
         jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
@@ -64,32 +72,46 @@ public class AdmissionJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setText("User:");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(suggestionbtn)
-                .addGap(73, 73, 73)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(applicationbtn)
-                .addGap(138, 138, 138)
-                .addComponent(decisionbtn)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(84, 84, 84)
+                        .addComponent(suggestionbtn)
+                        .addGap(73, 73, 73)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(applicationbtn)
+                        .addGap(138, 138, 138)
+                        .addComponent(decisionbtn))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(namelbl, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(203, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                    .addContainerGap(587, Short.MAX_VALUE)
+                    .addContainerGap(665, Short.MAX_VALUE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(336, 336, 336)))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(71, Short.MAX_VALUE)
+                .addGap(19, 19, 19)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(namelbl, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(suggestionbtn)
@@ -110,7 +132,7 @@ public class AdmissionJPanel extends javax.swing.JPanel {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 974, Short.MAX_VALUE)
+            .addGap(0, 1052, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,15 +156,67 @@ public class AdmissionJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void applicationbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_applicationbtnActionPerformed
-        // TODO add your handling code here:
-        UniversityApplicationJPanel ua=new UniversityApplicationJPanel();
-        jSplitPane1.setBottomComponent(ua);
+         // TODO add your handling code here:
+         String name=namelbl.getText();
+        
+         try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/finalproject","root","Rajkumar123#");
+            String s= "select * from universityapplication where Name=?";
+            PreparedStatement ps=conn.prepareStatement(s);
+            ps.setString(1, name);
+            ResultSet rs=ps.executeQuery();
+            if(rs.next()==true){
+                 UniversityApplicationJPanel ua=new UniversityApplicationJPanel();
+               String pname=String.valueOf(rs.getString("Name"));
+               
+             
+               
+                ua.nametxt.setText(pname);
+               
+                
+                 
+               jSplitPane1.setBottomComponent(ua);
+            }
+        
+         }
+         catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+      
+       
     }//GEN-LAST:event_applicationbtnActionPerformed
 
     private void decisionbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decisionbtnActionPerformed
         // TODO add your handling code here:
-         UniversityDecisionJPanel ud=new UniversityDecisionJPanel();
-        jSplitPane1.setBottomComponent(ud);
+         String name=namelbl.getText();
+        
+         try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/finalproject","root","Rajkumar123#");
+            String s= "select * from universitydecision where Name=?";
+            PreparedStatement ps=conn.prepareStatement(s);
+            ps.setString(1, name);
+            ResultSet rs=ps.executeQuery();
+            if(rs.next()==true){
+                UniversityDecisionJPanel ud=new UniversityDecisionJPanel();
+               String pname=String.valueOf(rs.getString("Name"));
+               
+             
+               
+                ud.nametxt.setText(pname);
+               
+                
+                 
+                     jSplitPane1.setBottomComponent(ud);
+            }
+        
+         }
+         catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+         
+  
     }//GEN-LAST:event_decisionbtnActionPerformed
 
 
@@ -151,11 +225,13 @@ public class AdmissionJPanel extends javax.swing.JPanel {
     private javax.swing.JButton decisionbtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSplitPane jSplitPane1;
+    public javax.swing.JLabel namelbl;
     private javax.swing.JButton suggestionbtn;
     // End of variables declaration//GEN-END:variables
 }

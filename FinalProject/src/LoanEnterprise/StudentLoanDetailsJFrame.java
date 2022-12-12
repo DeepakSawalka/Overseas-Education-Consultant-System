@@ -4,6 +4,8 @@
  */
 package LoanEnterprise;
 import java.awt.Color;
+import java.awt.Desktop;
+import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -11,6 +13,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.util.Vector;
 import java.sql.*;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -31,12 +34,16 @@ private static final String username="root";
      String enterprise;
      String name,pass,sponsor,income;
      byte[] image;
+      String pfilename = null;
      DefaultTableModel recordTable;
     /**
      * Creates new form StudentLoanDetailsJFrame
      */
     public StudentLoanDetailsJFrame() {
         initComponents();
+         itrtick.setVisible(false);
+        bstick.setVisible(false);
+        pantick.setVisible(false);
     }
 public void upDateDb()
     {
@@ -140,7 +147,9 @@ public void upDateDb()
         jLabel18 = new javax.swing.JLabel();
         engtestscoretxt = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        itrtick = new javax.swing.JLabel();
+        bstick = new javax.swing.JLabel();
+        pantick = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
 
@@ -205,22 +214,52 @@ public void upDateDb()
         ITR.setText("ITR:");
 
         itrbtn.setText("Upload");
+        itrbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itrbtnActionPerformed(evt);
+            }
+        });
 
         jLabel15.setText("Bank Statement:");
 
         bankstatementbtn.setText("Upload");
+        bankstatementbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bankstatementbtnActionPerformed(evt);
+            }
+        });
 
         jLabel16.setText("Pan Card");
 
         pancardbtn.setText("Upload");
+        pancardbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pancardbtnActionPerformed(evt);
+            }
+        });
 
         jLabel17.setText("Phone number:");
 
         viewitrbtn.setText("View ");
+        viewitrbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewitrbtnActionPerformed(evt);
+            }
+        });
 
         viewbsbtn.setText("View");
+        viewbsbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewbsbtnActionPerformed(evt);
+            }
+        });
 
         pcbtn.setText("View");
+        pcbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pcbtnActionPerformed(evt);
+            }
+        });
 
         submitbtn.setBackground(new java.awt.Color(255, 51, 51));
         submitbtn.setText("Submit");
@@ -240,7 +279,14 @@ public void upDateDb()
 
         jLabel19.setText("Eng Profiency Score:");
 
-        jButton1.setText("cancel");
+        itrtick.setForeground(new java.awt.Color(51, 255, 51));
+        itrtick.setText("✔️");
+
+        bstick.setForeground(new java.awt.Color(51, 255, 51));
+        bstick.setText("✔️");
+
+        pantick.setForeground(new java.awt.Color(51, 255, 51));
+        pantick.setText("✔️");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -287,16 +333,24 @@ public void upDateDb()
                                                 .addComponent(pancardbtn)
                                                 .addGap(18, 18, 18)))
                                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(viewbsbtn)
-                                            .addComponent(viewitrbtn)
-                                            .addComponent(pcbtn)))
+                                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                                .addComponent(viewbsbtn)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(bstick))
+                                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                                .addComponent(pcbtn)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(pantick))
+                                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                                .addComponent(viewitrbtn)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(itrtick))))
                                     .addGroup(jPanel4Layout.createSequentialGroup()
                                         .addGap(97, 97, 97)
                                         .addComponent(phntxt, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGap(185, 185, 185)
-                                .addComponent(submitbtn)))
-                        .addGap(28, 28, 28))
+                                .addComponent(submitbtn))))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
@@ -321,14 +375,12 @@ public void upDateDb()
                                                 .addComponent(parentsbtn)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(othersbtn))
-                                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(jButton1)
-                                                .addGroup(jPanel4Layout.createSequentialGroup()
-                                                    .addComponent(jLabel14)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(itrbtn)
-                                                        .addComponent(incomecbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                                .addComponent(jLabel14)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(itrbtn)
+                                                    .addComponent(incomecbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                         .addGroup(jPanel4Layout.createSequentialGroup()
                                             .addComponent(jLabel15)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -367,12 +419,13 @@ public void upDateDb()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(gendertxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addGap(0, 11, Short.MAX_VALUE)
+                .addGap(0, 8, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(ITR)
                         .addComponent(itrbtn)
-                        .addComponent(viewitrbtn))
+                        .addComponent(viewitrbtn)
+                        .addComponent(itrtick, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(emailtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel4)))
@@ -383,12 +436,13 @@ public void upDateDb()
                             .addComponent(mobiletxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
+                        .addGap(26, 26, 26)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel15)
                             .addComponent(bankstatementbtn)
-                            .addComponent(viewbsbtn))))
-                .addGap(18, 18, 18)
+                            .addComponent(viewbsbtn)
+                            .addComponent(bstick, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(15, 15, 15)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -414,15 +468,14 @@ public void upDateDb()
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(pcbtn)
-                            .addComponent(pancardbtn))
+                            .addComponent(pancardbtn)
+                            .addComponent(pantick, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(phntxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel17))
                         .addGap(95, 95, 95)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(submitbtn)
-                            .addComponent(jButton1))
+                        .addComponent(submitbtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel16)
@@ -543,8 +596,112 @@ catch(Exception e){
         JOptionPane.showMessageDialog(null,e);
     
 }      
-       
+       dispose();
+       LoanAdmin la=new LoanAdmin();
+       la.setVisible(true);
     }//GEN-LAST:event_submitbtnActionPerformed
+
+    private void itrbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itrbtnActionPerformed
+        // TODO add your handling code here:
+         JFileChooser chooser=new JFileChooser();
+        chooser.showOpenDialog(null);
+        File f =chooser.getSelectedFile();
+        pfilename=f.getAbsolutePath();
+    }//GEN-LAST:event_itrbtnActionPerformed
+
+    private void viewitrbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewitrbtnActionPerformed
+        // TODO add your handling code here:
+        try{
+            File file = new File(pfilename);
+            if (file.exists()){
+                if(Desktop.isDesktopSupported()){
+                   Desktop.getDesktop().open(file);
+                // Tick Mark Shown
+                   
+                   if(pfilename.length()!=0){
+                       itrtick.setVisible(true);
+                   }
+                   
+                   
+                   
+                }else{
+                    JOptionPane.showMessageDialog(this, "Not supported");
+                }
+            }else{
+                JOptionPane.showMessageDialog(this, "File Not exist");
+            }
+        }catch( Exception e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_viewitrbtnActionPerformed
+
+    private void bankstatementbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bankstatementbtnActionPerformed
+        // TODO add your handling code here:
+        JFileChooser chooser=new JFileChooser();
+        chooser.showOpenDialog(null);
+        File f =chooser.getSelectedFile();
+        pfilename=f.getAbsolutePath();
+    }//GEN-LAST:event_bankstatementbtnActionPerformed
+
+    private void viewbsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewbsbtnActionPerformed
+        // TODO add your handling code here:
+        try{
+            File file = new File(pfilename);
+            if (file.exists()){
+                if(Desktop.isDesktopSupported()){
+                   Desktop.getDesktop().open(file);
+                // Tick Mark Shown
+                   
+                   if(pfilename.length()!=0){
+                       bstick.setVisible(true);
+                   }
+                   
+                   
+                   
+                }else{
+                    JOptionPane.showMessageDialog(this, "Not supported");
+                }
+            }else{
+                JOptionPane.showMessageDialog(this, "File Not exist");
+            }
+        }catch( Exception e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_viewbsbtnActionPerformed
+
+    private void pancardbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pancardbtnActionPerformed
+        // TODO add your handling code here:
+           JFileChooser chooser=new JFileChooser();
+        chooser.showOpenDialog(null);
+        File f =chooser.getSelectedFile();
+        pfilename=f.getAbsolutePath();
+    }//GEN-LAST:event_pancardbtnActionPerformed
+
+    private void pcbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pcbtnActionPerformed
+        // TODO add your handling code here:
+         try{
+            File file = new File(pfilename);
+            if (file.exists()){
+                if(Desktop.isDesktopSupported()){
+                   Desktop.getDesktop().open(file);
+                // Tick Mark Shown
+                   
+                   if(pfilename.length()!=0){
+                       pantick.setVisible(true);
+                   }
+                   
+                   
+                   
+                }else{
+                    JOptionPane.showMessageDialog(this, "Not supported");
+                }
+            }else{
+                JOptionPane.showMessageDialog(this, "File Not exist");
+            }
+        }catch( Exception e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_pcbtnActionPerformed
 
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -552,6 +709,7 @@ catch(Exception e){
     public javax.swing.JTextField agetxt;
     private javax.swing.JButton bankstatementbtn;
     public javax.swing.JTextField branchtxt;
+    private javax.swing.JLabel bstick;
     public javax.swing.JTextField countriestxt;
     public javax.swing.JTextField degreetxt;
     public javax.swing.JTextField emailtxt;
@@ -560,7 +718,7 @@ catch(Exception e){
     public javax.swing.JTextField gendertxt;
     private javax.swing.JComboBox<String> incomecbox;
     private javax.swing.JButton itrbtn;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel itrtick;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -588,6 +746,7 @@ catch(Exception e){
     public javax.swing.JTextField nametxt;
     private javax.swing.JRadioButton othersbtn;
     private javax.swing.JButton pancardbtn;
+    private javax.swing.JLabel pantick;
     private javax.swing.JRadioButton parentsbtn;
     private javax.swing.JButton pcbtn;
     private javax.swing.JTextField phntxt;

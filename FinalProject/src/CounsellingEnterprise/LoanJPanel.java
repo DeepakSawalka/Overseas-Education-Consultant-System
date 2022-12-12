@@ -4,19 +4,80 @@
  */
 package CounsellingEnterprise;
 
+import java.awt.Color;
+import java.awt.Image;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.util.Vector;
+import java.sql.*;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Deepak
  */
 public class LoanJPanel extends javax.swing.JPanel {
-
+private static final String username="root"; 
+    private static final String password="Rajkumar123#";
+    private static final String dataconn="jdbc:mysql://localhost:3306/finalproject";
+    
+    Connection sqlConn=null;
+    PreparedStatement pst=null;
+    ResultSet rs=null;
+     int q,i;
+     String branch;
+     String enterprise;
+     String name,pass,in,loanp,rate;
+     
+     DefaultTableModel recordTable;
     /**
      * Creates new form LoanJPanel
      */
     public LoanJPanel() {
         initComponents();
     }
-
+public void upDateDb()
+    {
+    try
+    {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+         sqlConn=DriverManager.getConnection(dataconn,username,password);
+         pst=sqlConn.prepareStatement("select * from loandetailsfinal");
+         
+         rs=pst.executeQuery();
+         ResultSetMetaData stData= rs.getMetaData();
+         q=stData.getColumnCount();
+         
+   
+         while (rs.next())
+         {
+            Vector columnData = new Vector();
+            
+            
+                for(i=1;i<q;i++){
+                  
+                  columnData.add(rs.getString("ID"));
+                  columnData.add(rs.getString("Name"));
+                  columnData.add(rs.getString("LoanPartner"));
+                  columnData.add(rs.getString("Income"));
+                  columnData.add(rs.getString("Score"));
+                columnData.add(rs.getString("InterestRate"));
+                  columnData.add(rs.getString("Status"));
+                }         
+            
+             
+         }
+         
+} 
+    catch(Exception e){
+        JOptionPane.showMessageDialog(null,e);
+    
+    }}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,19 +87,248 @@ public class LoanJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        income = new javax.swing.ButtonGroup();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        userlbl = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        loanstatuslbl = new javax.swing.JLabel();
+        viewbtn = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        loanpcbox = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
+        less = new javax.swing.JCheckBox();
+        above = new javax.swing.JCheckBox();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        grescoretxt = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        interestcbox = new javax.swing.JComboBox<>();
+        submitbtn = new javax.swing.JButton();
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setText("User:");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setText("Loan Status:");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(userlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 415, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(loanstatuslbl, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(81, 81, 81))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(26, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(userlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(19, 19, 19))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(loanstatuslbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))
+                        .addGap(23, 23, 23))))
+        );
+
+        viewbtn.setText("View");
+
+        jLabel2.setText("More Details:");
+
+        loanpcbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select--", "HDFC Credila", "Leap Finance" }));
+        loanpcbox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loanpcboxActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Loan Partner's");
+
+        income.add(less);
+        less.setText("Below 10 lakhs");
+
+        income.add(above);
+        above.setText("Above 10 lakhs");
+
+        jLabel5.setText("Sponsor's Annual Income ");
+
+        jLabel6.setText("GRE Score");
+
+        jLabel7.setText("Interest Rate:");
+
+        interestcbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        submitbtn.setText("Submit");
+        submitbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitbtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE))
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(viewbtn)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(less)
+                                .addGap(38, 38, 38)
+                                .addComponent(above))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(grescoretxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(loanpcbox, javax.swing.GroupLayout.Alignment.LEADING, 0, 135, Short.MAX_VALUE))
+                            .addComponent(interestcbox, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(submitbtn)
+                .addGap(245, 245, 245))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(83, 83, 83)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(viewbtn)
+                    .addComponent(jLabel2))
+                .addGap(69, 69, 69)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(loanpcbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(submitbtn)
+                .addGap(15, 15, 15)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(less)
+                    .addComponent(above)
+                    .addComponent(jLabel5))
+                .addGap(49, 49, 49)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(grescoretxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(interestcbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void loanpcboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loanpcboxActionPerformed
+        // TODO add your handling code here:
+        try{
+        if(loanpcbox.getSelectedItem().equals("HDFC Credila")){
+            interestcbox.removeAllItems();
+            
+            interestcbox.addItem("Less than 10lakhs-10% ");
+            interestcbox.addItem("Above 10lakhs- 9%");
+          
+            interestcbox.setSelectedItem(null);
+        }
+        else if (loanpcbox.getSelectedItem().equals("Leap Finance")){
+            interestcbox.removeAllItems();
+            
+            interestcbox.addItem("Less than 10lakhs- 9.5%");
+              interestcbox.addItem("Above  10lakhs- 8.5%");
+          
+            interestcbox.setSelectedItem(null);
+        }}
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(this, e);
+        }
+    }//GEN-LAST:event_loanpcboxActionPerformed
+
+    private void submitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitbtnActionPerformed
+        // TODO add your handling code here:
+     try    
+    {
+      
+        Class.forName("com.mysql.cj.jdbc.Driver");
+         sqlConn=DriverManager.getConnection(dataconn,username,password);
+         pst=sqlConn.prepareStatement("INSERT INTO loandetailsfinal(Name,LoanPartner,Income,Score,InterestRate,Status)values(?,?,?,?,?,?)");
+         pst.setString(1,userlbl.getText()); 
+         loanp=loanpcbox.getSelectedItem().toString();
+          pst.setString(2,loanp); 
+          if(less.isSelected()){
+            in=less.getText()+"";}
+            if(above.isSelected()){
+            in=above.getText()+"";}
+         
+         pst.setString(3,in);
+          pst.setString(4,grescoretxt.getText());
+            rate=interestcbox.getSelectedItem().toString();
+          pst.setString(5,rate);  
+          String status="Initiated";
+            pst.setString(6,status); 
+          
+         
+    
+     pst.executeUpdate();
+         JOptionPane.showMessageDialog(this,"Loan Application in progress");
+        upDateDb();
+        
+    }                                         
+catch(Exception e){
+        JOptionPane.showMessageDialog(null,e);
+    
+        }
+        
+    }//GEN-LAST:event_submitbtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox above;
+    public javax.swing.JTextField grescoretxt;
+    private javax.swing.ButtonGroup income;
+    private javax.swing.JComboBox<String> interestcbox;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JCheckBox less;
+    private javax.swing.JComboBox<String> loanpcbox;
+    public javax.swing.JLabel loanstatuslbl;
+    private javax.swing.JButton submitbtn;
+    public javax.swing.JLabel userlbl;
+    private javax.swing.JButton viewbtn;
     // End of variables declaration//GEN-END:variables
 }

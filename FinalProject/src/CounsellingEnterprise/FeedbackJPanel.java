@@ -4,6 +4,8 @@
  */
 package CounsellingEnterprise;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Deepak
@@ -250,6 +252,11 @@ public class FeedbackJPanel extends javax.swing.JPanel {
         jRadioButton25.setBounds(1024, 421, 120, 21);
 
         jButton1.setText("Submit");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1);
         jButton1.setBounds(605, 589, 139, 40);
 
@@ -282,6 +289,11 @@ public class FeedbackJPanel extends javax.swing.JPanel {
     private void jRadioButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton24ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton24ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "Thank you for your feedback");
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

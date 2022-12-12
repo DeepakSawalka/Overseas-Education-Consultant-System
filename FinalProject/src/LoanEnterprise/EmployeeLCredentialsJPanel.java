@@ -313,7 +313,7 @@ public void upDateDb()
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             sqlConn=DriverManager.getConnection(dataconn,username,password);
-            pst=sqlConn.prepareStatement("select * from employeeloanncredentials");
+            pst=sqlConn.prepareStatement("select * from employeeloancredentials");
 
             rs=pst.executeQuery();
             DefaultTableModel model=(DefaultTableModel)credentialstbl.getModel();

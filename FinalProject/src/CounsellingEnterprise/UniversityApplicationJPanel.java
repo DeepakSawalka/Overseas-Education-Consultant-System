@@ -5,14 +5,41 @@
 package CounsellingEnterprise;
 
 import java.awt.Image;
+import java.sql.DriverManager;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
+import javax.swing.JOptionPane;
+
+import java.awt.Color;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.util.Vector;
+import java.sql.*;
 
 /**
  *
  * @author Deepak
  */
 public class UniversityApplicationJPanel extends javax.swing.JPanel {
-
+private static final String username="root"; 
+    private static final String password="Rajkumar123#";
+    private static final String dataconn="jdbc:mysql://localhost:3306/finalproject";
+    
+    Connection sqlConn=null;
+    PreparedStatement pst=null;
+    ResultSet rs=null;
+     int q,i;
+     String branch;
+     String enterprise;
+     String name,pass;
+     byte[] image;
+     DefaultTableModel recordTable;
+     String testp,prepmodes,batch,testpt,prepmodest,batcht,status,test,englishtest;
     /**
      * Creates new form UniversityApplicationJPanel
      */
@@ -20,6 +47,45 @@ public class UniversityApplicationJPanel extends javax.swing.JPanel {
         initComponents();
          scaleImage1();
     }
+    
+    
+    public void upDateDb()
+    {
+    try
+    {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+         sqlConn=DriverManager.getConnection(dataconn,username,password);
+         pst=sqlConn.prepareStatement("select * from universityapplication");
+         
+         rs=pst.executeQuery();
+         ResultSetMetaData stData= rs.getMetaData();
+         q=stData.getColumnCount();
+         
+         DefaultTableModel recordTable=(DefaultTableModel) apptbl.getModel();
+         recordTable.setRowCount(0);
+         while (rs.next())
+         {
+            Vector columnData = new Vector();
+            
+            
+                for(i=1;i<q;i++){
+                  
+                  columnData.add(rs.getString("ID"));
+               
+                  columnData.add(rs.getString("University"));
+                   columnData.add(rs.getString("Course"));
+                  columnData.add(rs.getString("AppID"));
+                  columnData.add(rs.getString("Comment"));
+                }         
+            
+             recordTable.addRow(columnData);
+         }
+         
+} 
+    catch(Exception e){
+        JOptionPane.showMessageDialog(null,e);
+    
+    }}
      public void scaleImage1(){
         ImageIcon icon=new ImageIcon("C:\\Users\\vatsal\\Documents\\Github\\Final_AED_Project\\Final_AED_Project\\FinalProject\\src\\icon\\logo.jpg");
         Image img=icon.getImage();
@@ -41,9 +107,9 @@ public class UniversityApplicationJPanel extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        apptbl = new javax.swing.JTable();
+        viewbtn = new javax.swing.JButton();
+        updatebtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -55,6 +121,8 @@ public class UniversityApplicationJPanel extends javax.swing.JPanel {
         appidtxt = new javax.swing.JTextField();
         studenttxt = new javax.swing.JTextField();
         iconlbl = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        idtxt = new javax.swing.JTextField();
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setLayout(null);
@@ -86,37 +154,52 @@ public class UniversityApplicationJPanel extends javax.swing.JPanel {
         jPanel4.add(jPanel1);
         jPanel1.setBounds(182, 6, 831, 67);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        apptbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "University Name", "Course", "Application Id", "Student Comment"
+                "ID", "University Name", "Course", "Application Id", "Student Comment"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                true, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable1);
+        apptbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                apptblMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(apptbl);
 
         jPanel4.add(jScrollPane2);
         jScrollPane2.setBounds(182, 91, 814, 128);
 
-        jButton1.setText("View");
-        jPanel4.add(jButton1);
-        jButton1.setBounds(182, 231, 72, 23);
+        viewbtn.setText("View");
+        viewbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewbtnActionPerformed(evt);
+            }
+        });
+        jPanel4.add(viewbtn);
+        viewbtn.setBounds(650, 260, 72, 23);
 
-        jButton2.setText("Update");
-        jPanel4.add(jButton2);
-        jButton2.setBounds(266, 231, 72, 23);
+        updatebtn.setText("Update");
+        updatebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updatebtnActionPerformed(evt);
+            }
+        });
+        jPanel4.add(updatebtn);
+        updatebtn.setBounds(650, 360, 72, 23);
 
         jLabel2.setText("Name:");
         jPanel4.add(jLabel2);
@@ -124,7 +207,7 @@ public class UniversityApplicationJPanel extends javax.swing.JPanel {
 
         jLabel3.setText("University Name:");
         jPanel4.add(jLabel3);
-        jLabel3.setBounds(182, 335, 93, 27);
+        jLabel3.setBounds(182, 335, 90, 27);
 
         jLabel4.setText("Course:");
         jPanel4.add(jLabel4);
@@ -132,7 +215,7 @@ public class UniversityApplicationJPanel extends javax.swing.JPanel {
 
         jLabel5.setText("Student Comment:");
         jPanel4.add(jLabel5);
-        jLabel5.setBounds(182, 470, 103, 27);
+        jLabel5.setBounds(182, 470, 101, 27);
 
         jLabel6.setText("Application ID:");
         jPanel4.add(jLabel6);
@@ -150,40 +233,123 @@ public class UniversityApplicationJPanel extends javax.swing.JPanel {
         jPanel4.add(iconlbl);
         iconlbl.setBounds(30, 10, 120, 110);
 
+        jLabel7.setText("ID");
+        jPanel4.add(jLabel7);
+        jLabel7.setBounds(180, 250, 37, 16);
+        jPanel4.add(idtxt);
+        idtxt.setBounds(300, 250, 71, 22);
+
         jScrollPane1.setViewportView(jPanel4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1010, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 580, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void viewbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewbtnActionPerformed
+        // TODO add your handling code here:
+        String name=nametxt.getText();
+         try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            sqlConn=DriverManager.getConnection(dataconn,username,password);
+            pst=sqlConn.prepareStatement("select * from universityapplication where Name=?");
+ pst.setString(1, name);
+            rs=pst.executeQuery();
+            DefaultTableModel model=(DefaultTableModel)apptbl.getModel();
+            model.setRowCount(0);
+            while(rs.next())
+            {
+
+                
+String id=String.valueOf(rs.getString("ID"));
+                
+                
+                String uni=String.valueOf(rs.getString("University"));
+                String course=String.valueOf(rs.getString("Course"));
+                 String appid=String.valueOf(rs.getString("AppID"));
+                String comment=String.valueOf(rs.getString("Comment"));
+
+                String tbdata[]={id,uni,course,appid,comment};
+
+                model.addRow(tbdata);
+            }
+
+        }
+
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }//GEN-LAST:event_viewbtnActionPerformed
+
+    private void apptblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_apptblMouseClicked
+        // TODO add your handling code here:
+         DefaultTableModel recordTable=(DefaultTableModel)apptbl.getModel();
+         int SelectedRows= apptbl.getSelectedRow();
+         
+         idtxt.setText(recordTable.getValueAt(SelectedRows, 0).toString());
+        unitxt.setText(recordTable.getValueAt(SelectedRows, 1).toString());
+        coursetxt.setText(recordTable.getValueAt(SelectedRows, 2).toString());
+        appidtxt.setText(recordTable.getValueAt(SelectedRows, 3).toString());
+        studenttxt.setText(recordTable.getValueAt(SelectedRows, 4).toString());
+        
+    }//GEN-LAST:event_apptblMouseClicked
+
+    private void updatebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatebtnActionPerformed
+        // TODO add your handling code here:
+         try
+        {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            sqlConn=DriverManager.getConnection(dataconn,username,password);
+            pst=sqlConn.prepareStatement("update universityapplication set AppID=?,Comment=? where ID=?");
+
+           
+              pst.setString(1,appidtxt.getText());
+            pst.setString(2,studenttxt.getText());
+           pst.setString(3,idtxt.getText());
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(this,"Information Updated Successfully");
+            upDateDb();
+            unitxt.setText("");
+            appidtxt.setText("");
+            studenttxt.setText("");
+            coursetxt.setText("");
+
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+
+        }
+    }//GEN-LAST:event_updatebtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField appidtxt;
+    private javax.swing.JTable apptbl;
     private javax.swing.JTextField coursetxt;
     private javax.swing.JLabel iconlbl;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JTextField idtxt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField nametxt;
+    public javax.swing.JTextField nametxt;
     private javax.swing.JTextField studenttxt;
     private javax.swing.JTextField unitxt;
+    private javax.swing.JButton updatebtn;
+    private javax.swing.JButton viewbtn;
     // End of variables declaration//GEN-END:variables
 }

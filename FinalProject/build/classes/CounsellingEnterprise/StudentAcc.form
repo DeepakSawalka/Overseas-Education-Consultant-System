@@ -120,6 +120,7 @@
                                       <Component id="loanbtn" alignment="0" max="32767" attributes="0"/>
                                       <Component id="contactbtn" max="32767" attributes="0"/>
                                       <Component id="feedbackbtn" max="32767" attributes="0"/>
+                                      <Component id="forexbtn" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -146,11 +147,13 @@
                           <Component id="visabtn" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                           <Component id="loanbtn" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="forexbtn" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="contactbtn" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="feedbackbtn" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="82" max="32767" attributes="0"/>
+                          <EmptySpace pref="68" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -223,6 +226,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Loan Management"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="loanbtnActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="contactbtn">
                   <Properties>
@@ -238,6 +244,14 @@
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="feedbackbtnActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="forexbtn">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Forex "/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="forexbtnActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>

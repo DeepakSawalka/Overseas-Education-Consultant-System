@@ -750,7 +750,9 @@ catch(Exception e){
         JOptionPane.showMessageDialog(null,e);
     
 }      
-        
+     dispose();
+     AgentRole ar=new AgentRole();
+     ar.setVisible(true);
     }//GEN-LAST:event_submitbtnActionPerformed
 
     

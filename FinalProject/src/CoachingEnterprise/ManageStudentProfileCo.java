@@ -171,7 +171,7 @@ public void upDateDb()
         // TODO add your handling code here:
          DefaultTableModel recordTable=(DefaultTableModel)managetbl.getModel();
          int SelectedRows= managetbl.getSelectedRow();
-         
+   
          StudentClassDetailsJFrame sc=new StudentClassDetailsJFrame();
          sc.setVisible(true);
          sc.namelbl.setText(recordTable.getValueAt(SelectedRows, 1).toString());

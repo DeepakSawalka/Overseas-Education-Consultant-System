@@ -4,6 +4,10 @@
  */
 package CounsellingEnterprise;
 
+import java.awt.Desktop;
+import java.io.File;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Deepak
@@ -35,53 +39,21 @@ public class DocumentJPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
         usrbtn = new javax.swing.JButton();
-        uslbtn = new javax.swing.JButton();
-        ussbtn = new javax.swing.JButton();
-        canlbtn = new javax.swing.JButton();
-        canrbtn = new javax.swing.JButton();
         cansbtn = new javax.swing.JButton();
-        ukrbtn = new javax.swing.JButton();
-        uklbtn = new javax.swing.JButton();
         uksbtn = new javax.swing.JButton();
         gerrbtn = new javax.swing.JButton();
-        gerlbtn = new javax.swing.JButton();
-        gersbtn = new javax.swing.JButton();
 
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -115,99 +87,55 @@ public class DocumentJPanel extends javax.swing.JPanel {
 
         jLabel6.setText("1. USA- Resume");
 
-        jLabel7.setText("2.USA- LOR");
-
-        jLabel8.setText("4.CAN- Resume");
-
-        jLabel9.setText("3.USA- SOP");
-
-        jLabel10.setText("5.CAN- LOR");
-
         jLabel11.setText("6.CAN- SOP");
-
-        jLabel12.setText("7.UK- Resume");
-
-        jLabel13.setText("8.UK- LOR");
 
         jLabel14.setText("9.UK- SOP");
 
         jLabel15.setText("10.GER- Resume");
 
-        jLabel16.setText("11.GER- LOR");
-
-        jLabel17.setText("12.GER- SOP");
-
         jLabel18.setText("ACTIVE");
 
-        jLabel19.setText("ACTIVE");
-
-        jLabel20.setText("ACTIVE");
-
-        jLabel21.setText("ACTIVE");
-
-        jLabel22.setText("ACTIVE");
-
-        jLabel23.setText("ACTIVE");
-
         jLabel24.setText("ACTIVE");
-
-        jLabel25.setText("ACTIVE");
 
         jLabel26.setText("ACTIVE");
 
         jLabel27.setText("ACTIVE");
 
-        jLabel28.setText("ACTIVE");
-
-        jLabel29.setText("ACTIVE");
-
-        jLabel30.setText("USA");
-
         jLabel31.setText("USA");
-
-        jLabel32.setText("USA");
-
-        jLabel33.setText("CANADA");
 
         jLabel34.setText("CANADA");
 
-        jLabel35.setText("CANADA");
-
-        jLabel36.setText("UK");
-
         jLabel37.setText("UK");
-
-        jLabel38.setText("UK");
-
-        jLabel39.setText("GERMANY");
 
         jLabel40.setText("GERMANY");
 
-        jLabel41.setText("GERMANY");
+        usrbtn.setText("Download");
+        usrbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usrbtnActionPerformed(evt);
+            }
+        });
 
-        usrbtn.setText("jButton1");
+        cansbtn.setText("Download");
+        cansbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cansbtnActionPerformed(evt);
+            }
+        });
 
-        uslbtn.setText("jButton1");
+        uksbtn.setText("Download");
+        uksbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                uksbtnActionPerformed(evt);
+            }
+        });
 
-        ussbtn.setText("jButton1");
-
-        canlbtn.setText("jButton1");
-
-        canrbtn.setText("jButton1");
-
-        cansbtn.setText("jButton1");
-
-        ukrbtn.setText("jButton1");
-
-        uklbtn.setText("jButton1");
-
-        uksbtn.setText("jButton1");
-
-        gerrbtn.setText("jButton1");
-
-        gerlbtn.setText("jButton1");
-
-        gersbtn.setText("jButton1");
+        gerrbtn.setText("Download");
+        gerrbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gerrbtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -223,64 +151,30 @@ public class DocumentJPanel extends javax.swing.JPanel {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(77, 77, 77)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(109, 109, 109)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(110, 110, 110)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(gersbtn)
-                                    .addComponent(gerlbtn)
-                                    .addComponent(gerrbtn)
-                                    .addComponent(uksbtn)
-                                    .addComponent(uklbtn)
-                                    .addComponent(ukrbtn)
-                                    .addComponent(cansbtn)
-                                    .addComponent(canlbtn)
-                                    .addComponent(ussbtn)
-                                    .addComponent(usrbtn)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(uslbtn)
-                                    .addComponent(canrbtn))))))
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(110, 110, 110)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(gerrbtn)
+                            .addComponent(uksbtn)
+                            .addComponent(cansbtn)
+                            .addComponent(usrbtn)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -300,48 +194,12 @@ public class DocumentJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel18)
                     .addComponent(jLabel31)
                     .addComponent(usrbtn))
-                .addGap(11, 11, 11)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel20)
-                    .addComponent(jLabel32)
-                    .addComponent(uslbtn))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel21)
-                    .addComponent(jLabel30)
-                    .addComponent(ussbtn))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel22)
-                    .addComponent(jLabel33)
-                    .addComponent(canrbtn))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel19)
-                    .addComponent(jLabel35)
-                    .addComponent(canlbtn))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(jLabel24)
                     .addComponent(jLabel34)
                     .addComponent(cansbtn))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel25)
-                    .addComponent(jLabel36)
-                    .addComponent(ukrbtn))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel23)
-                    .addComponent(jLabel38)
-                    .addComponent(uklbtn))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
@@ -354,19 +212,7 @@ public class DocumentJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel27)
                     .addComponent(jLabel40)
                     .addComponent(gerrbtn))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16)
-                    .addComponent(jLabel28)
-                    .addComponent(jLabel41)
-                    .addComponent(gerlbtn))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel17)
-                    .addComponent(jLabel29)
-                    .addComponent(jLabel39)
-                    .addComponent(gersbtn))
-                .addContainerGap(470, Short.MAX_VALUE))
+                .addContainerGap(812, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -383,63 +229,127 @@ public class DocumentJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cansbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cansbtnActionPerformed
+        // TODO add your handling code here:
+        try{
+            File file = new File("C:\\Users\\Deepak Sawalka\\Desktop\\documents\\sop.docx");
+            if (file.exists()){
+                if(Desktop.isDesktopSupported()){
+                   Desktop.getDesktop().open(file);
+                // Tick Mark Shown
+                   
+                   
+                   
+                   
+                   
+                }else{
+                    JOptionPane.showMessageDialog(this, "Not supported");
+                }
+            }else{
+                JOptionPane.showMessageDialog(this, "File Not exist");
+            }
+        }catch( Exception e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_cansbtnActionPerformed
+
+    private void usrbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usrbtnActionPerformed
+        // TODO add your handling code here:
+         try{
+            File file = new File("C:\\Users\\Deepak Sawalka\\Desktop\\documents\\resume.docx");
+            if (file.exists()){
+                if(Desktop.isDesktopSupported()){
+                   Desktop.getDesktop().open(file);
+                // Tick Mark Shown
+                   
+                   
+                   
+                   
+                   
+                }else{
+                    JOptionPane.showMessageDialog(this, "Not supported");
+                }
+            }else{
+                JOptionPane.showMessageDialog(this, "File Not exist");
+            }
+        }catch( Exception e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_usrbtnActionPerformed
+
+    private void uksbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uksbtnActionPerformed
+        // TODO add your handling code here:
+         try{
+            File file = new File("C:\\Users\\Deepak Sawalka\\Desktop\\documents\\sop.docx");
+            if (file.exists()){
+                if(Desktop.isDesktopSupported()){
+                   Desktop.getDesktop().open(file);
+                // Tick Mark Shown
+                   
+                   
+                   
+                   
+                   
+                }else{
+                    JOptionPane.showMessageDialog(this, "Not supported");
+                }
+            }else{
+                JOptionPane.showMessageDialog(this, "File Not exist");
+            }
+        }catch( Exception e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_uksbtnActionPerformed
+
+    private void gerrbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerrbtnActionPerformed
+        // TODO add your handling code here:
+         try{
+            File file = new File("C:\\Users\\Deepak Sawalka\\Desktop\\documents\\resume.docx");
+            if (file.exists()){
+                if(Desktop.isDesktopSupported()){
+                   Desktop.getDesktop().open(file);
+                // Tick Mark Shown
+                   
+                   
+                   
+                   
+                   
+                }else{
+                    JOptionPane.showMessageDialog(this, "Not supported");
+                }
+            }else{
+                JOptionPane.showMessageDialog(this, "File Not exist");
+            }
+        }catch( Exception e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_gerrbtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton canlbtn;
-    private javax.swing.JButton canrbtn;
     private javax.swing.JButton cansbtn;
-    private javax.swing.JButton gerlbtn;
     private javax.swing.JButton gerrbtn;
-    private javax.swing.JButton gersbtn;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton uklbtn;
-    private javax.swing.JButton ukrbtn;
     private javax.swing.JButton uksbtn;
-    private javax.swing.JButton uslbtn;
     private javax.swing.JButton usrbtn;
-    private javax.swing.JButton ussbtn;
     // End of variables declaration//GEN-END:variables
 }

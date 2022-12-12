@@ -63,9 +63,12 @@ public class MainFrame extends javax.swing.JFrame {
         videolbl = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         contactusbtn = new javax.swing.JButton();
-        logincbox = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        adminbtn = new javax.swing.JButton();
+        studentbtn = new javax.swing.JButton();
+        enterprisebtn = new javax.swing.JButton();
+        employeebtn = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         emailicon = new javax.swing.JLabel();
@@ -93,14 +96,6 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        logincbox.setBackground(new java.awt.Color(255, 102, 51));
-        logincbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select--", "Enterprise login", "Admin login", "Employee login", "Student login" }));
-        logincbox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logincboxActionPerformed(evt);
-            }
-        });
-
         jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Login");
@@ -112,6 +107,34 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        adminbtn.setText("Admin");
+        adminbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminbtnActionPerformed(evt);
+            }
+        });
+
+        studentbtn.setText("Student");
+        studentbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentbtnActionPerformed(evt);
+            }
+        });
+
+        enterprisebtn.setText("Enterprise");
+        enterprisebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enterprisebtnActionPerformed(evt);
+            }
+        });
+
+        employeebtn.setText("Employee");
+        employeebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                employeebtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -119,23 +142,32 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap(519, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(324, 324, 324)
+                .addGap(65, 65, 65)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(logincbox, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addComponent(enterprisebtn)
+                .addGap(18, 18, 18)
+                .addComponent(adminbtn)
+                .addGap(18, 18, 18)
+                .addComponent(employeebtn)
+                .addGap(18, 18, 18)
+                .addComponent(studentbtn)
+                .addGap(18, 18, 18)
                 .addComponent(contactusbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(100, 100, 100))
+                .addGap(134, 134, 134))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap(21, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(contactusbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(logincbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel1))
+                    .addComponent(jLabel1)
+                    .addComponent(studentbtn)
+                    .addComponent(employeebtn)
+                    .addComponent(adminbtn)
+                    .addComponent(enterprisebtn))
                 .addGap(27, 27, 27))
         );
 
@@ -208,7 +240,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(26, 26, 26)
                 .addComponent(videolbl, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addComponent(chatbotbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -250,37 +282,6 @@ public class MainFrame extends javax.swing.JFrame {
         chat.setVisible(true);
     }//GEN-LAST:event_chatbotbtnActionPerformed
 
-    private void logincboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logincboxActionPerformed
-        // TODO add your handling code here:
-        //int d=logincbox.getSelectedIndex();
-        if(logincbox.getSelectedItem()=="Enterprise login"){
-            dispose();
-            EnterpriseAdminLogin l =new EnterpriseAdminLogin();
-            l.setVisible(true);
-        }
-       if(logincbox.getSelectedItem()=="Admin login"){
-           
-           dispose();
-            AdminLogin l =new AdminLogin();
-            l.setVisible(true);
-            l.backbtn.setOpaque(false);
-        l.backbtn.setContentAreaFilled(false);
-        l.backbtn.setBorderPainted(false);
-        }
-         if(logincbox.getSelectedItem()=="Employee login"){
-           dispose();
-            EmployeeLogin e =new EmployeeLogin();
-            e.setVisible(true);
-        }
-        if(logincbox.getSelectedItem()=="Student login"){
-            dispose();
-            StudentLogin l =new StudentLogin();
-            l.setVisible(true);
-        }
-       
-       
-    }//GEN-LAST:event_logincboxActionPerformed
-
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
          Desktop browser=Desktop.getDesktop();
@@ -294,6 +295,37 @@ public class MainFrame extends javax.swing.JFrame {
                                         
 
     }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void enterprisebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterprisebtnActionPerformed
+        // TODO add your handling code here:
+        dispose();
+            EnterpriseAdminLogin l =new EnterpriseAdminLogin();
+            l.setVisible(true);
+    }//GEN-LAST:event_enterprisebtnActionPerformed
+
+    private void adminbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminbtnActionPerformed
+        // TODO add your handling code here:
+        dispose();
+            AdminLogin l =new AdminLogin();
+            l.setVisible(true);
+            l.backbtn.setOpaque(false);
+        l.backbtn.setContentAreaFilled(false);
+        l.backbtn.setBorderPainted(false);
+    }//GEN-LAST:event_adminbtnActionPerformed
+
+    private void employeebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeebtnActionPerformed
+        // TODO add your handling code here:
+        dispose();
+            EmployeeLogin e =new EmployeeLogin();
+            e.setVisible(true);
+    }//GEN-LAST:event_employeebtnActionPerformed
+
+    private void studentbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentbtnActionPerformed
+        // TODO add your handling code here:
+             dispose();
+            StudentLogin l =new StudentLogin();
+            l.setVisible(true);
+    }//GEN-LAST:event_studentbtnActionPerformed
 
 
     
@@ -333,9 +365,12 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton adminbtn;
     private javax.swing.JButton chatbotbtn;
     private javax.swing.JButton contactusbtn;
     private javax.swing.JLabel emailicon;
+    private javax.swing.JButton employeebtn;
+    private javax.swing.JButton enterprisebtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -343,7 +378,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JComboBox<String> logincbox;
+    private javax.swing.JButton studentbtn;
     private javax.swing.JLabel videolbl;
     private javax.swing.JLabel vlbl;
     // End of variables declaration//GEN-END:variables
